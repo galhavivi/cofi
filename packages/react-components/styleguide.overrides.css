@@ -1,0 +1,77 @@
+body {
+  font-family:Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+}
+
+[data-testid="sidebar"] {
+  height: 100% !important;
+}
+
+.MuiInput-root, .MuiFormControl-root {
+  width: 400px;
+}
+
+h1[class*="rsg--heading"] {
+  font-size: 38px;
+  margin-bottom: 40px !important;
+}
+
+h2[class*="rsg--heading"] {
+  font-size: 28px;
+}
+
+h3[class*="rsg--heading"] {
+  margin: 40px 0;
+  font-size: 23px;
+}
+
+.rsg--preview-38 .sc-bdVaJa { /* cofi field - should have better selector */
+  margin: 0 !important;
+}
+
+[data-testid] {
+  margin-bottom: 70px !important;
+}
+
+.rsg--heading4-18 {
+  font-size: 14px !important;
+}
+
+[class*="rsg--preview-"] {
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+[class*="rsg--pathline"] {
+  display: none;
+}
+
+[class*="rsg--sidebar-"] {
+  background-color: #f9f9f9 !important;
+}
+
+[class*="rsg--sidebar-"] nav ul {
+  padding: 0 16px;
+}
+
+[class*="rsg--sidebar-"] [class*="rsg--item-"] {
+  padding: 10px 0px;
+  margin: 0;
+}
+
+[class*="rsg--link-"][class*="rsg--heading"] {
+  color: #555 !important;
+}
+
+[class*="rsg--link-"] [class*="rsg--para-"],
+[class*="rsg--button"] {
+  color: #3fcee6 !important;
+}
+
+[class*="rsg--button"]:focus {
+  outline: none!important;
+}
+
+[class*="rsg--controls-"] {
+  margin-top: 0px !important;
+}

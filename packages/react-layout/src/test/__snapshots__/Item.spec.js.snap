@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item Should render - ok 1`] = `
+<ItemView
+  sections={
+    Array [
+      Object {
+        "id": "general",
+        "ref": Object {
+          "current": null,
+        },
+        "title": "General",
+      },
+    ]
+  }
+  sectionsRef={
+    Object {
+      "current": null,
+    }
+  }
+  size={4}
+  tabs={
+    Object {
+      "items": Array [
+        Object {
+          "label": "General",
+          "value": "general",
+        },
+      ],
+      "onChange": [Function],
+      "value": "general",
+    }
+  }
+  title="Employee"
+/>
+`;
+
+exports[`Item Should render with all filtered sections - ok 1`] = `""`;
+
+exports[`Item Should render with layout mobile - ok 1`] = `
+<MobileItemView
+  sections={
+    Array [
+      Object {
+        "id": "general",
+        "ref": Object {
+          "current": null,
+        },
+        "title": "General",
+      },
+    ]
+  }
+  size={1}
+  title="Employee"
+/>
+`;
+
+exports[`Item Should render with layout tabs - ok 1`] = `
+<ItemView
+  sections={
+    Array [
+      Object {
+        "id": "general",
+        "ref": Object {
+          "current": null,
+        },
+        "title": undefined,
+      },
+    ]
+  }
+  sectionsRef={
+    Object {
+      "current": null,
+    }
+  }
+  size={4}
+  tabs={
+    Object {
+      "items": Array [
+        Object {
+          "label": "General",
+          "value": "general",
+        },
+      ],
+      "onChange": [Function],
+      "value": "general",
+    }
+  }
+  title="Employee"
+/>
+`;
+
+exports[`Item Should render with mainActions - popover - ok 1`] = `
+<ItemView
+  sections={
+    Array [
+      Object {
+        "id": "general",
+        "ref": Object {
+          "current": null,
+        },
+        "title": "General",
+      },
+    ]
+  }
+  sectionsRef={
+    Object {
+      "current": null,
+    }
+  }
+  size={4}
+  tabs={
+    Object {
+      "items": Array [
+        Object {
+          "label": "General",
+          "value": "general",
+        },
+      ],
+      "onChange": [Function],
+      "value": "general",
+    }
+  }
+  title="Employee"
+/>
+`;
+
+exports[`Item Should render without layout - ok 1`] = `
+<ItemView
+  sections={
+    Array [
+      Object {
+        "id": "general",
+        "ref": Object {
+          "current": null,
+        },
+        "title": "General",
+      },
+    ]
+  }
+  sectionsRef={
+    Object {
+      "current": null,
+    }
+  }
+  size={4}
+  title="Employee"
+/>
+`;
+
+exports[`Item Should render without mainActions - ok 1`] = `
+<ItemView
+  sections={
+    Array [
+      Object {
+        "id": "general",
+        "ref": Object {
+          "current": null,
+        },
+        "title": "General",
+      },
+    ]
+  }
+  sectionsRef={
+    Object {
+      "current": null,
+    }
+  }
+  size={4}
+  tabs={
+    Object {
+      "items": Array [
+        Object {
+          "label": "General",
+          "value": "general",
+        },
+      ],
+      "onChange": [Function],
+      "value": "general",
+    }
+  }
+  title="Employee"
+/>
+`;
+
+exports[`Item Should render without optionsActions - ok 1`] = `
+<ItemView
+  sections={
+    Array [
+      Object {
+        "id": "general",
+        "ref": Object {
+          "current": null,
+        },
+        "title": "General",
+      },
+    ]
+  }
+  sectionsRef={
+    Object {
+      "current": null,
+    }
+  }
+  size={4}
+  tabs={
+    Object {
+      "items": Array [
+        Object {
+          "label": "General",
+          "value": "general",
+        },
+      ],
+      "onChange": [Function],
+      "value": "general",
+    }
+  }
+  title="Employee"
+/>
+`;
+
+exports[`Item Should render without title - ok 1`] = `
+<ItemView
+  sections={
+    Array [
+      Object {
+        "id": "general",
+        "ref": Object {
+          "current": null,
+        },
+        "title": "General",
+      },
+    ]
+  }
+  sectionsRef={
+    Object {
+      "current": null,
+    }
+  }
+  size={4}
+  tabs={
+    Object {
+      "items": Array [
+        Object {
+          "label": "General",
+          "value": "general",
+        },
+      ],
+      "onChange": [Function],
+      "value": "general",
+    }
+  }
+/>
+`;

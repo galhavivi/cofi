@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form init - triggers init action and update public ui form 1`] = `
+<div>
+  Mock Child
+</div>
+`;

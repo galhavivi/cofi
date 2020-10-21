@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Box Should render box with style, ok 1`] = `
+<styled.div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "row",
+    }
+  }
+>
+  <Box
+    component={[Function]}
+    key="0"
+    props={
+      Object {
+        "id": "firstName",
+      }
+    }
+  />
+  <Box
+    component={[Function]}
+    key="1"
+    props={
+      Object {
+        "id": "lastName",
+      }
+    }
+  />
+</styled.div>
+`;
+
+exports[`Box Should render component - ok 1`] = `
+<component
+  id="firstName"
+/>
+`;
+
+exports[`Box Should render nested boxes, ok 1`] = `
+<styled.div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "row",
+    }
+  }
+>
+  <Box
+    boxes={
+      Array [
+        Object {
+          "component": [Function],
+          "props": Object {
+            "id": "firstName",
+          },
+        },
+        Object {
+          "component": [Function],
+          "props": Object {
+            "id": "lastName",
+          },
+        },
+      ]
+    }
+    key="0"
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+      }
+    }
+  />
+  <Box
+    boxes={
+      Array [
+        Object {
+          "component": [Function],
+          "props": Object {
+            "id": "address",
+          },
+        },
+      ]
+    }
+    key="1"
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+      }
+    }
+  />
+</styled.div>
+`;

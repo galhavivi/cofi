@@ -1,0 +1,476 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section Should render complex section boxes 1`] = `
+<styled.div
+  id="job-information"
+>
+  <styled.div>
+    Job Information
+  </styled.div>
+  <Box
+    boxes={
+      Array [
+        Object {
+          "boxes": Array [
+            Object {
+              "component": [Function],
+              "props": Object {
+                "id": "firstName",
+              },
+            },
+            Object {
+              "component": [Function],
+              "props": Object {
+                "id": "lastName",
+              },
+            },
+          ],
+          "direction": "column",
+        },
+        Object {
+          "boxes": Array [
+            Object {
+              "component": [Function],
+              "props": Object {
+                "id": "address",
+              },
+            },
+          ],
+          "direction": "column",
+        },
+      ]
+    }
+    key="0"
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+      }
+    }
+  />
+</styled.div>
+`;
+
+exports[`Section Should render section with grid 1`] = `
+<styled.div
+  id="job-information"
+>
+  <styled.div>
+    Job Information
+  </styled.div>
+  <CssGrid
+    elements={
+      Array [
+        Object {
+          "component": [Function],
+          "gridArea": "firstName",
+          "props": Object {
+            "id": "firstName",
+          },
+          "selector": "#firstName",
+          "style": "width: 350px;",
+        },
+        Object {
+          "component": [Function],
+          "gridArea": "lastName",
+          "props": Object {
+            "id": "lastName",
+          },
+          "selector": "#lastName",
+          "style": "width: 350px;",
+        },
+        Object {
+          "component": [Function],
+          "gridArea": "personalId",
+          "props": Object {
+            "id": "personalId",
+          },
+          "selector": "#personalId",
+          "style": "width: 350px;",
+        },
+        Object {
+          "component": [Function],
+          "gridArea": "address",
+          "props": Object {
+            "id": "address",
+          },
+          "selector": "#address",
+          "style": "width: 350px;",
+        },
+      ]
+    }
+    templateAreas={
+      Array [
+        "firstName lastName .",
+        "personalId address .",
+      ]
+    }
+  />
+</styled.div>
+`;
+
+exports[`Section Should render section with only sub sections with root 1`] = `
+<styled.div
+  id="raw-data"
+>
+  <styled.div>
+    Raw Data
+  </styled.div>
+  <Section
+    boxes={
+      Array [
+        Object {
+          "boxes": Array [
+            Object {
+              "boxes": Array [
+                Object {
+                  "component": [Function],
+                  "props": Object {
+                    "id": "id",
+                  },
+                },
+              ],
+              "direction": "column",
+            },
+            Object {
+              "boxes": Array [
+                Object {
+                  "component": [Function],
+                  "props": Object {
+                    "id": "modifier",
+                  },
+                },
+              ],
+              "direction": "column",
+            },
+          ],
+          "style": Object {
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        },
+      ]
+    }
+    id="raw-data-general"
+    key="raw-data-general"
+    root={false}
+    size={3}
+    title="General"
+  />
+  <Section
+    boxes={
+      Array [
+        Object {
+          "boxes": Array [
+            Object {
+              "boxes": Array [
+                Object {
+                  "component": [Function],
+                  "props": Object {
+                    "id": "creationDate",
+                  },
+                },
+              ],
+              "direction": "column",
+            },
+            Object {
+              "boxes": Array [
+                Object {
+                  "component": [Function],
+                  "props": Object {
+                    "id": "modificationDate",
+                  },
+                },
+              ],
+              "direction": "column",
+            },
+          ],
+          "style": Object {
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        },
+      ]
+    }
+    id="raw-data-modification"
+    key="raw-data-modification"
+    root={false}
+    size={3}
+    title="Modification"
+  />
+</styled.div>
+`;
+
+exports[`Section Should render section with sub sections 1`] = `
+<styled.div
+  id="raw-data"
+>
+  <styled.div>
+    Raw Data
+  </styled.div>
+  <Box
+    boxes={
+      Array [
+        Object {
+          "boxes": Array [
+            Object {
+              "component": [Function],
+              "props": Object {
+                "id": "id",
+              },
+            },
+            Object {
+              "component": [Function],
+              "props": Object {
+                "id": "modifier",
+              },
+            },
+          ],
+          "direction": "column",
+        },
+        Object {
+          "boxes": Array [
+            Object {
+              "component": [Function],
+              "props": Object {
+                "id": "creationDate",
+              },
+            },
+            Object {
+              "component": [Function],
+              "props": Object {
+                "id": "modificationDate",
+              },
+            },
+          ],
+          "direction": "column",
+        },
+      ]
+    }
+    key="0"
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+      }
+    }
+  />
+  <Section
+    boxes={
+      Array [
+        Object {
+          "boxes": Array [
+            Object {
+              "boxes": Array [
+                Object {
+                  "component": [Function],
+                  "props": Object {
+                    "id": "id",
+                  },
+                },
+              ],
+              "direction": "column",
+            },
+            Object {
+              "boxes": Array [
+                Object {
+                  "component": [Function],
+                  "props": Object {
+                    "id": "modifier",
+                  },
+                },
+              ],
+              "direction": "column",
+            },
+          ],
+          "style": Object {
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        },
+      ]
+    }
+    id="raw-data-general"
+    key="raw-data-general"
+    root={false}
+    size={3}
+    title="General"
+  />
+  <Section
+    boxes={
+      Array [
+        Object {
+          "boxes": Array [
+            Object {
+              "boxes": Array [
+                Object {
+                  "component": [Function],
+                  "props": Object {
+                    "id": "creationDate",
+                  },
+                },
+              ],
+              "direction": "column",
+            },
+            Object {
+              "boxes": Array [
+                Object {
+                  "component": [Function],
+                  "props": Object {
+                    "id": "modificationDate",
+                  },
+                },
+              ],
+              "direction": "column",
+            },
+          ],
+          "style": Object {
+            "display": "flex",
+            "flexDirection": "row",
+          },
+        },
+      ]
+    }
+    id="raw-data-modification"
+    key="raw-data-modification"
+    root={false}
+    size={3}
+    title="Modification"
+  />
+</styled.div>
+`;
+
+exports[`Section Should render simple section boxes - not root 1`] = `
+<styled.div
+  id="job-information"
+>
+  <styled.div>
+    Job Information
+  </styled.div>
+  <Box
+    boxes={
+      Array [
+        Object {
+          "component": [Function],
+          "props": Object {
+            "id": "firstName",
+          },
+        },
+        Object {
+          "component": [Function],
+          "props": Object {
+            "id": "lastName",
+          },
+        },
+      ]
+    }
+    key="0"
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+      }
+    }
+  />
+</styled.div>
+`;
+
+exports[`Section Should render simple section boxes - root 1`] = `
+<styled.div
+  id="job-information"
+>
+  <styled.div>
+    Job Information
+  </styled.div>
+  <Box
+    boxes={
+      Array [
+        Object {
+          "component": [Function],
+          "props": Object {
+            "id": "firstName",
+          },
+        },
+        Object {
+          "component": [Function],
+          "props": Object {
+            "id": "lastName",
+          },
+        },
+      ]
+    }
+    key="0"
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+      }
+    }
+  />
+</styled.div>
+`;
+
+exports[`Section Should render simple section boxes without title 1`] = `
+<styled.div
+  id="job-information"
+>
+  <Box
+    boxes={
+      Array [
+        Object {
+          "component": [Function],
+          "props": Object {
+            "id": "firstName",
+          },
+        },
+        Object {
+          "component": [Function],
+          "props": Object {
+            "id": "lastName",
+          },
+        },
+      ]
+    }
+    key="0"
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "row",
+      }
+    }
+  />
+</styled.div>
+`;
+
+exports[`Section Should render simple section with ref 1`] = `
+<Section
+  boxes={
+    Array [
+      Object {
+        "boxes": Array [
+          Object {
+            "component": [Function],
+            "props": Object {
+              "id": "firstName",
+            },
+          },
+          Object {
+            "component": [Function],
+            "props": Object {
+              "id": "lastName",
+            },
+          },
+        ],
+        "style": Object {
+          "display": "flex",
+          "flexDirection": "row",
+        },
+      },
+    ]
+  }
+  id="job-information"
+  innerRef={null}
+  root={true}
+  size={4}
+/>
+`;

@@ -1,0 +1,107 @@
+---
+id: contributing-guide
+title: Contributing Guide
+sidebar_label: Contributing Guide
+---
+
+In this doc, we'll cover up the steps that need to be followed in order to contribute Cofi.
+
+## Code of Conduct
+
+Please refer to the [Code of Conduct](code-of-conduct) doc for information about behavior expectation.
+
+## File an Issue
+
+Before filing a new issue, please verify if a similar issue already exists in the issues tab. 
+If an issue is not assigned and no one comment about planning to fix the issue - leave a comment stating that you intend to work on it in order to save other people duplicate effort.
+
+If somebody claims an issue but doesn’t follow up for more than two weeks, it’s fine to take it over but you should still leave a comment.
+
+For new feature suggestion - please mention a real life usage example, to establish the need for it.
+
+> **Note:** `Breaking changes` - should first be discussed and agreed by our team.
+
+## Your Process - "The Routine"
+
+Follow these steps while working on an issue:
+
+> **Note:** Docs are using `npm` commands. To use `yarn` replace:
+>  - `npm run` with `yarn run`
+>  - `npm start` with `yarn start`
+
+### Getting Started
+
+Fork the repository and create your branch from master.
+Download forked repository, and run `npm run bootstrap` from root directory to initialize all packages: 
+- Cleans packages `node-modules` directory
+- Install and hoist all packages dependencies to the repository root `node-modules` directory
+- Build all packages (creates a `dist` folder under each package) 
+- Link all local packages to each other's `dist` folder
+
+Some packages include a demo website, run `npm start` under the specific package to see them and use them during development.
+
+### Update Code
+
+Change the code in order to fullfil an issue needs. Keep in mind that Cofi is a `monorepo` - meaning a change in a specific package might affect other packages, or require other packages updates. For example - changing `@cofi/form` package, might affect or require additional change in `@cofi/react-form` package. See Cofi's [packages](https://galhavivi.github.com/cofi/docs/packages.html) structure for more info.
+
+- To use or test a change in one package on another package, one can:
+  - Run `npm run build-package` from the updated package directory to re-build the `dist` folder which is linked to other local packages.
+  - Run `npm run watch-package` from the updated package directory. This will run `npm run build-package` automatically on each package change, and update its `dist` folder which is linked to other local packages.
+- We try to keep `@cofi/react-component` as generic as possible. We also expect all the params under state to be stringify (for example, don't pass components or functions in the state object) - because we want our common components to be stateless and support persistency.
+
+### Add Tests
+
+Each change should be backed up with unit tests (add new tests or update ones) and potential e2e test if needed. Each package has `tests` folder, containing all package's unit tests. Some packages has a `src/website/demos` that contains e2e tests for a demo.
+
+### Verify your Change
+
+We expect you to verify you change prior to submitting a pull:
+
+#### Lint
+
+Run `npm run lint` on each updated package, and fix lint issues (run `npm run lint-fix` to auto fix most of the issues).
+
+#### Unit Tests Coverage
+Run `npm run coverage -- --watchAll` on each updated package, to run unit tests and verify coverage is not hurt. Under each package there is a `coverage` folder. Open coverage/lcov-report/index.html to view full coverage report.
+
+#### E2E Tests
+
+On each updated package - if `e2e` script exists in package.json - Run `npm start` in one terminal tab, and then `npm run e2e` on another tab - to verify end to end tests.
+
+#### Affected Packages
+
+Verify all potential affected packages e2e tests. For example - when changing `@cofi/form` - verify also `@cofi/react-form` and `@cofi/react-layout` e2e tests. Steps to verify:
+  - Update the `dist` folder of the changed package. For example run `npm run build-package` from `@cofi/react-form`.
+  - From the tested package (For example from `@cofi/react-form`) run `npm start` in one terminal tab, and then `npm run e2e` on another tab - to verify end to end tests.
+
+#### No Console Alerts
+
+Verify no console errors and warnings.
+
+### Submit Pull Request
+
+Submit a pull request directly to the `master` branch. Cofi's team monitor, review and merge pull requests.
+
+## Our Process
+
+The following steps are done by Cofi's team:
+
+#### Monitor and Maintain Issues and Pull Requests
+
+- We monitor issues and pull requests frequently.
+- We review pull requests and merge them when all necessary changes are done.
+- We comment on issues, link issues to pull requests and close issues when they are done.
+
+#### Handle new Version
+
+After each bulk of changes we will:
+
+- Update relevant documentation.
+- Update CHANGELOG.md
+- Update all packages to a new and same version.
+- Publish packages to npm registry.
+- Create a new release on github for each meaningful change
+
+## License
+
+By contributing to Cofi, you agree that your contributions will be licensed under its MIT license.

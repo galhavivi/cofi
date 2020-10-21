@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<JsonView /> should render provided data 1`] = `
+<styled.div>
+  <JSONInput
+    confirmGood={false}
+    height="130px"
+    locale="English"
+    placeholder={
+      Object {
+        "name": "Rachel",
+      }
+    }
+    theme="light_mitsuketa_tribute"
+    viewOnly={true}
+  />
+</styled.div>
+`;

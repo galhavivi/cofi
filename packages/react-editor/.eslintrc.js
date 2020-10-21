@@ -1,0 +1,1 @@
+module.exports = require('@cofi/react-kit/config/eslintrc.js');

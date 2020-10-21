@@ -1,0 +1,16 @@
+{
+  "name": "cofi",
+  "description": "JavaScript Form Solutions",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/galhavivi/cofi.git"
+  },
+  "homepage": "https://galhavivi.github.com/cofi/index.html",
+	"scripts": {
+		"bootstrap": "rm -rf ./node_modules && npx lerna exec -- rm -rf ./node_modules && npx lerna bootstrap --force-local --hoist --no-ci -- --production=false && npx lerna run build-package"
+	},
+  "devDependencies": {
+    "husky": "^3.0.0",
+    "lerna": "3.20.0"
+  }
+}

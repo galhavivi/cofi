@@ -1,0 +1,1 @@
+module.exports = require('@cofi/js-kit/config/eslintrc.js');

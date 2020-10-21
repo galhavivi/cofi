@@ -1,0 +1,664 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FieldView render component = undefined 1`] = `
+<styled.div
+  aria-label="Field"
+  data-dirty={false}
+  data-disabled={false}
+  data-empty={false}
+  data-invalid={false}
+  data-required={false}
+  id="firstName"
+>
+  <div
+    aria-label="Header"
+  >
+    <div
+      aria-label="Label"
+    >
+      First Name
+    </div>
+    <i
+      aria-label="Description"
+      title="Enter your first name"
+    >
+      ?
+    </i>
+  </div>
+</styled.div>
+`;
+
+exports[`FieldView render default test props 1`] = `
+<styled.div
+  aria-label="Field"
+  data-dirty={false}
+  data-disabled={false}
+  data-empty={false}
+  data-invalid={false}
+  data-required={false}
+  id="firstName"
+>
+  <div
+    aria-label="Header"
+  >
+    <div
+      aria-label="Label"
+    >
+      First Name
+    </div>
+    <i
+      aria-label="Description"
+      title="Enter your first name"
+    >
+      ?
+    </i>
+  </div>
+  <div
+    aria-label="Component"
+  >
+    <mockConstructor
+      dirty={false}
+      disabled={false}
+      empty={false}
+      invalid={false}
+      onStateChange={[MockFunction]}
+      onValueChange={[MockFunction]}
+      required={false}
+      state={Object {}}
+      value="Rachel Green"
+    />
+  </div>
+</styled.div>
+`;
+
+exports[`FieldView render description = undefined 1`] = `
+<styled.div
+  aria-label="Field"
+  data-dirty={false}
+  data-disabled={false}
+  data-empty={false}
+  data-invalid={false}
+  data-required={false}
+  id="firstName"
+>
+  <div
+    aria-label="Header"
+  >
+    <div
+      aria-label="Label"
+    >
+      First Name
+    </div>
+  </div>
+  <div
+    aria-label="Component"
+  >
+    <mockConstructor
+      dirty={false}
+      disabled={false}
+      empty={false}
+      invalid={false}
+      onStateChange={[MockFunction]}
+      onValueChange={[MockFunction]}
+      required={false}
+      state={Object {}}
+      value="Rachel Green"
+    />
+  </div>
+</styled.div>
+`;
+
+exports[`FieldView render dirty = true 1`] = `
+<styled.div
+  aria-label="Field"
+  data-dirty={true}
+  data-disabled={false}
+  data-empty={false}
+  data-invalid={false}
+  data-required={false}
+  id="firstName"
+>
+  <div
+    aria-label="Header"
+  >
+    <div
+      aria-label="Label"
+    >
+      First Name
+    </div>
+    <i
+      aria-label="Description"
+      title="Enter your first name"
+    >
+      ?
+    </i>
+  </div>
+  <div
+    aria-label="Component"
+  >
+    <mockConstructor
+      dirty={true}
+      disabled={false}
+      empty={false}
+      invalid={false}
+      onStateChange={[MockFunction]}
+      onValueChange={[MockFunction]}
+      required={false}
+      state={Object {}}
+      value="Rachel Green"
+    />
+  </div>
+</styled.div>
+`;
+
+exports[`FieldView render disabled = true 1`] = `
+<styled.div
+  aria-label="Field"
+  data-dirty={false}
+  data-disabled={true}
+  data-empty={false}
+  data-invalid={false}
+  data-required={false}
+  id="firstName"
+>
+  <div
+    aria-label="Header"
+  >
+    <div
+      aria-label="Label"
+    >
+      First Name
+    </div>
+    <i
+      aria-label="Description"
+      title="Enter your first name"
+    >
+      ?
+    </i>
+  </div>
+  <div
+    aria-label="Component"
+  >
+    <mockConstructor
+      dirty={false}
+      disabled={true}
+      empty={false}
+      invalid={false}
+      onStateChange={[MockFunction]}
+      onValueChange={[MockFunction]}
+      required={false}
+      state={Object {}}
+      value="Rachel Green"
+    />
+  </div>
+</styled.div>
+`;
+
+exports[`FieldView render empty = true 1`] = `
+<styled.div
+  aria-label="Field"
+  data-dirty={false}
+  data-disabled={false}
+  data-empty={true}
+  data-invalid={false}
+  data-required={false}
+  id="firstName"
+>
+  <div
+    aria-label="Header"
+  >
+    <div
+      aria-label="Label"
+    >
+      First Name
+    </div>
+    <i
+      aria-label="Description"
+      title="Enter your first name"
+    >
+      ?
+    </i>
+  </div>
+  <div
+    aria-label="Component"
+  >
+    <mockConstructor
+      dirty={false}
+      disabled={false}
+      empty={true}
+      invalid={false}
+      onStateChange={[MockFunction]}
+      onValueChange={[MockFunction]}
+      required={false}
+      state={Object {}}
+      value="Rachel Green"
+    />
+  </div>
+</styled.div>
+`;
+
+exports[`FieldView render errors = [...] 1`] = `
+<styled.div
+  aria-label="Field"
+  data-dirty={false}
+  data-disabled={false}
+  data-empty={false}
+  data-invalid={false}
+  data-required={false}
+  id="firstName"
+>
+  <div
+    aria-label="Header"
+  >
+    <div
+      aria-label="Label"
+    >
+      First Name
+    </div>
+    <i
+      aria-label="Description"
+      title="Enter your first name"
+    >
+      ?
+    </i>
+  </div>
+  <div
+    aria-label="Component"
+  >
+    <mockConstructor
+      dirty={false}
+      disabled={false}
+      empty={false}
+      invalid={false}
+      onStateChange={[MockFunction]}
+      onValueChange={[MockFunction]}
+      required={false}
+      state={Object {}}
+      value="Rachel Green"
+    />
+  </div>
+  <div
+    aria-label="Error"
+  >
+    min length is 2
+  </div>
+</styled.div>
+`;
+
+exports[`FieldView render excluded = true 1`] = `""`;
+
+exports[`FieldView render id = undefined 1`] = `
+<styled.div
+  aria-label="Field"
+  data-dirty={false}
+  data-disabled={false}
+  data-empty={false}
+  data-invalid={false}
+  data-required={false}
+>
+  <div
+    aria-label="Header"
+  >
+    <div
+      aria-label="Label"
+    >
+      First Name
+    </div>
+    <i
+      aria-label="Description"
+      title="Enter your first name"
+    >
+      ?
+    </i>
+  </div>
+  <div
+    aria-label="Component"
+  >
+    <mockConstructor
+      dirty={false}
+      disabled={false}
+      empty={false}
+      invalid={false}
+      onStateChange={[MockFunction]}
+      onValueChange={[MockFunction]}
+      required={false}
+      state={Object {}}
+      value="Rachel Green"
+    />
+  </div>
+</styled.div>
+`;
+
+exports[`FieldView render invalid = true 1`] = `
+<styled.div
+  aria-label="Field"
+  data-dirty={false}
+  data-disabled={false}
+  data-empty={false}
+  data-invalid={true}
+  data-required={false}
+  id="firstName"
+>
+  <div
+    aria-label="Header"
+  >
+    <div
+      aria-label="Label"
+    >
+      First Name
+    </div>
+    <i
+      aria-label="Description"
+      title="Enter your first name"
+    >
+      ?
+    </i>
+  </div>
+  <div
+    aria-label="Component"
+  >
+    <mockConstructor
+      dirty={false}
+      disabled={false}
+      empty={false}
+      invalid={true}
+      onStateChange={[MockFunction]}
+      onValueChange={[MockFunction]}
+      required={false}
+      state={Object {}}
+      value="Rachel Green"
+    />
+  </div>
+</styled.div>
+`;
+
+exports[`FieldView render label = undefined 1`] = `
+<styled.div
+  aria-label="Field"
+  data-dirty={false}
+  data-disabled={false}
+  data-empty={false}
+  data-invalid={false}
+  data-required={false}
+  id="firstName"
+>
+  <div
+    aria-label="Component"
+  >
+    <mockConstructor
+      dirty={false}
+      disabled={false}
+      empty={false}
+      invalid={false}
+      onStateChange={[MockFunction]}
+      onValueChange={[MockFunction]}
+      required={false}
+      state={Object {}}
+      value="Rachel Green"
+    />
+  </div>
+</styled.div>
+`;
+
+exports[`FieldView render onStateChange = undefined 1`] = `
+<styled.div
+  aria-label="Field"
+  data-dirty={false}
+  data-disabled={false}
+  data-empty={false}
+  data-invalid={false}
+  data-required={false}
+  id="firstName"
+>
+  <div
+    aria-label="Header"
+  >
+    <div
+      aria-label="Label"
+    >
+      First Name
+    </div>
+    <i
+      aria-label="Description"
+      title="Enter your first name"
+    >
+      ?
+    </i>
+  </div>
+  <div
+    aria-label="Component"
+  >
+    <mockConstructor
+      dirty={false}
+      disabled={false}
+      empty={false}
+      invalid={false}
+      onStateChange={[Function]}
+      onValueChange={[MockFunction]}
+      required={false}
+      state={Object {}}
+      value="Rachel Green"
+    />
+  </div>
+</styled.div>
+`;
+
+exports[`FieldView render onValueChange = undefined 1`] = `
+<styled.div
+  aria-label="Field"
+  data-dirty={false}
+  data-disabled={false}
+  data-empty={false}
+  data-invalid={false}
+  data-required={false}
+  id="firstName"
+>
+  <div
+    aria-label="Header"
+  >
+    <div
+      aria-label="Label"
+    >
+      First Name
+    </div>
+    <i
+      aria-label="Description"
+      title="Enter your first name"
+    >
+      ?
+    </i>
+  </div>
+  <div
+    aria-label="Component"
+  >
+    <mockConstructor
+      dirty={false}
+      disabled={false}
+      empty={false}
+      invalid={false}
+      onStateChange={[MockFunction]}
+      onValueChange={[Function]}
+      required={false}
+      state={Object {}}
+      value="Rachel Green"
+    />
+  </div>
+</styled.div>
+`;
+
+exports[`FieldView render required = true 1`] = `
+<styled.div
+  aria-label="Field"
+  data-dirty={false}
+  data-disabled={false}
+  data-empty={false}
+  data-invalid={false}
+  data-required={true}
+  id="firstName"
+>
+  <div
+    aria-label="Header"
+  >
+    <div
+      aria-label="Label"
+    >
+      First Name
+    </div>
+    <div
+      aria-label="Required"
+    >
+      *
+    </div>
+    <i
+      aria-label="Description"
+      title="Enter your first name"
+    >
+      ?
+    </i>
+  </div>
+  <div
+    aria-label="Component"
+  >
+    <mockConstructor
+      dirty={false}
+      disabled={false}
+      empty={false}
+      invalid={false}
+      onStateChange={[MockFunction]}
+      onValueChange={[MockFunction]}
+      required={true}
+      state={Object {}}
+      value="Rachel Green"
+    />
+  </div>
+</styled.div>
+`;
+
+exports[`FieldView render state = undefined 1`] = `
+<styled.div
+  aria-label="Field"
+  data-dirty={false}
+  data-disabled={false}
+  data-empty={false}
+  data-invalid={false}
+  data-required={false}
+  id="firstName"
+>
+  <div
+    aria-label="Header"
+  >
+    <div
+      aria-label="Label"
+    >
+      First Name
+    </div>
+    <i
+      aria-label="Description"
+      title="Enter your first name"
+    >
+      ?
+    </i>
+  </div>
+  <div
+    aria-label="Component"
+  >
+    <mockConstructor
+      dirty={false}
+      disabled={false}
+      empty={false}
+      invalid={false}
+      onStateChange={[MockFunction]}
+      onValueChange={[MockFunction]}
+      required={false}
+      state={Object {}}
+      value="Rachel Green"
+    />
+  </div>
+</styled.div>
+`;
+
+exports[`FieldView render un-supported cofi field props - pass it to the underline component 1`] = `
+<styled.div
+  aria-label="Field"
+  data-dirty={false}
+  data-disabled={false}
+  data-empty={false}
+  data-invalid={false}
+  data-required={false}
+  id="firstName"
+>
+  <div
+    aria-label="Header"
+  >
+    <div
+      aria-label="Label"
+    >
+      First Name
+    </div>
+    <i
+      aria-label="Description"
+      title="Enter your first name"
+    >
+      ?
+    </i>
+  </div>
+  <div
+    aria-label="Component"
+  >
+    <mockConstructor
+      dirty={false}
+      disabled={false}
+      empty={false}
+      invalid={false}
+      mickey="mouse"
+      onStateChange={[MockFunction]}
+      onValueChange={[MockFunction]}
+      required={false}
+      state={Object {}}
+      value="Rachel Green"
+    />
+  </div>
+</styled.div>
+`;
+
+exports[`FieldView render value = undefined 1`] = `
+<styled.div
+  aria-label="Field"
+  data-dirty={false}
+  data-disabled={false}
+  data-empty={false}
+  data-invalid={false}
+  data-required={false}
+  id="firstName"
+>
+  <div
+    aria-label="Header"
+  >
+    <div
+      aria-label="Label"
+    >
+      First Name
+    </div>
+    <i
+      aria-label="Description"
+      title="Enter your first name"
+    >
+      ?
+    </i>
+  </div>
+  <div
+    aria-label="Component"
+  >
+    <mockConstructor
+      dirty={false}
+      disabled={false}
+      empty={false}
+      invalid={false}
+      onStateChange={[MockFunction]}
+      onValueChange={[MockFunction]}
+      required={false}
+      state={Object {}}
+    />
+  </div>
+</styled.div>
+`;

@@ -1,0 +1,52 @@
+import { Field } from '@cofi/react-form';
+
+const getGrid = (templateAreas) => {
+  let fieldIds = templateAreas.join(' ').split(' ').filter(x => x !== '.');
+  fieldIds = [...(new Set(fieldIds))];
+  return {
+    templateAreas,
+    elements: fieldIds.map(id => ({ 
+      selector: `#${id}`, 
+      gridArea: id, 
+      component: Field, 
+      props: { id },
+      style: 'width: 250px;',
+    })),
+  };
+};
+
+export default [{
+  id: 'personal-information',
+  title: 'Personal Information',
+  grid: getGrid([
+    'firstName    lastName  .',
+    'personalId   address   .',
+  ]),
+}, {
+  id: 'job-information',
+  title: 'Job Information',
+  grid: getGrid([
+    'level       benefits    .',
+    'department  benefits    .',
+  ]),
+}, {
+  id: 'raw-data',
+  title: 'Raw Data',
+  grid: getGrid([
+    'id         creationDate       .',
+    'modifier   modificationDate   .',
+  ]),
+  sections: [{
+    id: 'raw-data-general',
+    title: 'General',
+    grid: getGrid([
+      'id modifier .',
+    ]),
+  }, {
+    id: 'raw-data-modification',
+    title: 'Modification',
+    grid: getGrid([
+      'creationDate modificationDate .',
+    ]),
+  }],
+}];

@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid Should render grid 1`] = `
+<styled.div
+  elements={
+    Array [
+      Object {
+        "component": [Function],
+        "gridArea": "firstName",
+        "props": Object {
+          "id": "firstName",
+        },
+        "selector": "#firstName",
+        "style": "width: 350px;",
+      },
+      Object {
+        "component": [Function],
+        "gridArea": "lastName",
+        "props": Object {
+          "id": "lastName",
+        },
+        "selector": "#lastName",
+        "style": "width: 350px;",
+      },
+      Object {
+        "component": [Function],
+        "gridArea": "personalId",
+        "props": Object {
+          "id": "personalId",
+        },
+        "selector": "#personalId",
+        "style": "width: 350px;",
+      },
+      Object {
+        "component": [Function],
+        "gridArea": "address",
+        "props": Object {
+          "id": "address",
+        },
+        "selector": "#address",
+        "style": "width: 350px;",
+      },
+    ]
+  }
+  templateAreas={
+    Array [
+      "firstName lastName .",
+      "personalId address .",
+    ]
+  }
+>
+  <Field
+    id="firstName"
+    key="0"
+  />
+  <Field
+    id="lastName"
+    key="1"
+  />
+  <Field
+    id="personalId"
+    key="2"
+  />
+  <Field
+    id="address"
+    key="3"
+  />
+</styled.div>
+`;
