@@ -88,11 +88,8 @@ export async function testCreateNewForm(page) {
 
   // enter form settings
   await utils.textFieldTypeText(page, 'changeValueDebounceWait', '1');
-  await page.waitFor(utils.COFI_LIFECYCLE);
   await utils.textFieldTypeText(page, 'changeValueDebounceMaxWait', '1');
-  await page.waitFor(utils.COFI_LIFECYCLE);
   await utils.textFieldTypeText(page, 'changeStateDebounceWait', '1');
-  await page.waitFor(utils.COFI_LIFECYCLE);
   await utils.textFieldTypeText(page, 'changeStateDebounceMaxWait', '1');
   await page.waitFor(utils.COFI_LIFECYCLE);
   state.config.json.settings = { 
