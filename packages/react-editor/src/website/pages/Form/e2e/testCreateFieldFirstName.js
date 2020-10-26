@@ -33,12 +33,12 @@ export default async function testCreateFieldFirstName(page, state) {
  
   // enter field path
   await utils.inputTypeText(page, `${selectors.edit.field.wrapper} div[id="path"] input`, 'firstName');
-  await page.waitFor(6 * utils.COFI_LIFECYCLE);
+  await page.waitFor(utils.COFI_LIFECYCLE);
   state.field.json.path = 'firstName';
   state.field.saveDisabled = false;
   state.playground.display = true;
   state.log.error = 0;
-  state.log.debug = 11; // init
+  state.log.debug = 0; // init
  
   // verify all
   await verifyAll(page, state);
