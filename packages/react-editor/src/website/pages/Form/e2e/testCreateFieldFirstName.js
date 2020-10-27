@@ -38,7 +38,7 @@ export default async function testCreateFieldFirstName(page, state) {
   state.field.saveDisabled = false;
   state.playground.display = true;
   state.log.error = 0;
-  state.log.debug = 0; // init
+  state.log.debug = 11; // init
  
   // verify all
   await verifyAll(page, state);
