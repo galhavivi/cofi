@@ -99,18 +99,18 @@ export async function verifyAll(page, state) {
   const log = await page.$(selectors.edit.preview.log.wrapper);
   expect(log).toBeTruthy();
 
-  // // verify records
-  // let logTabs = await page.$eval(selectors.edit.preview.log.tabs, e => e.innerText);
-  // expect(logTabs).toContain(`Error (${state.log.error})`); // missing fields error
-  // expect(logTabs).toContain(`Warn (${state.log.warn})`);
-  // expect(logTabs).toContain(`Debug (${state.log.debug})`);
+  // verify records
+  let logTabs = await page.$eval(selectors.edit.preview.log.tabs, e => e.innerText);
+  expect(logTabs).toContain(`Error (${state.log.error})`); // missing fields error
+  expect(logTabs).toContain(`Warn (${state.log.warn})`);
+  expect(logTabs).toContain(`Debug (${state.log.debug})`);
 
-  // // clear log
-  // await page.$eval(selectors.edit.preview.log.clear, e => e.click());
-  // logTabs = await page.$eval(selectors.edit.preview.log.tabs, e => e.innerText);
-  // expect(logTabs).toContain('Error (0)'); 
-  // expect(logTabs).toContain('Warn (0)');
-  // expect(logTabs).toContain('Debug (0)');
+  // clear log
+  await page.$eval(selectors.edit.preview.log.clear, e => e.click());
+  logTabs = await page.$eval(selectors.edit.preview.log.tabs, e => e.innerText);
+  expect(logTabs).toContain('Error (0)'); 
+  expect(logTabs).toContain('Warn (0)');
+  expect(logTabs).toContain('Debug (0)');
 }
 
 export async function showJson(page, selector) {
