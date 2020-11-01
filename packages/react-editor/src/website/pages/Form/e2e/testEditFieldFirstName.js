@@ -7,6 +7,7 @@ import * as utils from '../../../e2e.utils';
 import selectors from './selectors';
 import { verifyAll, showJson } from './common';
 
+
 export default async function testEditFieldFirstName(page, state) {
   // edit first name
   await editFieldFirstName(page, state);
