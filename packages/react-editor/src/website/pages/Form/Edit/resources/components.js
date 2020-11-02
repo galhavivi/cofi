@@ -53,7 +53,7 @@ const _components = {
   Number,
 };
 
-const URL_PREFIX = 'https://galhavivi.github.com/cofi/demo-react-components.html#';
+const URL_PREFIX = 'https://galhavivi.github.io/cofi/demo-react-components.html#';
 
 const components = {};
 

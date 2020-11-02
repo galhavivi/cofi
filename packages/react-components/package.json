@@ -23,7 +23,7 @@
     "lint-fix": "npm run lint -- --fix",
     "pre-push": "lint-staged",
     "publish-package": "npm publish dist --access public || echo publish failed",
-    "deploy-website": "PUBLIC_URL=https://galhavivi.github.com/cofi/react-components npm run build-website && gh-pages --dist build --dest react-components",
+    "deploy-website": "PUBLIC_URL=https://galhavivi.github.io/cofi/react-components npm run build-website && gh-pages --dist build --dest react-components",
     "watch-package": "npm-watch build-package"
   },
   "watch": {

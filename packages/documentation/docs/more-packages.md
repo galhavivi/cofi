@@ -42,7 +42,7 @@ it('should update the form data on change field value ', async () => {
 ```
 
 ### @cofi/react-form
-[@cofi/react-form](https://github.com/galhavivi/cofi/tree/master/packages/react-form) - contains React [Form and Field](https://galhavivi.github.com/cofi/demo-react-form.html) components. Based on `@cofi/form`. 
+[@cofi/react-form](https://github.com/galhavivi/cofi/tree/master/packages/react-form) - contains React [Form and Field](https://galhavivi.github.io/cofi/demo-react-form.html) components. Based on `@cofi/form`. 
 
 Usage Example: 
 
@@ -59,7 +59,7 @@ const model = {...};
 ```
 
 ### @cofi/react-components
-[@cofi/react-components](https://github.com/galhavivi/cofi/tree/master/packages/react-components) - contains common [unified api components](https://galhavivi.github.com/cofi/demo-react-components.html) for form usage. Exports common components that can be added to forms.
+[@cofi/react-components](https://github.com/galhavivi/cofi/tree/master/packages/react-components) - contains common [unified api components](https://galhavivi.github.io/cofi/demo-react-components.html) for form usage. Exports common components that can be added to forms.
 
 Usage Example:
 ```javascript
@@ -86,7 +86,7 @@ const resources = {
 
 ### @cofi/react-layout
 [@cofi/react-layout](https://github.com/galhavivi/cofi/tree/master/packages/react-layout) - contains React Layout components
-such as [Item and List](https://galhavivi.github.com/cofi/demo-react-layout.html).
+such as [Item and List](https://galhavivi.github.io/cofi/demo-react-layout.html).
 
 Usage Example: 
 
@@ -104,7 +104,7 @@ const item = {
 ```
 
 ### @cofi/react-editor
-[@cofi/react-editor](https://github.com/galhavivi/cofi/tree/master/packages/react-editor) - contains form and layout configurations [editor](https://galhavivi.github.com/cofi/demo-react-editor.html). 
+[@cofi/react-editor](https://github.com/galhavivi/cofi/tree/master/packages/react-editor) - contains form and layout configurations [editor](https://galhavivi.github.io/cofi/demo-react-editor.html). 
 
 ### @cofi/documentation
-[@cofi/documentation](https://github.com/galhavivi/cofi/tree/master/packages/documentation) - contains [this documentation site](https://galhavivi.github.com/cofi/).
+[@cofi/documentation](https://github.com/galhavivi/cofi/tree/master/packages/documentation) - contains [this documentation site](https://galhavivi.github.io/cofi/).

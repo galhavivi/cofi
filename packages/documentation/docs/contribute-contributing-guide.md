@@ -42,7 +42,7 @@ Some packages include a demo website, run `npm start` under the specific package
 
 ### Update Code
 
-Change the code in order to fullfil an issue needs. Keep in mind that Cofi is a `monorepo` - meaning a change in a specific package might affect other packages, or require other packages updates. For example - changing `@cofi/form` package, might affect or require additional change in `@cofi/react-form` package. See Cofi's [packages](https://galhavivi.github.com/cofi/docs/packages.html) structure for more info.
+Change the code in order to fullfil an issue needs. Keep in mind that Cofi is a `monorepo` - meaning a change in a specific package might affect other packages, or require other packages updates. For example - changing `@cofi/form` package, might affect or require additional change in `@cofi/react-form` package. See Cofi's [packages](https://galhavivi.github.io/cofi/docs/packages.html) structure for more info.
 
 - To use or test a change in one package on another package, one can:
   - Run `npm run build-package` from the updated package directory to re-build the `dist` folder which is linked to other local packages.

@@ -5,7 +5,7 @@
 
 import terms from '@cofi/form/terms';
 
-const URL_PREFIX = 'https://galhavivi.github.com/cofi/docs/term#';
+const URL_PREFIX = 'https://galhavivi.github.io/cofi/docs/term#';
 
 Object.keys(terms).forEach(name => 
   terms[name].detailsUrl = `${URL_PREFIX}${(name).toLowerCase()}`);

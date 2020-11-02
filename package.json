@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/galhavivi/cofi.git"
   },
-  "homepage": "https://galhavivi.github.com/cofi/index.html",
+  "homepage": "https://galhavivi.github.io/cofi/index.html",
 	"scripts": {
 		"bootstrap": "rm -rf ./node_modules && npx lerna exec -- rm -rf ./node_modules && npx lerna bootstrap --force-local --hoist --no-ci -- --production=false && npx lerna run build-package"
 	},

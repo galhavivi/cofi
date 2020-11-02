@@ -68,4 +68,4 @@ return (
   </Grid>);
 ```
 
-See advanced demo in [Grid Demo](https://galhavivi.github.com/cofi/demo-react-form.html#/others/grid-usage/html).
+See advanced demo in [Grid Demo](https://galhavivi.github.io/cofi/demo-react-form.html#/others/grid-usage/html).

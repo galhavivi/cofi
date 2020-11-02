@@ -5,7 +5,7 @@
 
 import conversions from '@cofi/form/conversions';
 
-const URL_PREFIX = 'https://galhavivi.github.com/cofi/docs/formatter-parser#';
+const URL_PREFIX = 'https://galhavivi.github.io/cofi/docs/formatter-parser#';
 
 Object.keys(conversions).forEach(name => 
   conversions[name].detailsUrl = `${URL_PREFIX}${(name).toLowerCase()}`);

@@ -5,7 +5,7 @@
 
 import validators from '@cofi/form/validators';
 
-const URL_PREFIX = 'https://galhavivi.github.com/cofi/docs/validators#';
+const URL_PREFIX = 'https://galhavivi.github.io/cofi/docs/validators#';
 
 Object.keys(validators).forEach(name => 
   validators[name].detailsUrl = `${URL_PREFIX}${(name).toLowerCase()}`);

@@ -6,7 +6,7 @@ sidebar_label: Editor
 
 Online form editor let developers create, edit, preview, persist in a local storage and download - forms and layouts configurations.
 
-Visit [Editor](https://galhavivi.github.com/cofi/demo-react-editor.html) to try it out.
+Visit [Editor](https://galhavivi.github.io/cofi/demo-react-editor.html) to try it out.
 
 ## Configurations
 
