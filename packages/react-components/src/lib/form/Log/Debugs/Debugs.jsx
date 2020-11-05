@@ -87,7 +87,7 @@ export default ({ items, aggregate, showQueueSteps }) => {
 
     // if the action id is the same action before the prev queue action
     return item.id !== items[index - 2]?.id;
-  }, [items]);
+  }, [items, showQueueSteps]);
 
   return (<>
     <Styled.Items>
