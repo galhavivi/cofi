@@ -45,15 +45,15 @@ export default withRouter(({ history }) => {
     <h1>Editor</h1>
     <p>
       A simple UI form editor - which you can use to create the form's <Link
-        href="https://galhavivi.github.com/cofi/docs/arguments.html#model">model</Link> and <Link
-        href="https://galhavivi.github.com/cofi/docs/react-layout.html">layout</Link> configurations, to help you get started. 
+        href="https://galhavivi.github.io/cofi/docs/arguments.html#model">model</Link> and <Link
+        href="https://galhavivi.github.io/cofi/docs/react-layout.html">layout</Link> configurations, to help you get started. 
       These form configurations are saved on your local storage.
     </p>
     <h3>Features</h3>
     <ul>
       <li>Create form configuration</li>
       <li>Download form configuration as jsons and as files (you might need to supply custom <Link
-        href="https://galhavivi.github.com/cofi/docs/arguments.html#resources">resources</Link> such as actual components,
+        href="https://galhavivi.github.io/cofi/docs/arguments.html#resources">resources</Link> such as actual components,
         custom validators and more - if defined in the form model, prior to passing it to the Form class / component)</li>
       <li>Create common fields in 'Fields Library'</li>
       <li>Add common fields to a form using a reference (i.e when a library field is updated - all referenced fields are 

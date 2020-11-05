@@ -44,4 +44,4 @@ const model = getModel();
 <Form model={model} resource={form.resources}>
 ```
 
-See advanced demo in [Form Persistency Demo](https://galhavivi.github.com/cofi/demo-react-form.html#/others/persistency/html).
+See advanced demo in [Form Persistency Demo](https://galhavivi.github.io/cofi/demo-react-form.html#/others/persistency/html).

@@ -9,7 +9,7 @@ sidebar_label: DevTools
 In addition to Cofi's console logs of `error`, `info` and `debug` messages - Cofi chrome extension
 lets developers see Cofi's log messages and understand form's lifecycle process in a more convenient way.
 
-Similar layout to the `Log` component which appears on [React Form Demos](https://galhavivi.github.com/cofi/demo-react-form.html).
+Similar layout to the `Log` component which appears on [React Form Demos](https://galhavivi.github.io/cofi/demo-react-form.html).
 
 > **Note:** Another way to see logs without Chrome extension, is to import `LogProvider` and `Log` components,
 and render them in your App.

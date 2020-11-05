@@ -17,7 +17,7 @@
     "e2e": "echo e2e not needed",
     "lint": "echo no lint yet",
     "lint-fix": "npm run lint -- --fix",
-    "deploy-website": "PUBLIC_URL=https://galhavivi.github.com/cofi npm run build-website && gh-pages --dist build --add",
+    "deploy-website": "PUBLIC_URL=https://galhavivi.github.io/cofi npm run build-website && gh-pages --dist build --add",
     "pre-push": "lint-staged"
   },
   "devDependencies": {

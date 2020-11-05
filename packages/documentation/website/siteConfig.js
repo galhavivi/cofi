@@ -10,15 +10,15 @@ const baseUrl = `${process.env.PUBLIC_URL || ''}/`;
 // List of projects/orgs using your project for the users page.
 const users = require('./users.js');
 
-const FORM_DEMO_URL = `https://galhavivi.github.com/cofi/react-form/index.html`;
-const COMPONENTS_DEMO_URL = `https://galhavivi.github.com/cofi/react-components/index.html`;
-const LAYOUT_DEMO_URL = `https://galhavivi.github.com/cofi/react-layout/index.html`;
-const EDITOR_DEMO_URL = `https://galhavivi.github.com/cofi/react-editor/index.html`;
+const FORM_DEMO_URL = `https://galhavivi.github.io/cofi/react-form/index.html`;
+const COMPONENTS_DEMO_URL = `https://galhavivi.github.io/cofi/react-components/index.html`;
+const LAYOUT_DEMO_URL = `https://galhavivi.github.io/cofi/react-layout/index.html`;
+const EDITOR_DEMO_URL = `https://galhavivi.github.io/cofi/react-editor/index.html`;
 
 const siteConfig = {
   title: 'cofi',
   tagline: 'JavaScript Form Solutions',
-  url: 'https://galhavivi.github.com/cofi',
+  url: 'https://galhavivi.github.io/cofi',
   baseUrl,
   headerLinks: [
     { label: 'Docs', doc: 'introduction' },

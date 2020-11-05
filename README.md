@@ -200,7 +200,7 @@ const resources = { /*...*/ };
 
 ## Docs and Demos
 
-Cofi's full docs and demos are [available here](https://galhavivi.github.com/cofi).
+Cofi's full docs and demos are [available here](https://galhavivi.github.io/cofi).
 
 ## Run Docs and Demos Locally
 

@@ -3,7 +3,7 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-const COFI_DOCS_ERROR_CODES = 'https://galhavivi.github.com/cofi/docs/error-codes';
+const COFI_DOCS_ERROR_CODES = 'https://galhavivi.github.io/cofi/docs/error-codes';
 
 function CofiError(code, message, form, data, reference, subError) {
   this.code = code;

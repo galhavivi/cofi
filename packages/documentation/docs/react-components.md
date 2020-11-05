@@ -134,7 +134,7 @@ Using the above HOC saves the `react` import as well as simplify tests ([More in
 ## Our Common Components
 
 We have a collection of common components with unified api that can be used, documented here:
-[common components](https://galhavivi.github.com/cofi/react-components/index.html)
+[common components](https://galhavivi.github.io/cofi/react-components/index.html)
 
 For instance:
 ```

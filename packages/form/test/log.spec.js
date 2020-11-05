@@ -407,7 +407,7 @@ describe('Logger', () => {
       global.console.error = jest.fn();
       log.error(createError(prefix, error, form, data, args, subError));
       expect(global.console.error).toHaveBeenCalledWith(
-        'Cofi error - "MISSING_ID": Cofi model.id is missing. More info: https://galhavivi.github.com/cofi/docs/error-codes#missing-id.',
+        'Cofi error - "MISSING_ID": Cofi model.id is missing. More info: https://galhavivi.github.io/cofi/docs/error-codes#missing-id.',
         '\nform: ',
         form,
         '\ndata: ',

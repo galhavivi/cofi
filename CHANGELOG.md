@@ -4,7 +4,7 @@
 
 Changes that have landed in master but are not yet released.
 
-## v1.0.0
+## v1.0.0 (November 2, 2020)
 
 ### Documentation
 
@@ -79,8 +79,6 @@ Changes that have landed in master but are not yet released.
 * Add log viewer
 
 # Jafar Changelog
-
-## Unreleased
 
 ### Form
 
