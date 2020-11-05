@@ -33,23 +33,25 @@ const isQueueAction = type => type === 'QUEUE';
 export const getDuration = (endActionStep) => !endActionStep ? undefined :
   endActionStep.actionMetadata.end - endActionStep.actionMetadata.start;
 
-export const ActionItem = ({ item, showQueueSteps, selected, setSelected }) => {
+export const ActionItem = ({ item, showQueueSteps, selected, setSelected, showActionHeader = true }) => {
   const { id, type, data, duration, steps } = item;
 
   const selectAction = useCallback(() => setSelected(item), [setSelected, item]);
 
   return !showQueueSteps && isQueueAction(type) ? (null) : (<Styled.Action isQueueAction={isQueueAction(type)}>
-    <Styled.Header onClick={selectAction}>
-      <Common.Tooltip title={getActionTooltip({ type, data })} arrow={true}>
-        <Styled.ActionType selected={selected && selected.id === id}>{type}</Styled.ActionType>
-      </Common.Tooltip>
-      { 
-        duration !== undefined &&
-        <Common.Tooltip title={info.duration} arrow={true}>
-          <Styled.ActionDuration>{duration} ms</Styled.ActionDuration> 
+    {
+      showActionHeader && <Styled.Header onClick={selectAction}>
+        <Common.Tooltip title={getActionTooltip({ type, data })} arrow={true}>
+          <Styled.ActionType selected={selected && selected.id === id}>{type}</Styled.ActionType>
         </Common.Tooltip>
-      }
-    </Styled.Header>
+        { 
+          duration !== undefined &&
+          <Common.Tooltip title={info.duration} arrow={true}>
+            <Styled.ActionDuration>{duration} ms</Styled.ActionDuration> 
+          </Common.Tooltip>
+        }
+      </Styled.Header>
+    }
     <Styled.Steps>
       {
         steps.map((record, j) => (
