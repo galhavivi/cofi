@@ -35,27 +35,6 @@ const adjustItems = items => {
   return items;
 };
 
-const reorderItems = items => {
-  let preActionRecords = [];
-  const newItems = [];
-  
-  // replace pre action steps action (which are non queue steps) to have the next action (with action id) data
-  items.forEach((item) => {
-    if ([StepsTypes.SET_FORM, StepsTypes.SET_FIELD_COMPONENT_VALUE, StepsTypes.SET_FIELD_COMPONENT_STATE]
-      .includes(item.step.type)) {
-      preActionRecords.push(item);
-      return;
-    }
-
-    const records = preActionRecords.filter(x => x.action.id === item.action.id);
-    Array.prototype.push.apply(newItems, records);
-    newItems.push(item);
-    preActionRecords = preActionRecords.filter(x => x.action.id !== item.action.id);
-  });
-
-  return newItems;
-};
-
 const aggregateActionsSteps = debug => {
   const actions = [];
   let processedAction;
@@ -94,21 +73,28 @@ export default ({ items, aggregate, showQueueSteps }) => {
 
   if (aggregate) {
     items = adjustItems(items);
-    items = reorderItems(items);
     items = aggregateActionsSteps(items);  
   } else {
     adjustItems(items);
-    const tempActions = aggregateActionsSteps(reorderItems(items));  
+    const tempActions = aggregateActionsSteps(items);  
     items = items.map(step => ({ ...step, action: tempActions.find(x => x.id === step.action.id) }));
   }
 
   const Item = aggregate ? ActionItem : StepItem;
   
+  const showActionHeader = useCallback((item, index) => {
+    if (index === 0 || showQueueSteps) return true;
+
+    // if the action id is the same action before the prev queue action
+    return item.id !== items[index - 2]?.id;
+  }, [items]);
+
   return (<>
     <Styled.Items>
       {
         items.map((item, index) => (<Styled.Item key={index}>
-          <Item item={item} showQueueSteps={showQueueSteps} selected={selected} setSelected={setSelected} />
+          <Item item={item} showQueueSteps={showQueueSteps} selected={selected} setSelected={setSelected}
+            showActionHeader={showActionHeader(item, index)} />
         </Styled.Item>))
       }
     </Styled.Items>
