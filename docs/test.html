@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Test Cofi · cofi</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="After defining a page that uses cofi, there are few recommended ways to test cofi in the page."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Test Cofi · cofi"/><meta property="og:type" content="website"/><meta property="og:url" content="https://galhavivi.github.io/cofihttps://galhavivi.github.io/cofi/index.html"/><meta property="og:description" content="After defining a page that uses cofi, there are few recommended ways to test cofi in the page."/><meta property="og:image" content="https://galhavivi.github.io/cofihttps://galhavivi.github.io/cofi/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://galhavivi.github.io/cofihttps://galhavivi.github.io/cofi/img/docusaurus.png"/><link rel="shortcut icon" href="https://galhavivi.github.io/cofi/img/logo.svg"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://galhavivi.github.io/cofi/js/update-href-urls.js"></script><script src="https://galhavivi.github.io/cofi/js/scrollSpy.js"></script><link rel="stylesheet" href="https://galhavivi.github.io/cofi/css/main.css"/><script src="https://galhavivi.github.io/cofi/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="https://galhavivi.github.io/cofi/"><img class="logo" src="https://galhavivi.github.io/cofi/img/logo.svg" alt="cofi"/><h2 class="headerTitleWithLogo">cofi</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="https://galhavivi.github.io/cofi/docs/introduction.html" target="_self">Docs</a></li><li class=""><a href="https://galhavivi.github.io/cofi/demo-react-form.html" target="_self">Form Demos</a></li><li class=""><a href="https://galhavivi.github.io/cofi/demo-react-components.html" target="_self">Components Demos</a></li><li class=""><a href="https://galhavivi.github.io/cofi/demo-react-layout.html" target="_self">Layout Demos</a></li><li class=""><a href="https://galhavivi.github.io/cofi/demo-react-editor.html" target="_self">Editor</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="https://github.com/galhavivi/cofi" target="_self">GitHub</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>More Info</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Getting started<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/introduction.html">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Form Class<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/form-installation.html">Installation</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/form-overview.html">Overview</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/arguments.html">Arguments</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/id.html">Id</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/data.html">Data</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/fields.html">Fields</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/path.html">Path</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/component.html">Component</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/formatter-parser.html">Formatter &amp; Parser</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/dependencies.html">Dependencies</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/required.html">Required</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/validators.html">Validators</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/exclude-term.html">Exclude Term</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/disable-term.html">Disable Term</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/require-term.html">Require Term</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/dependencies-change.html">Dependencies Change</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/context.html">Context</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/dirty.html">Dirty</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/invalid.html">Invalid</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/errors.html">Errors</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/processing.html">Processing</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/pending-actions.html">Pending Actions</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/hooks.html">Hooks</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/term.html">Term</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/log.html">Log</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/error-codes.html">Error Codes</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/actions.html">Actions</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/definition-shorthand.html">Definition Shorthand</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Advanced Usages<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/grid-usage.html">Grid Usage</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/persistency.html">Form Persistency</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/undo-redo.html">Undo &amp; Redo</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/replay.html">Replay Actions</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/track.html">Track Actions</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/server-validation.html">Server Validation</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/entity-templates.html">Entity Templates</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/folder-structure.html">Folder Structure</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">React Form<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/react-installation.html">Installation</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/react-overview.html">Overview</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/react-form.html">Form</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/react-field.html">Field</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/react-components.html">Components</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/react-layout.html">Layout</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/react-demos.html">Demos</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Tools<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/editor.html">Editor</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/devtools.html">DevTools</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">More Info<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/test.html">Test Cofi</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/packages.html">Packages</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/why-cofi.html">Why Cofi?</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/technologies.html">Technologies</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/videos.html">Videos</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/channels.html">Channels</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Contribute<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/code-of-conduct.html">Code of Conduct</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/contributing-guide.html">Contributing Guide</a></li><li class="navListItem"><a class="navItem" href="https://galhavivi.github.io/cofi/docs/contributors.html">Contributors</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Test Cofi</h1></header><article><div><span><p>After defining a page that uses cofi, there are few recommended ways to test cofi in the page.</p>
+<h2><a class="anchor" aria-hidden="true" id="recommended-tests"></a><a href="#recommended-tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Recommended Tests</h2>
+<h3><a class="anchor" aria-hidden="true" id="verify-form-definition"></a><a href="#verify-form-definition" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Verify Form Definition</h3>
+<p>Verify form definition is valid. Its very useful when upgrading major version to verify that configuration is still valid,
+and if not to understand what need to be changed according to the given error.</p>
+<p>Example using jest:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { createForm, verifyForm } <span class="hljs-keyword">from</span> <span class="hljs-string">'@cofi/form'</span>;
+<span class="hljs-keyword">import</span> { model, resources, settings } <span class="hljs-keyword">from</span> <span class="hljs-string">'./form'</span>;
+
+expect.extend({
+  <span class="hljs-attr">toBeValid</span>: <span class="hljs-function">(<span class="hljs-params">{ model, resources, settings }</span>) =&gt;</span> {
+    <span class="hljs-keyword">const</span> form = createForm(model, resources, settings);
+    <span class="hljs-keyword">let</span> error;
+    <span class="hljs-keyword">try</span> {
+      verifyForm(form);
+    } <span class="hljs-keyword">catch</span> (err) {
+      error = err;
+    }
+
+    <span class="hljs-keyword">return</span> !error ? {
+      <span class="hljs-attr">pass</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">message</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-string">`form definition is valid`</span>,
+    } : {
+      <span class="hljs-attr">pass</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">message</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-string">`expected form definition to be valid, but got error: \n<span class="hljs-subst">${error}</span>`</span>,
+    };
+  },
+});
+
+it(<span class="hljs-string">'form definition ok'</span>, () =&gt; {
+  <span class="hljs-keyword">const</span> form = { model, resources };
+  expect(form).toBeValid();
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="handlers-unit-tests"></a><a href="#handlers-unit-tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Handlers Unit Tests</h3>
+<p>Resources object contains custom handlers that the form will use during its lifecycle (for example validators).
+Each custom handler is a small block that can be tested via unit tests.</p>
+<p>Example using jest:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">// lib/form/validators.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> { <span class="hljs-comment">// e.g - model.fields.firstName.validators: [{ name: 'minLength', args: { value: 2 } }</span>
+  <span class="hljs-attr">minLength</span>: {
+    <span class="hljs-attr">func</span>: <span class="hljs-function">(<span class="hljs-params">{ value, args }</span>) =&gt;</span> value &gt;= args.value,
+    <span class="hljs-attr">message</span>: <span class="hljs-function">(<span class="hljs-params">{ label, args }</span>) =&gt;</span> <span class="hljs-string">`<span class="hljs-subst">${label}</span> should have minimum length of '<span class="hljs-subst">${args}</span>'`</span>,
+  }
+}
+
+<span class="hljs-comment">// tests/form/validators.spec.js</span>
+<span class="hljs-keyword">import</span> validators <span class="hljs-keyword">from</span> <span class="hljs-string">'lib/form/validators'</span>;
+
+describe(<span class="hljs-string">'employee / resources / validators'</span>, () =&gt; {
+  describe(<span class="hljs-string">'minLength'</span>, () =&gt; {
+    describe(<span class="hljs-string">'func'</span>, () =&gt; {
+       describe(<span class="hljs-string">'valid'</span>, () =&gt; {
+          it(<span class="hljs-string">'value length grater than args value'</span>, () =&gt; {
+            expect(validators.minLength.func({ <span class="hljs-attr">value</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">args</span>: { <span class="hljs-attr">value</span>: <span class="hljs-number">2</span> } })).toBeTruthy();
+          });
+
+          it(<span class="hljs-string">'value length equals args value'</span>, () =&gt; {
+            expect(validators.minLength.func({ <span class="hljs-attr">value</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">args</span>: { <span class="hljs-attr">value</span>: <span class="hljs-number">3</span> } })).toBeTruthy();
+          });
+       });
+
+       describe(<span class="hljs-string">'invalid'</span>, () =&gt; {
+          it(<span class="hljs-string">'value length lower than args value'</span>, () =&gt; {
+            expect(validators.minLength.func({ <span class="hljs-attr">value</span>: <span class="hljs-number">2</span>, <span class="hljs-attr">args</span>: { <span class="hljs-attr">value</span>: <span class="hljs-number">3</span> } })).toBeFalsy();
+          });
+       });     
+    });
+
+    describe(<span class="hljs-string">'message'</span>, () =&gt; {
+      it(<span class="hljs-string">'ok'</span>, () =&gt; {
+        expect(validators.minLength.message({ <span class="hljs-attr">label</span>: <span class="hljs-string">'First Name'</span>, <span class="hljs-attr">args</span>: { <span class="hljs-attr">value</span>: <span class="hljs-number">2</span> } }))
+        .toEqual(<span class="hljs-string">'First Name should have minimum length of 2'</span>);
+      });
+    });
+  });
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="form-integration-tests"></a><a href="#form-integration-tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Form Integration Tests</h3>
+<p>Use integration tests to describe and test form use cases. It provides:</p>
+<ul>
+<li>A clean and simple 'form spec' insurance, for times of:
+<ul>
+<li>Migrating to a new UI library - since Form class is agnostic to UI.</li>
+<li>Migrating to a new Cofi major version - resources handler's arguments (or definition structure in general) might change between major versions. Since <code>verifyForm</code> function does not verify the resources handler's arguments data, Integration tests using Form class can help
+cover all users scenarios are working correctly.</li>
+</ul></li>
+<li>A simple guidance for your form's new / old maintainers (especially when supporting apps which lacks of original product managers, original
+developers, the existence of a real form spec and anything that can help to understand all scenarios of the form).</li>
+<li>No re-writing tests when migrating to a new UI library</li>
+</ul>
+<p>Resources handler's arguments (or definition structure in general) might change between major versions.
+Since <code>verifyForm</code> function does not verify the resources handler's arguments data, Integration tests using Form class can help
+cover all users scenarios are working correctly (this can also be done via e2e).</p>
+<p>Example of test using jest:</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> Form <span class="hljs-keyword">from</span> <span class="hljs-string">'@cofi/form'</span>;
+
+describe(<span class="hljs-string">'Form use cases'</span>, () =&gt; {
+  <span class="hljs-comment">// define user form</span>
+  <span class="hljs-keyword">const</span> model = {
+    <span class="hljs-attr">id</span>: <span class="hljs-string">'user-form'</span>,
+    <span class="hljs-attr">fields</span>: {
+      <span class="hljs-attr">firstName</span>: {
+        <span class="hljs-attr">label</span>: <span class="hljs-string">'First Name'</span>,
+        <span class="hljs-attr">path</span>: <span class="hljs-string">'firstName'</span>,
+        <span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">validators</span>: [{
+          <span class="hljs-attr">name</span>: <span class="hljs-string">'minLength'</span>
+          <span class="hljs-attr">args</span>: {
+            <span class="hljs-attr">value</span>: <span class="hljs-number">2</span>
+          }
+        }],
+      },
+      <span class="hljs-attr">lastName</span>: {
+        <span class="hljs-attr">label</span>: <span class="hljs-string">'Last Name'</span>,
+        <span class="hljs-attr">path</span>: <span class="hljs-string">'lastName'</span>,
+      }
+    },
+    <span class="hljs-attr">data</span>: {
+      <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Ross'</span>,
+      <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Geller'</span>,
+    }
+  };
+
+  beforeEach(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-comment">// create user form</span>
+    <span class="hljs-keyword">const</span> form = <span class="hljs-keyword">new</span> Form();
+    <span class="hljs-keyword">await</span> form.init(model);
+
+    <span class="hljs-comment">// verify initial data</span>
+    expect(form.data).toEqual({ <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Ross'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Geller'</span> });
+  });
+
+  it(<span class="hljs-string">'firstName = Monica'</span>, () =&gt; {
+    <span class="hljs-comment">// change field firstName and verify the change</span>
+    <span class="hljs-keyword">await</span> form.changeValue(<span class="hljs-string">'firstName'</span>, <span class="hljs-string">'Monica'</span>);
+
+    <span class="hljs-comment">// verify form data</span>
+    expect(form.data).toEqual({ <span class="hljs-attr">firstName</span>: <span class="hljs-string">'Monica'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Geller'</span> });
+
+    <span class="hljs-comment">// verify form is valid</span>
+    expect(form.invalid).toBeFalsy();
+  });
+
+  it(<span class="hljs-string">'firstName = empty'</span>, () =&gt; {
+    <span class="hljs-comment">// change field firstName to empty value</span>
+    <span class="hljs-keyword">await</span> form.changeValue(<span class="hljs-string">'firstName'</span>, <span class="hljs-string">''</span>);
+
+    <span class="hljs-comment">// verify form data</span>
+    expect(form.data).toEqual({ <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Geller'</span> });
+
+    <span class="hljs-comment">// verify form is invalid (field 'firstName' is required)</span>
+    expect(form.invalid).toBeTruthy();
+    expect(form.fields.firstName.empty).toBeTruthy();
+    expect(form.fields.firstName.required).toBeTruthy();
+    expect(form.fields.firstName.errors).toEqual([{
+      <span class="hljs-attr">name</span>: <span class="hljs-string">'required'</span>,
+      <span class="hljs-attr">message</span>: <span class="hljs-string">'Field required'</span>,
+    }]);
+  });
+
+  it(<span class="hljs-string">'firstName = a (min length error)'</span>, () =&gt; {
+    <span class="hljs-comment">// change field firstName to 'a'</span>
+    <span class="hljs-keyword">await</span> form.changeValue(<span class="hljs-string">'firstName'</span>, <span class="hljs-string">'a'</span>);
+
+    <span class="hljs-comment">// verify form data</span>
+    expect(form.data).toEqual({ <span class="hljs-attr">firstName</span>: <span class="hljs-string">'a'</span>, <span class="hljs-attr">lastName</span>: <span class="hljs-string">'Geller'</span> });
+
+    <span class="hljs-comment">// verify form is invalid (since field 'firstName' has minimum length)</span>
+    expect(form.invalid).toBeTruthy();
+    expect(form.fields.firstName.errors).toEqual([{
+      <span class="hljs-attr">name</span>: <span class="hljs-string">'minLength'</span>,
+      <span class="hljs-attr">message</span>: <span class="hljs-string">'Minimum length is 2'</span>,
+    }]);
+  });
+});
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="ui-form-integration-tests"></a><a href="#ui-form-integration-tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>UI Form Integration Tests</h3>
+<p>For <code>@cofi/react-form</code>, a mount to the UI <code>Form</code> component in a test can be done, followed by integration tests scenarios similar to the approach of <a href="test#form-integration-tests">Form Integration Tests</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="components-tests"></a><a href="#components-tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Components Tests</h3>
+<p>Since Cofi uses generic component props for all of its components, a mapping layer to existing component props is required,
+which should be tested.</p>
+<p>Example - component Input using <a href="react-components#tocofi">toCofi</a> hoc</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">/* Input.js */</span>
+<span class="hljs-keyword">import</span> { toCofi } <span class="hljs-keyword">from</span> <span class="hljs-string">'@cofi/react-components/utils'</span>;
+<span class="hljs-keyword">import</span> Input <span class="hljs-keyword">from</span> <span class="hljs-string">'@material-ui/core/Input'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> mapper = <span class="hljs-function">(<span class="hljs-params">{ value = <span class="hljs-string">''</span>, disabled = <span class="hljs-literal">false</span>, state = {}, onValueChange }</span>) =&gt;</span> ({
+  <span class="hljs-attr">type</span>: state.type
+  <span class="hljs-attr">placeholder</span>: state.placeholder,
+  value,
+  disabled,
+  <span class="hljs-attr">onChange</span>: <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> onValueChange(e.target.value),
+});
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> toCofi(Input, mapper);
+</code></pre>
+<p>Using the above format saves the <code>react</code> import as well as simplify tests.
+The following code tests mapper function with a simple JavaScript test.</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-comment">/* Input.spec.js */</span>
+<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { shallow } <span class="hljs-keyword">from</span> <span class="hljs-string">'enzyme'</span>;
+<span class="hljs-keyword">import</span> Input, { mapper } <span class="hljs-keyword">from</span> <span class="hljs-string">'./Input.js'</span>;
+
+describe(<span class="hljs-string">'Input'</span>, () =&gt; {
+  <span class="hljs-keyword">const</span> cofiProps = {
+    <span class="hljs-attr">state</span>: {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">'text'</span>,
+      <span class="hljs-attr">placeholder</span>: <span class="hljs-string">'Enter name...'</span>,
+    },
+    <span class="hljs-attr">value</span>: <span class="hljs-string">'Rachel'</span>,
+    <span class="hljs-attr">disabled</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">onValueChange</span>: jest.fn(),
+  };
+
+  <span class="hljs-keyword">const</span> expectedInputProps = {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">'text'</span>,
+    <span class="hljs-attr">placeholder</span>: <span class="hljs-string">'Enter name...'</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-string">'Rachel Green'</span>,
+    <span class="hljs-attr">disabled</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">onChange</span>: expect.any(<span class="hljs-built_in">Function</span>),
+  };
+
+  <span class="hljs-keyword">let</span> inputProps;
+  
+  beforeEach(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    inputProps = mapper(cofiProps);
+  });
+  
+  describe(<span class="hljs-string">'mapper'</span>, () =&gt; {
+    it(<span class="hljs-string">'return correct props'</span>, () =&gt; {
+      expect(inputProps).toEqual(expectedInputProps);
+    });
+
+    it(<span class="hljs-string">'call onValueChange with correct value'</span>, () =&gt; {
+      <span class="hljs-keyword">const</span> mockEvent = { <span class="hljs-attr">target</span>: { <span class="hljs-attr">value</span>: <span class="hljs-string">'Ross'</span> } };
+      inputProps.onChange(mockEvent);
+      expect(cofiProps.onValueChange).toHaveBeenCalledWith(<span class="hljs-string">'Ross'</span>);
+    });
+  });
+
+  describe(<span class="hljs-string">'component'</span>, () =&gt; {
+    it(<span class="hljs-string">'renders ok'</span>, () =&gt; {
+      <span class="hljs-keyword">const</span> component = shallow(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Input</span> {<span class="hljs-attr">...cofiProps</span>} /&gt;</span>);
+      expect(component.props()).toEqual(expectedInputProps);
+    });
+  });
+});
+</span></code></pre>
+<h3><a class="anchor" aria-hidden="true" id="e2e-tests"></a><a href="#e2e-tests" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>E2E Tests</h3>
+<p>Add e2e tests to verify that your UI was loaded and perform some real user changes to verify it works correctly.
+We covered all <code>@cofi/react-form</code> <a href="https://github.com/galhavivi/cofi/blob/master/packages/react-form/src/website/Root.e2e.js">demos with e2e</a> using <a href="https://github.com/GoogleChrome/puppeteer">Puppeteer</a>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="https://galhavivi.github.io/cofi/docs/devtools.html"><span class="arrow-prev">← </span><span class="function-name-prevnext">DevTools</span></a><a class="docs-next button" href="https://galhavivi.github.io/cofi/docs/packages.html"><span>Packages</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#recommended-tests">Recommended Tests</a><ul class="toc-headings"><li><a href="#verify-form-definition">Verify Form Definition</a></li><li><a href="#handlers-unit-tests">Handlers Unit Tests</a></li><li><a href="#form-integration-tests">Form Integration Tests</a></li><li><a href="#ui-form-integration-tests">UI Form Integration Tests</a></li><li><a href="#components-tests">Components Tests</a></li><li><a href="#e2e-tests">E2E Tests</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><div><a target="_blank" href="https://www.verizonmedia.com/" class="nav-home"><img src="https://galhavivi.github.io/cofi/img/verizon-media-white.png" alt="cofi" width="100" height="58"/></a><div class="copyright">Copyright © 2020 Verizon Media</div></div><div><h5>DOCS</h5><a href="https://galhavivi.github.io/cofi/docs/introduction">Introduction</a><a href="https://galhavivi.github.io/cofi/docs/form-overview">Form Class</a><a href="https://galhavivi.github.io/cofi/docs/react-overview">React Form</a><a href="https://galhavivi.github.io/cofi/docs/react-components">React Components</a><a href="https://galhavivi.github.io/cofi/docs/react-layout">React Layout</a></div><div><h5>DEMOS</h5><a href="https://galhavivi.github.io/cofi/demo-react-form">React Form</a><a href="https://galhavivi.github.io/cofi/demo-react-components">React Components</a><a href="https://galhavivi.github.io/cofi/demo-react-layout">React Layout</a></div></section><section class="sitemap"><div></div><div><h5>CONTRIBUTING</h5><a href="https://galhavivi.github.io/cofi/docs/code-of-conduct">Code Of Conduct</a><a href="https://galhavivi.github.io/cofi/docs/contributing-guide">Contributing Guide</a><a href="https://galhavivi.github.io/cofi/docs/contributors">Contributors</a><a href="https://galhavivi.github.io/cofi/users">Users</a></div><div><h5>CHANNELS</h5><a target="_blank" class="github-button" href="https://github.com/galhavivi/cofi" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><a target="_blank" href="https://github.com/galhavivi/cofi">GitHub</a><a target="_blank" href="https://stackoverflow.com/questions/tagged/cofi">Stack Overflow</a><a target="_blank" href="https://medium.com/search?q=cofi">Medium</a><a href="https://galhavivi.github.io/cofi/docs/videos">Videos</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'todo',
+                indexName: 'todo',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
