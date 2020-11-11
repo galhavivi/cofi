@@ -53,7 +53,8 @@ async function editLayout(page, state, openWithRowAction) {
     const actionsButton = await page.$(`${selectors.edit.config.layoutsRows}:first-child ${selectors.list.rowActionsButton}`);
     await actionsButton.click();
     await page.waitFor(utils.ANIMATION_DURATION);
-    await page.click(`${selectors.list.rowActionsMenu}:last-child li:nth-child(1)`);
+    const action = await page.$(`${selectors.list.rowActionsMenu}:last-child li:nth-child(1)`);
+    await action.click();
     await page.waitFor(utils.COFI_LIFECYCLE);
   }
 

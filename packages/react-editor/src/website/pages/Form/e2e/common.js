@@ -114,7 +114,8 @@ export async function verifyAll(page, state) {
 }
 
 export async function showJson(page, selector) {
-  await page.click(selector.options.menu);
+  const menu = await page.$(selector.options.menu);
+  await menu.click();
   await page.waitFor(utils.ANIMATION_DURATION);
   await page.click(selector.options.showJson);
 }
