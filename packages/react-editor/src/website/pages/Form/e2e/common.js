@@ -86,10 +86,10 @@ export async function verifyAll(page, state) {
     if (state.playground.json) {
       // config - click show json
       await showJson(page, selectors.edit.preview);
-
+      
       // verify preview json
       await verifyJsonView(page, selectors.edit.preview.jsonView, state.playground.json);
-
+      
       // config - click close json
       await showJson(page, selectors.edit.preview);
     }
@@ -114,8 +114,7 @@ export async function verifyAll(page, state) {
 }
 
 export async function showJson(page, selector) {
-  const menu = await page.$(selector.options.menu);
-  await menu.click();
+  await page.click(selector.options.menu);
   await page.waitFor(utils.ANIMATION_DURATION);
   await page.click(selector.options.showJson);
 }
