@@ -4,11 +4,11 @@
   */
 
 const wrappers = {
-  FORM_EDITOR: '[aria-label="Form Editor"]',
-  CONFIG: '[aria-label="Edit Config"]',
-  FIELD: '[aria-label="Edit Item"][type="field"]',
-  LAYOUT: '[aria-label="Edit Item"][type="layout"]',
-  PREVIEW: '[aria-label="Preview"]',
+  FORM_EDITOR: 'div[aria-label="Form Editor"]',
+  CONFIG: 'div[aria-label="Edit Config"]',
+  FIELD: 'div[aria-label="Edit Item"][type="field"]',
+  LAYOUT: 'div[aria-label="Edit Item"][type="layout"]',
+  PREVIEW: 'div[aria-label="Preview"]',
   LOG: 'div[aria-label="Log"]',
 };
 
