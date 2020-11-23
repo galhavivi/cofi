@@ -15,7 +15,7 @@ const wrappers = {
 const base = wrapper => ({
   wrapper,
   options: {
-    menu: `${wrapper} button[aria-label="Options"]`,
+    menu: `${wrapper} button`, // `${wrapper} button[aria-label="Options"]`,
     showJson: '[id="options-menu"] [role="menuitem"]:nth-child(1)',   
   },
   jsonView: `${wrapper} [aria-label="json-view"]`,
