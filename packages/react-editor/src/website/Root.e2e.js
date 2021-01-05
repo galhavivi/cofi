@@ -40,7 +40,7 @@ async function execTest(testFunc) {
   const page = await openTabPageOnBrowser(browser);
 
   // set animation faster
-  await page._client.send('Animation.setPlaybackRate', { playbackRate: 100 });
+  await page._client.send('Animation.setPlaybackRate', { playbackRate: 1000 });
 
   let error;
 
