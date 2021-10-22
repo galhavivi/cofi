@@ -7,7 +7,7 @@ module.exports = defaultsDeep({
       lines: 99.9,
       branches: 95.48,
       functions: 99.76,
-      statements: 99.83,
+      statements: 99.82,
     },
   },
 }, base);
