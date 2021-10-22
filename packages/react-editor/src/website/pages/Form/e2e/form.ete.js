@@ -6,11 +6,11 @@
 import * as utils from '../../../e2e.utils';
 import selectors from './selectors';
 import { verifyAll, showJson } from './common';
-import testCreateFieldFirstName from './testCreateFieldFirstName';
-import testCreateFieldLastName from './testCreateFieldLastName';
-import testEditFieldFirstName from './testEditFieldFirstName';
-import testCreateLayout from './testCreateLayout';
-import testEditLayout from './testEditLayout';
+// import testCreateFieldFirstName from './testCreateFieldFirstName';
+// import testCreateFieldLastName from './testCreateFieldLastName';
+// import testEditFieldFirstName from './testEditFieldFirstName';
+// import testCreateLayout from './testCreateLayout';
+// import testEditLayout from './testEditLayout';
 
 export async function testCreateNewForm(page) {
   await page.waitFor(utils.ANIMATION_DURATION);
