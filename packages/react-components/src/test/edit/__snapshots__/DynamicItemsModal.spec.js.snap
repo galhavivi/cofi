@@ -53,7 +53,7 @@ exports[`<DynamicItemsModal /> component functions render itemsDisplay 1`] = `
           }
         }
       >
-        <CreateIcon />
+        <Memo([object Object]) />
       </WithStyles(ForwardRef(Fab))>
       <WithStyles(ForwardRef(Fab))
         color="secondary"
@@ -65,7 +65,7 @@ exports[`<DynamicItemsModal /> component functions render itemsDisplay 1`] = `
           }
         }
       >
-        <DeleteIcon />
+        <Memo([object Object]) />
       </WithStyles(ForwardRef(Fab))>
     </styled.div>
   </styled.li>

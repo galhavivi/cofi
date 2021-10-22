@@ -21,7 +21,7 @@ exports[`MobileItemView Should render - ok 1`] = `
       color="primary"
       onClick={[Function]}
     >
-      <MoreVertIcon />
+      <Memo([object Object]) />
     </WithStyles(ForwardRef(IconButton))>
     <Menu
       anchorEl={null}

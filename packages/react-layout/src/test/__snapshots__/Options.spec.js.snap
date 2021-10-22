@@ -8,7 +8,7 @@ exports[`Options Should render - ok 1`] = `
     color="primary"
     onClick={[Function]}
   >
-    <DehazeIcon />
+    <Memo([object Object]) />
   </WithStyles(ForwardRef(IconButton))>
   <Menu
     anchorEl={null}
@@ -40,7 +40,7 @@ exports[`Options Should render - with action that has disabled truthy - ok 1`] =
     color="primary"
     onClick={[Function]}
   >
-    <DehazeIcon />
+    <Memo([object Object]) />
   </WithStyles(ForwardRef(IconButton))>
   <Menu
     anchorEl={null}
