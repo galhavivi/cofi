@@ -8,6 +8,7 @@ import { HashRouter, Route, Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import { createGenerateClassName, StylesProvider, ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
+import { setLogLevel, logLevels } from '@cofi/form';
 import Styled from './components/StyledComponents';
 import Demos from './components/Demos';
 
@@ -29,6 +30,9 @@ const theme = createMuiTheme({
     },
   },
 });
+
+// set cofi log level to debug (to see it also on prod docs website)
+setLogLevel(logLevels.DEBUG);
 
 const Root = () => {
   useEffect(() => {

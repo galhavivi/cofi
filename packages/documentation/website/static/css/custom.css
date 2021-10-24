@@ -48,9 +48,11 @@ body {
 }
 
 .homeContainer {
+  background: #475055;
+}
+
+.homeSplashFade {
   background-position: center;
-  /* background: #2a4d69; */
-  /* background: #464F56; */
 }
 
 .homeContainer .homeWrapper {

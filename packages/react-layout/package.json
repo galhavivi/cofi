@@ -42,6 +42,7 @@
   },
   "devDependencies": {
     "@cofi/react-components": "^1.0.0",
+    "@cofi/form": "^1.0.0",
     "@cofi/react-form": "^1.0.0",
     "@cofi/react-kit": "^1.0.0",
     "jszip": "^3.2.2",

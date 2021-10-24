@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom';
 import { createGenerateClassName, StylesProvider, ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { HashRouter, Route, Switch } from 'react-router-dom';
+import { setLogLevel, logLevels } from '@cofi/form';
 import Styled from './Styled';
 import Home from './pages/Home';
 import FormList from './pages/Form/List';
@@ -27,6 +28,9 @@ const theme = createMuiTheme({
     },
   },
 });
+
+// set cofi log level to debug (to see it also on prod docs website)
+setLogLevel(logLevels.DEBUG);
 
 const Root = () => {
   return ( 

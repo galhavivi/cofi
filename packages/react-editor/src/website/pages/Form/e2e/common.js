@@ -86,10 +86,10 @@ export async function verifyAll(page, state) {
     if (state.playground.json) {
       // config - click show json
       await showJson(page, selectors.edit.preview);
-
+      
       // verify preview json
       await verifyJsonView(page, selectors.edit.preview.jsonView, state.playground.json);
-
+      
       // config - click close json
       await showJson(page, selectors.edit.preview);
     }
@@ -114,9 +114,13 @@ export async function verifyAll(page, state) {
 }
 
 export async function showJson(page, selector) {
-  await page.click(selector.options.menu);
+  await page.waitForSelector(selector.options.menu);
+  const menu = await page.$(selector.options.menu);
+  menu.click();
   await page.waitFor(utils.ANIMATION_DURATION);
-  await page.click(selector.options.showJson);
+  await page.waitForSelector(selector.options.showJson);
+  const showJson = await page.$(selector.options.showJson);
+  await showJson.click();
 }
 
 export async function fillHandler(page, id, child, selector = '') {
@@ -142,6 +146,7 @@ export async function addArgs(page, id, selector) {
 }
 
 async function verifyJsonView(page, selector, expectedJson) {
+  await page.waitForSelector(selector);
   const jsonString = await page.$eval(selector, e => e.getAttribute('value'));
   const json = JSON.parse(jsonString);
   expect(json).toEqual(expectedJson);

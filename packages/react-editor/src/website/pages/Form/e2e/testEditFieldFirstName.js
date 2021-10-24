@@ -43,7 +43,8 @@ export default async function testEditFieldFirstName(page, state) {
 
 async function editFieldFirstName(page, state) {
   // click edit first name
-  await page.click(`${selectors.edit.config.fieldsRows}:first-child > div:first-child a`);
+  const firstNameLink = await page.$(`${selectors.edit.config.fieldsRows}:first-child > div:first-child a`);
+  await firstNameLink.click();
   await page.waitFor(utils.COFI_LIFECYCLE);
 
   // click show json

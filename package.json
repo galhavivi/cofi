@@ -7,7 +7,9 @@
   },
   "homepage": "https://galhavivi.github.io/cofi/index.html",
 	"scripts": {
-		"bootstrap": "rm -rf ./node_modules && npx lerna exec -- rm -rf ./node_modules && npx lerna bootstrap --force-local --hoist --no-ci -- --production=false && npx lerna run build-package"
+    "bootstrap": "rm -rf ./node_modules && npx lerna exec -- rm -rf ./node_modules && npx lerna bootstrap --force-local --hoist --no-ci -- --production=false && npx lerna run build-package",
+    "clean": "rm -rf package-lock.json && npx lerna exec -- rm -rf package-lock.json",
+    "clean-bootstrap": "npm run clean && npm run bootstrap"
 	},
   "devDependencies": {
     "husky": "^3.0.0",
