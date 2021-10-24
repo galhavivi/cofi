@@ -4,6 +4,6 @@ exports[`<Boolean /> should render provided data 1`] = `
 <styled.div
   color="#1adc91"
 >
-  <Memo([object Object]) />
+  <Memo(ForwardRef(CheckCircleOutlineIcon)) />
 </styled.div>
 `;
