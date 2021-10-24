@@ -6,7 +6,7 @@
 import React, { useEffect } from 'react';
 import { HashRouter, Route, Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import { createGenerateClassName, StylesProvider, ThemeProvider } from '@material-ui/styles';
 import { setLogLevel, logLevels } from '@cofi/form';
 import { LogProvider } from '../lib';
@@ -22,7 +22,7 @@ const generateClassName = createGenerateClassName({
 
 const defaultDemoRoute = '/overview/introduction';
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: '#3fcee6',

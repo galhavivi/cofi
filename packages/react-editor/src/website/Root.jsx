@@ -6,7 +6,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createGenerateClassName, StylesProvider, ThemeProvider } from '@material-ui/styles';
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import { setLogLevel, logLevels } from '@cofi/form';
 import Styled from './Styled';
@@ -18,7 +18,7 @@ import FieldEdit from './pages/Field/Edit';
 
 const generateClassName = createGenerateClassName({ productionPrefix: 'cofi-react-editor' });
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: '#3fcee6',
