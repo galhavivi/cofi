@@ -76,7 +76,7 @@ initialState = {
     state: {
         placeholder: 'Enter Name',
         multiline: true,
-        rowsMax:10,
+        maxRows:10,
     },
 };
  <Text

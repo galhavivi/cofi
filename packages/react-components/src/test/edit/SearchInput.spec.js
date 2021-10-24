@@ -15,6 +15,14 @@ describe('<SearchInput />', () => {
     onSearchSpy = jest.fn();
   });
 
+  const getComponent = (value, placeholder, disabled, onChange, onSearch) => (
+    <SearchInput
+      value={value}
+      placeholder={placeholder}
+      disabled={disabled}
+      onChange={onChange}
+      onSearch={onSearch} />);
+
   it('should render provided data', () => {
     component = shallow(
       getComponent(value, placeholder, disabled, onChangeSpy, onSearchSpy)
@@ -54,16 +62,4 @@ describe('<SearchInput />', () => {
     component.find('button').simulate('click');
     expect(onSearchSpy).toHaveBeenCalledWith(value);
   });
-
-  function getComponent(value, placeholder, disabled, onChange, onSearch) {
-    return (
-      <SearchInput
-        value={value}
-        placeholder={placeholder}
-        disabled={disabled}
-        onChange={onChange}
-        onSearch={onSearch}
-      />
-    );
-  }
 });

@@ -82,7 +82,7 @@ export const mainActionsForm = {
             state: {
               placeholder: 'On click do...',
               multiline: true,
-              rowsMax: 3,
+              maxRows: 3,
             },
           },
         },
@@ -95,7 +95,7 @@ export const mainActionsForm = {
             state: {
               placeholder: 'Disable action when...',
               multiline: true,
-              rowsMax: 3,
+              maxRows: 3,
             },
           },
         },
@@ -108,7 +108,7 @@ export const mainActionsForm = {
             state: {
               placeholder: 'Exclude action when...',
               multiline: true,
-              rowsMax: 3,
+              maxRows: 3,
             },
           },
         },

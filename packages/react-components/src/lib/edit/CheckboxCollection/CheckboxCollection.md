@@ -222,17 +222,19 @@ initialState = {
 <CheckboxCollection
 value={state.value}
 state={state.state}
-onValueChange={(value) => { 
-    setState({ value });
-    console.log(`onValueChange: ${value}`);
-}}
-onStateChange={(state) => { 
-    state.items = allItems.filter(x => { 
-        return x.label.toLowerCase().indexOf(state.search.value.toLowerCase()) > -1;
+onValueChange={value => setState({ value })}
+onStateChange={updater => {
+    setState(state => {
+        const newState = updater({ state: state.state }); // illustrate a cofi updater
+        return ({ 
+            state: { 
+                ...newState,
+                items: allItems.filter(x => { 
+                    return x.label.toLowerCase().indexOf(newState.search.value.toLowerCase()) > -1;
+                }), 
+            }
+        })
     });
-
-    setState({ state });
-    console.log(`onStateChange: ${state}`);
 }}
 />
 ```
@@ -271,25 +273,18 @@ initialState = {
     }
 };
 
+const findItems = query => allItems.filter(x => x.label.toLowerCase().indexOf(query.toLowerCase()) > -1);
+
 <CheckboxCollection
 value={state.value}
 state={state.state}
-onValueChange={(value) => { 
-    setState({ value });
-    console.log(`onValueChange: ${value}`);
-}}
-onStateChange={(state) => { 
-    setState({ state }, function() {
-        setTimeout(() => {
-        const items = allItems.filter(x => { 
-        return x.label.toLowerCase().indexOf(this.state.state.search.value.toLowerCase()) > -1;
-        });
+onValueChange={value => setState({ value })}
+onStateChange={updater => {
+  setState(state => ({ state: { ...updater({ state: state.state }), items: [] } }));
 
-        const updatedState = Object.assign({}, this.state.state);
-        updatedState.items = items;
-        setState({ state: updatedState });
-        }, 200);
-    });
+  setTimeout(() => {      
+    setState(state => ({ state: { ...state.state, items: findItems(state.state.search.value) } }));
+  }, 300);
 }}
 />
 ```

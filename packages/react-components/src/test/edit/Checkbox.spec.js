@@ -18,6 +18,13 @@ describe('<Checkbox />', () => {
     onValueChangeSpy = jest.fn();
   });
 
+  const getComponent = (value, state, disabled, onValueChange) => (
+    <Checkbox
+      value={value}
+      state={state}
+      disabled={disabled}
+      onValueChange={onValueChange} />);
+
   it('should render provided data', () => {
     component = shallow(
       getComponent(value, state, disabled, onValueChangeSpy)
@@ -36,15 +43,4 @@ describe('<Checkbox />', () => {
 
     expect(onValueChangeSpy).toHaveBeenCalledWith(newValue);
   });
-
-  function getComponent(value, state, disabled, onValueChange) {
-    return (
-      <Checkbox
-        value={value}
-        state={state}
-        disabled={disabled}
-        onValueChange={onValueChange}
-      />
-    );
-  }
 });

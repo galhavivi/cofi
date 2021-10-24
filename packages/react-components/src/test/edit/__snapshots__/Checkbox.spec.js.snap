@@ -3,7 +3,7 @@
 exports[`<Checkbox /> should render provided data 1`] = `
 <WithStyles(ForwardRef(FormControlLabel))
   control={
-    <ForwardRef(WithStyles)
+    <ForwardRef(WithStyles(ForwardRef(Checkbox)))
       checked={false}
       disabled={false}
       onChange={[Function]}
