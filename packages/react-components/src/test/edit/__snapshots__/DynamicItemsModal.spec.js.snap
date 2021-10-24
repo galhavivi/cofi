@@ -19,7 +19,6 @@ exports[`<DynamicItemsModal /> component functions render itemsDisplay 1`] = `
 ",
         ],
       },
-      "displayName": "styled.ul",
       "foldedComponentIds": Array [],
       "render": [Function],
       "styledComponentId": "sc-bxivhb",

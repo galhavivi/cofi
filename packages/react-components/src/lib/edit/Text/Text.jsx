@@ -22,7 +22,7 @@ export default class Text extends React.Component {
     state: PropTypes.shape({
       placeholder: PropTypes.string,
       multiline: PropTypes.bool,
-      rowsMax: PropTypes.number,
+      maxRows: PropTypes.number,
       maxLength: PropTypes.number,
     }),
     disabled: PropTypes.bool,
@@ -35,7 +35,7 @@ export default class Text extends React.Component {
     state: {
       placeholder: '',
       multiline: false,
-      rowsMax: undefined,
+      maxRows: undefined,
       maxLength: undefined,
     },
     disabled: false,
@@ -51,7 +51,7 @@ export default class Text extends React.Component {
           placeholder={this.props.state.placeholder}
           disabled={this.props.disabled}
           multiline={this.props.state.multiline}
-          rowsMax={this.props.state.rowsMax}
+          maxRows={this.props.state.maxRows}
           error={this.props.invalid}
           onChange={this.onValueChange}
           inputProps={{

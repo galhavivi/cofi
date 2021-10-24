@@ -19,6 +19,16 @@ describe('<Text />', () => {
     onValueChangeSpy = jest.fn();
   });
 
+
+  const getComponent = (value, state, disabled, invalid, onValueChange) => (
+    <Text
+      value={value}
+      state={state}
+      disabled={disabled}
+      invalid={invalid}
+      onValueChange={onValueChange}
+    />);
+
   it('should render provided data', () => {
     component = shallow(
       getComponent(value, state, disabled, invalid, onValueChangeSpy)
@@ -34,16 +44,4 @@ describe('<Text />', () => {
     component.find('input').simulate('change', { target: { value: newValue } });
     expect(onValueChangeSpy).toHaveBeenCalledWith(newValue);
   });
-
-  function getComponent(value, state, disabled, invalid, onValueChange) {
-    return (
-      <Text
-        value={value}
-        state={state}
-        disabled={disabled}
-        invalid={invalid}
-        onValueChange={onValueChange}
-      />
-    );
-  }
 });
