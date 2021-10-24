@@ -5,7 +5,8 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/galhavivi/cofi"
+    "url": "https://github.com/galhavivi/cofi",
+    "directory": "packages/documentation"
   },
   "scripts": {
     "start": "cd website && npm start",
