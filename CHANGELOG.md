@@ -6,9 +6,18 @@ Changes that have landed in master but are not yet released.
 
 ## v1.0.0 (October 24, 2021)
 
+### js-kit
+
+* Update jest version to ^27.3.1
 ### react-kit
 
 * Change react version from 16 to 17.
+
+* Add dependency to new testing library - @testing-library/react
+
+### react-form
+
+* Update most react-form tests to use @testing-library/react
 
 ## v1.0.0 (November 2, 2020)
 

@@ -4,41 +4,33 @@
   */
 
 import React from 'react';
-import * as ReactAll from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
-import { withForm } from '../lib';
+import { render, act } from '@testing-library/react';
+import { withForm, FormContext } from '../lib';
   
-  
+
 describe('withForm', () => {
   let context;
   let Form;
-  let realUseContext;
-  
-  // Setup mock
+  let Inner;
+  let wrapper;
+
   beforeEach(() => {
     context = {
       model: {},
       resources: {},
       actions: {},
     };
-    realUseContext = ReactAll.useContext;
-    ReactAll.useContext = () => context;
-    const Inner = () => {};
+
+    Inner = jest.fn(() => <div />);
     Form = withForm(Inner);
+    wrapper = ({ children }) => (<FormContext.Provider value={context}>{children}</FormContext.Provider>);
   });
-
-  // Cleanup mock
-  afterEach(() => {
-    ReactAll.useContext = realUseContext;
-  });
-
-  it('rendered correctly', () => {
-    const renderer = new ShallowRenderer();
-    renderer.render(<Form mickey="mouse" />);
-    const element = renderer.getRenderOutput();
-    expect(element.props).toEqual({
+ 
+  it('rendered correctly', async () => {
+    await act(async () => { render(<Form mickey="mouse" />, { wrapper }); });
+    expect(Inner).toHaveBeenCalledWith({
       form: context,
       mickey: 'mouse',
-    });
+    }, {});
   });
 });

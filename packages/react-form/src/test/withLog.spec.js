@@ -4,41 +4,32 @@
   */
 
 import React from 'react';
-import * as ReactAll from 'react';
-import ShallowRenderer from 'react-test-renderer/shallow';
-import { withLog } from '../lib';
+import { render, act } from '@testing-library/react';
+import { withLog, LogContext } from '../lib';
   
   
 describe('withLog', () => {
   let context;
   let CofiLog;
-  let realUseContext;
+  let Log;
+  let wrapper;
   
-  // Setup mock
   beforeEach(() => {
     context = {
       debug: [],
       error: [],
       warn: [],
     };
-    realUseContext = ReactAll.useContext;
-    ReactAll.useContext = () => context;
-    const Log = () => {};
+    Log = jest.fn(() => <div />);
     CofiLog = withLog(Log);
+    wrapper = ({ children }) => (<LogContext.Provider value={context}>{children}</LogContext.Provider>);
   });
 
-  // Cleanup mock
-  afterEach(() => {
-    ReactAll.useContext = realUseContext;
-  });
-
-  it('rendered correctly', () => {
-    const renderer = new ShallowRenderer();
-    renderer.render(<CofiLog mickey="mouse" />);
-    const element = renderer.getRenderOutput();
-    expect(element.props).toEqual({
+  it('rendered correctly', async () => {
+    await act(async () => { render(<CofiLog mickey="mouse" />, { wrapper }); });
+    expect(Log).toHaveBeenCalledWith({
       log: context,
       mickey: 'mouse',
-    });
+    }, {});
   });
 });
