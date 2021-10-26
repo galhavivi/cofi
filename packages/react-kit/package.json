@@ -21,6 +21,7 @@
   "dependencies": {
     "@cofi/js-kit": "^1.0.0",
     "babel-plugin-styled-components": "^1.10.0",
+    "@testing-library/react": "^12.1.2",
     "enzyme": "^3.6.0",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
     "enzyme-to-json": "^3.3.4",

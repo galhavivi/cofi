@@ -3,8 +3,12 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
+jest.mock('../lib/FieldView');
 
-import { Field } from '../lib';
-import test from './createField.spec';
+import { Field, FieldView } from '../lib';
+import { testField, CustomFieldView } from './createField.spec';
  
-test(Field, 'Field');
+FieldView.mockImplementation(CustomFieldView);
+ 
+testField('Field', Field, FieldView);
+ 
