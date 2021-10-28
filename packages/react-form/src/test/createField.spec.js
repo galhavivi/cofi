@@ -114,6 +114,26 @@ export const testField = (name, Field, FieldView) => {
       expectedProps.value = context.model.fields.firstName.component.value;
       expect(FieldView).toHaveBeenCalledWith(expectedProps, {});
     });
+
+    it('render new field view - when prop has changed', async () => {
+      await act(async () => { component = render(<Field id="firstName" />, { wrapper }); });
+      expect(FieldView).toHaveBeenCalledWith(expectedProps, {});
+      
+      context.model.fields.firstName.label = 'new label';
+      await act(async () => { component.rerender(<Field id="firstName" />, { wrapper }); });
+      expectedProps.label = context.model.fields.firstName.label;
+      expect(FieldView).toHaveBeenCalledWith(expectedProps, {});
+    });
+
+    it('render new field view - when custom prop has changed', async () => {
+      await act(async () => { component = render(<Field id="firstName" mickey="mouse" />, { wrapper }); });
+      expectedProps.mickey = 'mouse';
+      expect(FieldView).toHaveBeenCalledWith(expectedProps, {});
+      
+      await act(async () => { component.rerender(<Field id="firstName" mickey="cat" />, { wrapper }); });
+      expectedProps.mickey = 'cat';
+      expect(FieldView).toHaveBeenCalledWith(expectedProps, {});
+    });
   });
 };
 

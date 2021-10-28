@@ -16,9 +16,11 @@ export default function createField(FieldView) {
     const [cachedFieldView, setCachedFieldView] = useState((null));
     const { model, resources, actions } = useContext(FormContext);
     
-    const props = mapFieldToProps(id, model, resources);
+    // we dont use "useMemo" since its not doing deep compare if id / model / resources changes
+    const props = { ...customProps, ...mapFieldToProps(id, model, resources) };
   
-    // optimization prevent un-necessary field renders
+    // optimization prevent un-necessary field view renders
+    // we dont use "useEffect" here since its not doing deep compare if props changes
     if (!isEqual(props, cachedProps)) {
       setCachedProps(props);
       setCachedFieldView(<FieldView
