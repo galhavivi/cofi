@@ -19,7 +19,7 @@ Changes that have landed in master but are not yet released.
 
 * Update most react-form tests to use @testing-library/react
 
-* Rerender FieldView on custom prop change. [Issue 8](https://github.com/galhavivi/cofi/issues/8)
+* Rerender FieldView on custom prop change [Issue 8](https://github.com/galhavivi/cofi/issues/8)
 
 ## v1.0.0 (November 2, 2020)
 
