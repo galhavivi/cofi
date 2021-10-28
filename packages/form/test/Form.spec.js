@@ -635,6 +635,118 @@ describe('Form', () => {
         expect(form.invalid).toBeFalsy();
       });
     });
+
+    it('data integrity - if error occur during exec changeState  action - revert to the prev form state', async () => {
+      const errorMessage = 'some error';
+      let error;
+      log.error  = (err) => { error = err; };
+      stateChangesForm.model.fields.name.component.state.search.value = '1';
+
+      // ideally we wanted when we changed state to '3' that eventually it will change to '5'
+      // but some unexpected error occurred
+      stateChangesForm.resources.components.checkboxes.stateChange = ({ state }) => {
+        if (state.search.value === '3') {
+          return { search: { value: '4' } };
+        }
+        if (state.search.value === '4') {
+          return { search: { value: '5' } };
+        }
+        if (state.search.value === '5') {
+          throw new Error(errorMessage);
+        }
+  
+        // no more changes needed
+        return undefined;
+      };
+
+      const form = new Form();
+      await form.init(stateChangesForm.model, stateChangesForm.resources);
+      expect(form.fields.name.component.state.search.value).toEqual('1');
+      
+      // change state to '2'
+      await form.changeState('name', { search: { value: '2' } });
+      expect(form.fields.name.component.state.search.value).toEqual('2');
+
+      // change state search value to '3' 
+      // during stateChange throw an error
+      await form.changeState('name', { search: { value: '3' } });
+
+      // verify for state revered to prior the error (to '3' and not 2 because it was set outside the debounce action)
+      expect(form.fields.name.component.state.search.value).toEqual('3');
+
+      // verify error occurred
+      expect(error.code).toEqual(errors.ACTION_FAILED.code);
+      expect(error.subError.message).toEqual(errorMessage);
+    });
+
+    it('data integrity - if error occur during exec changeValue action - revert to the prev form state', async () => {
+      const errorMessage = 'some error';
+      let error;
+      log.error  = (err) => { error = err; };
+
+      const model = {
+        id: 'simple',
+        fields: {
+          a: {
+            path: 'a',
+            component: { name: 'inputText' },
+          },
+          b: {
+            path: 'b',
+            dependencies: ['a'],
+            dependenciesChange: { name: 'bDependenciesChange' },
+            component: { name: 'inputText' },
+          },
+          c: {
+            path: 'c',
+            dependencies: ['b'],
+            dependenciesChange: { name: 'cDependenciesChange' },
+            component: { name: 'inputText' },
+          },
+        },
+        data: { a: '0', b: '0', c: '0' }
+      };
+      
+      const resources = {
+        dependenciesChanges: {
+          bDependenciesChange: {
+            func: ({ dependencies }) => (dependencies.a.value === '1') ? ({ value: '2' }) : undefined,
+          },
+          cDependenciesChange: {
+            func: ({ dependencies }) => {
+              if (dependencies.b.value === '2') {
+                throw new Error(errorMessage);
+              }
+              return undefined;
+            },
+          },
+        },
+        components: {
+          inputText: { 
+            renderer: noop,
+          },
+        },
+      };
+
+      const form = new Form();
+      await form.init(model, resources);
+      expect(form.data).toEqual({ a: '0', b: '0', c: '0' });
+      
+      // change a to '1'
+      // during dependencies changes throw an error
+      await form.changeValue('a', '1');
+
+      // data value was not change
+      // view value remained with a=1 (since it happens outside the process queue - outside the debounced action)
+      expect(form.data).toEqual({ a: '0', b: '0', c: '0' });
+      expect(form.fields.a.component.value).toEqual('1');
+      expect(form.fields.b.component.value).toEqual('0');
+      expect(form.fields.c.component.value).toEqual('0');
+
+      // verify error occurred
+      expect(error.code).toEqual(errors.ACTION_FAILED.code);
+      expect(error.subError.message).toEqual(errorMessage);
+    });
   });
 
   describe('destroy form', () => {

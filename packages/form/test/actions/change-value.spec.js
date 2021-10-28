@@ -196,6 +196,7 @@ describe('actions / changeValue', () => {
       Steps.SET_FIELD_VALUE, // lastName
       Steps.SET_FIELD_EVALUATION, // name
       Steps.SET_FIELD_EVALUATION, // lastName
+      Steps.SET_FORM, // name
       Steps.END_ACTION,
       Steps.SHIFT_ACTION,
       Steps.END_PROCESSING,
@@ -271,6 +272,7 @@ describe('actions / changeValue', () => {
       Steps.SET_FIELD_VALUE, // name
       Steps.SET_FIELD_EVALUATION, // name
       Steps.SET_FIELD_EVALUATION, // name
+      Steps.SET_FORM, // name - revert action
       Steps.END_ACTION, // name - end change value
       Steps.SHIFT_ACTION, // pop the first action in the queue - changeValue
       Steps.END_PROCESSING, // end form processing

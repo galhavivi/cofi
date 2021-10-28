@@ -52,6 +52,7 @@ describe('pending-actions', () => {
       Steps.ADD_ACTION, // add action to queue - changeDate
       Steps.START_PROCESSING, // start form processing
       Steps.START_ACTION, // start - change form data
+      Steps.SET_FORM, // revert to prev form state
       Steps.END_ACTION, // end - change form data
       Steps.SHIFT_ACTION, // pop the first action in the queue - changeData
       Steps.END_PROCESSING, // end form processing
@@ -186,8 +187,9 @@ describe('pending-actions', () => {
       Steps.START_PROCESSING, // start form processing
       Steps.START_ACTION, // start - change form data 1
       Steps.ADD_ACTION, // add action to queue - changeDate 2
+      Steps.SET_FORM, // revert form state
       Steps.END_ACTION, // end - change form data 1
-      Steps.SHIFT_ACTION, // (error occured on before hook, action ended) shift first action in the queue - changeData 1
+      Steps.SHIFT_ACTION, // (error occurred on before hook, action ended) shift first action in the queue - changeData 1
       Steps.START_ACTION, // start - change form data 2
       Steps.SET_FORM_DATA, // set form data 2
       Steps.SET_FIELD_COMPONENT_VALUE_BATCH, // name
