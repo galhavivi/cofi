@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "https://galhavivi.github.io/cofi/react-editor/static/js/main.1e788069.js",
-    "main.js.map": "https://galhavivi.github.io/cofi/react-editor/static/js/main.1e788069.js.map",
+    "main.js": "https://galhavivi.github.io/cofi/react-editor/static/js/main.30c18551.js",
+    "main.js.map": "https://galhavivi.github.io/cofi/react-editor/static/js/main.30c18551.js.map",
     "index.html": "https://galhavivi.github.io/cofi/react-editor/index.html",
-    "precache-manifest.9b502cb44e43a506e0863f96a2b02531.js": "https://galhavivi.github.io/cofi/react-editor/precache-manifest.9b502cb44e43a506e0863f96a2b02531.js",
+    "precache-manifest.abf154a96768365c52c9593db284cc48.js": "https://galhavivi.github.io/cofi/react-editor/precache-manifest.abf154a96768365c52c9593db284cc48.js",
     "service-worker.js": "https://galhavivi.github.io/cofi/react-editor/service-worker.js",
-    "static/js/main.1e788069.js.LICENSE.txt": "https://galhavivi.github.io/cofi/react-editor/static/js/main.1e788069.js.LICENSE.txt",
+    "static/js/main.30c18551.js.LICENSE.txt": "https://galhavivi.github.io/cofi/react-editor/static/js/main.30c18551.js.LICENSE.txt",
     "static/media/logo.svg": "https://galhavivi.github.io/cofi/react-editor/static/media/logo.8387712a.svg"
   },
   "entrypoints": [
-    "static/js/main.1e788069.js"
+    "static/js/main.30c18551.js"
   ]
 }
