@@ -138,7 +138,7 @@ describe('actions / submit', () => {
     const tracks = await testAction(form, Actions.SUBMIT, { formId: form.model.id });
 
     // see that all expected Steps occurred
-    verifySteps(tracks);
+    verifySteps(tracks, true);
 
     const finalForm = tracks.privateForm[tracks.privateForm.length - 1].form;
 
@@ -165,16 +165,23 @@ describe('actions / submit', () => {
     log.error = orgError;
   });
 
-  function verifySteps(tracks) {
-    // see that all expected actions occurred
-    expect(tracks.privateForm.map(x => x.step.type)).toEqual([
+  function verifySteps(tracks, revertForm) {
+    const steps = [
       Steps.ADD_ACTION, // add action to queue - submit
       Steps.START_PROCESSING, // start form processing
       Steps.START_ACTION, // start - submit
+      Steps.SET_FORM, // revert to prev form state
       Steps.END_ACTION, // end - submit
       Steps.SHIFT_ACTION, // pop the first action in the queue - submit
       Steps.END_PROCESSING, // end form processing
-    ]);
+    ];
+
+    if (!revertForm) {
+      steps.splice(3, 1); // remove 'Steps.SET_FORM'
+    }
+
+    // see that all expected actions occurred
+    expect(tracks.privateForm.map(x => x.step.type)).toEqual(steps);
 
     // see that all expected ui actions occurred
     expect(tracks.publicForm.map(x => x.step.type)).toEqual([

@@ -44,15 +44,17 @@ Internally - form class uses the following functions cycle:
 
 1. Fetch first action (FIFO - first in first out)
 1. Announce start action
-1. Run before hooks: 
-   - `beforeAction`
-   - `beforeDataChange` (if action is one of: `init`, `changeValue`, `changeData`, `reset`)
-   - `before{actionName}` (such as `beforeInit`)
-1. Run action (and its side effects like dependent fields changes)
-1. Run after hooks:
-   - `afterAction`
-   - `afterDataChange` (if action is one of: `init`, `changeValue`, `changeData`, `reset`)
-   - `after{actionName}` (such as `afterInit`)
+1. Execute action and side effects in a safe mode:
+    - Run before hooks: 
+        - `beforeAction`
+        - `beforeDataChange` (if action is one of: `init`, `changeValue`, `changeData`, `reset`)
+        - `before{actionName}` (such as `beforeInit`)
+    - Run action (and its side effects like dependent fields changes)
+    - Run after hooks:
+        - `afterAction`
+        - `afterDataChange` (if action is one of: `init`, `changeValue`, `changeData`, `reset`)
+        - `after{actionName}` (such as `afterInit`)
+1. If an error occurred during action execution - revert to the previous form state
 1. Announce end action
 1. Resolve the action
 1. Remove action from the queue

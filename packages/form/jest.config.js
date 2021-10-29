@@ -5,7 +5,7 @@ module.exports = defaultsDeep({
   coverageThreshold: {
     global: {
       lines: 99.9,
-      branches: 95.48,
+      branches: 95.33,
       functions: 99.76,
       statements: 99.82,
     },

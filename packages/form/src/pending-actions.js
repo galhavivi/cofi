@@ -6,6 +6,7 @@
 import {
   startProcessing,
   endProcessing,
+  setForm,
   addAction,
   shiftAction,
   startAction,
@@ -54,6 +55,7 @@ const processQueue = formId => async (getState, dispatch) => {
   const { afterAction, afterDataChange } = resources.hooks;
 
   let result;
+  let actionSuccess;
 
   try {
     const actionScopeDispatch = step => dispatch(step, action);
@@ -63,6 +65,7 @@ const processQueue = formId => async (getState, dispatch) => {
 
     // run the action and wait for it and its side effects to end
     result = await action.func(...action.args)(actionScopeDispatch, getState);
+    actionSuccess = true;
 
     // run after hooks
     await runAfterHooks(formId, action, getState, afterNamedAction, afterDataChange, afterAction);
@@ -70,6 +73,13 @@ const processQueue = formId => async (getState, dispatch) => {
     // error - process action fail
     const error = createError(ERROR_PREFIX, errors.ACTION_FAILED, form, { action }, [action.type], err);
     log.error(error);
+
+    // if run action was not complete - revert to prev form state
+    // exclude pending actions (form might received new actions during this time)
+    if (!actionSuccess) {
+      form.model.pendingActions = getState().forms[formId].model.pendingActions;
+      dispatch(setForm(form.model, form.resources, form.settings));
+    }
   }
 
   // announce end action
