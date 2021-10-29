@@ -1,8 +1,8 @@
 export default {
   firstDependenciesChange: {
-    func: props => ({ value: `${props.value}a` }),
+    func: ({ value = '' }) => ({ value: `${value}a` }),
   },
   secondDependenciesChange: {
-    func: props => ({ value: `${props.value}b` }),
+    func: ({ value = '' }) => ({ value: `${value}b` }),
   },
 };

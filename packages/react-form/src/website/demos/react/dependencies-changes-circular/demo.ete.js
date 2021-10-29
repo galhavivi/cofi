@@ -4,23 +4,33 @@
   */
 
 import {
-  testInput, CORE_CYCLE_TIME,
+  getInput, isDataViewerContains, CORE_CYCLE_TIME,
 } from '../../../e2e.utils';
 
 export default async function (page) {
   // wait for circular loop to stop
   await waitForAsyncToRender(page);
 
+  // Fields do not appear because init form action failed 
+  // and the action reverted to the prev form snapshot.
+  
+  // Field with id "first"
   let id = 'first';
   let leafPath = 'first';
-  let initialValue = 'aaaa';
-  await testInput(page, id, leafPath, initialValue, null);
+  let initialValue = '';
+  let input = await getInput(page, id, initialValue);
+  expect(input).toBeFalsy();
+  let exists = await isDataViewerContains(page, leafPath, initialValue);
+  expect(exists).toBeTruthy();
 
-  // Field with id "second" - as expected
+  // Field with id "second"
   id = 'second';
   leafPath = 'second';
-  initialValue = 'bbbbb';
-  await testInput(page, id, leafPath, initialValue, null);
+  initialValue = '';
+  input = await getInput(page, id, initialValue);
+  expect(input).toBeFalsy();
+  exists = await isDataViewerContains(page, leafPath, initialValue);
+  expect(exists).toBeTruthy();
 }
 
 async function waitForAsyncToRender(page) {
