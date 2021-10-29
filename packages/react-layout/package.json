@@ -1,6 +1,6 @@
 {
   "name": "@cofi/react-layout",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "React Item, List and more Components, to create full entities pages such as create / edit/ details / list with the same UI/UX experience",
   "license": "MIT",
   "main": "src/website/app.js",
@@ -33,8 +33,8 @@
     "build-package": "src/lib/**/*.js"
   },
   "peerDependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "dependencies": {
     "react-breakpoints": "^3.0.3",

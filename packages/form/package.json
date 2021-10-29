@@ -1,6 +1,6 @@
 {
   "name": "@cofi/form",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "JavaScript Form Class",
   "license": "MIT",
   "main": "src/index.js",
@@ -31,7 +31,7 @@
     "dateformat": "^3.0.3"
   },
   "devDependencies": {
-    "@cofi/js-kit": "^1.0.0"
+    "@cofi/js-kit": "^2.0.0"
   },
   "keywords": [
     "cofi",
