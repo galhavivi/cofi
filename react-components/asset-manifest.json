@@ -1,13 +1,13 @@
 {
   "files": {
-    "build/0.2794b998.js": "https://galhavivi.github.io/cofi/react-components/build/0.2794b998.js",
-    "main.js": "https://galhavivi.github.io/cofi/react-components/build/main.3df7890d.js",
+    "build/0.79efd46d.js": "https://galhavivi.github.io/cofi/react-components/build/0.79efd46d.js",
+    "main.js": "https://galhavivi.github.io/cofi/react-components/build/main.5abed4a1.js",
     "runtime-main.js": "https://galhavivi.github.io/cofi/react-components/build/bundle.105de5e2.js",
     "index.html": "https://galhavivi.github.io/cofi/react-components/index.html"
   },
   "entrypoints": [
     "build/bundle.105de5e2.js",
-    "build/0.2794b998.js",
-    "build/main.3df7890d.js"
+    "build/0.79efd46d.js",
+    "build/main.5abed4a1.js"
   ]
 }
