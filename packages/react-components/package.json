@@ -1,6 +1,6 @@
 {
   "name": "@cofi/react-components",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "MIT",
   "description": "React common components with unified api to be used in a Cofi form (using material components as an underline layer)",
   "repository": {
@@ -46,9 +46,9 @@
     "styled-components": "^4.4.1"
   },
   "devDependencies": {
-    "@cofi/form": "^1.0.0",
-    "@cofi/react-form": "^1.0.0",
-    "@cofi/react-kit": "^1.0.0",
+    "@cofi/form": "^2.0.0",
+    "@cofi/react-form": "^2.0.0",
+    "@cofi/react-kit": "^2.0.0",
     "react-styleguidist": "^9.0.5"
   },
   "keywords": [
