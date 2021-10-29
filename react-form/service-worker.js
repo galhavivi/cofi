@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://galhavivi.github.io/cofi/react-form/precache-manifest.4e153767f3e88c644b8752eb2beea056.js"
+  "https://galhavivi.github.io/cofi/react-form/precache-manifest.6c0733b9e7f12d40bdeabf746d3d3521.js"
 );
 
 self.addEventListener('message', (event) => {
