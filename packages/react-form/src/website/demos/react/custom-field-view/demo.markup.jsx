@@ -3,46 +3,43 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-const demo = `import React from 'react';
+const demo = `import React, { useContext, useCallback } from 'react';
 import { createForm, FormContext, createField } from '@cofi/react-form';
 import Button from '@material-ui/core/Button';
 import ReactJson from 'react-json-view';
 import FieldView from './CustomFieldView';
 import form from './form/index.js';
 
-const Field = createField(FieldView);
+const DemoForm = () => {
+  const { model, actions } = useContext(FormContext);
 
-class Demo extends React.Component {
-  static contextType = FormContext;
+  const reset = useCallback(() => actions.reset(), [actions]);
 
-  render() {
-    return (<div>
-      <div>
-        <h2>First Section</h2>
+  const save = useCallback(() => console.log('Saving data to the server...', model.data), [actions]); // eslint-disable-line
+
+  return (
+    <React.Fragment>
+      <Styled.MainElement>
+        <Styled.SectionTitle>First Section</Styled.SectionTitle>
         <Field id="id" />
-        <h2>Second Section</h2>
+        <Styled.SectionTitle>Second Section</Styled.SectionTitle>
         <Field id="name" />
         <Field id="hobbies" />
-        <Button onClick={this.reset}>Reset</Button>
-        <Button disabled={!this.context.model.dirty || this.context.model.invalid || this.context.model.processing}
-          onClick={this.save}>Save</Button>
-      </div>
-      <div>
-        <ReactJson src={this.context.model.data} name="data" displayDataTypes={false} enableClipboard={false} />
-      </div>
-    </div>);
-  }
+        <Styled.FormFooter>
+          <Button disabled={model.invalid} onClick={reset}
+            aria-label="Reset" color="primary">Reset</Button>
+          <Button disabled={!model.dirty || model.invalid
+            || model.processing} onClick={save}
+          aria-label="Save" color="primary" variant="contained">Save</Button>
+        </Styled.FormFooter>
+      </Styled.MainElement>
+      <Styled.MainElement>
+        <ReactJson src={model.data} name="data" displayDataTypes={false} enableClipboard={false} />
+      </Styled.MainElement>
+    </React.Fragment>);
+};
 
-  reset = () => {
-    this.context.actions.reset();
-  }
-
-  save = () => {
-    console.log('Saving data to the server...', this.context.model.data); // eslint-disable-line
-  }
-}
-
-export default createForm(form)(Demo);`;
+export default createForm(form)(DemoForm);`;
 
 export default {
   exampleName: 'custom-field-view',

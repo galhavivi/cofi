@@ -3,47 +3,40 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-const demo = `import React from 'react';
+const demo = `import React, { useState, useCallback } from 'react';
 import { Form, Field } from '@cofi/react-form';
 import Button from '@material-ui/core/Button';
 import DataViewer from './custom-form-components/DataViewer';
 import formEdit from './edit-form';
 import formView from './view-form';
 
-export default class Demo extends React.Component {
-  constructor(props) {
-    super(props);
+const DemoForm = () => {
+  const [edit, setEdit] = useState(false);
+  const [config, setConfig] = useState(formEdit);
 
-    this.formEdit = formEdit;
-    this.formView = formView;
-
-    this.state = {
-      form: this.formEdit,
-      edit: true,
-    };
-  }
-
-  change = () => {
-    this.setState({
-      edit: !this.state.edit,
-      form: this.state.edit ? this.formView : this.formEdit,
-    });
-  }
-
-  render() {
-    return (<Form model={this.state.form.model} resources={this.state.form.resources}>
-         <div>
+  const change = useCallback(() => {
+    setEdit(!edit);
+    setConfig(edit ? formEdit : formView);
+  }, [edit, formView, formEdit]);
+  return (
+    <React.Fragment>
+      <Form model={config.model} resources={config.resources}>
+        <Styled.MainElement>
           <Field id="id" />
           <Field id="firstName" />
           <Field id="lastName" />
-          <Button onClick={this.change}>Change Form</Button>
-        </div>
-        <div>
+          <Styled.FormFooter>
+            <Button onClick={change}>Change Form</Button>
+          </Styled.FormFooter>
+        </Styled.MainElement>
+        <Styled.MainElement>
           <DataViewer />
-      </div>
-    </Form>)
-  }
-}`;
+        </Styled.MainElement>
+      </Form>
+    </React.Fragment>);;
+};
+
+export default DemoForm;`;
 
 export default {
   exampleName: 'change-form-definition',

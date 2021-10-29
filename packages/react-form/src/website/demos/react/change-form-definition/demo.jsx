@@ -3,7 +3,7 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import Button from '@material-ui/core/Button';
 import { Form, Field } from '../../../../lib';
 import Styled from '../../../components/StyledComponents';
@@ -11,42 +11,30 @@ import DataViewer from './custom-form-components/DataViewer';
 import formEdit from './edit-form';
 import formView from './view-form';
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
+const DemoForm = () => {
+  const [edit, setEdit] = useState(false);
+  const [config, setConfig] = useState(formEdit);
 
-    this.formEdit = formEdit;
-    this.formView = formView;
+  const change = useCallback(() => {
+    setEdit(!edit);
+    setConfig(edit ? formEdit : formView);
+  }, [edit]);
+  return (
+    <React.Fragment>
+      <Form model={config.model} resources={config.resources}>
+        <Styled.MainElement>
+          <Field id="id" />
+          <Field id="firstName" />
+          <Field id="lastName" />
+          <Styled.FormFooter>
+            <Button onClick={change}>Change Form</Button>
+          </Styled.FormFooter>
+        </Styled.MainElement>
+        <Styled.MainElement>
+          <DataViewer />
+        </Styled.MainElement>
+      </Form>
+    </React.Fragment>);
+};
 
-    this.state = {
-      form: this.formEdit,
-      edit: true,
-    };
-  }
-
-  render() {
-    return (
-      <React.Fragment>
-        <Form model={this.state.form.model} resources={this.state.form.resources}>
-          <Styled.MainElement>
-            <Field id="id" />
-            <Field id="firstName" />
-            <Field id="lastName" />
-            <Styled.FormFooter>
-              <Button onClick={this.change}>Change Form</Button>
-            </Styled.FormFooter>
-          </Styled.MainElement>
-          <Styled.MainElement>
-            <DataViewer />
-          </Styled.MainElement>
-        </Form>
-      </React.Fragment>);
-  }
-
-  change = () => {
-    this.setState({
-      edit: !this.state.edit,
-      form: this.state.edit ? this.formView : this.formEdit,
-    });
-  }
-}
+export default DemoForm;
