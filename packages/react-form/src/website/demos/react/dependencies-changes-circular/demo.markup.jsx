@@ -3,28 +3,27 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-const demo = `import React from 'react';
+const demo = `import React, { useContext } from 'react';
 import { createForm, FormContext, createForm } from '@cofi/react-form';
 import ReactJson from 'react-json-view';
 import form from './form/index.js';
 
-class Demo extends React.Component {
-  static contextType = FormContext;
+const DemoForm = () => {
+  const { model } = useContext(FormContext);
 
-  render() {
-    return (<div>
-      <div>
+  return (
+    <React.Fragment>
+      <Styled.MainElement>
         <Field id="first" />
         <Field id="second" />
-      </div>
-      <div>
-        <ReactJson src={this.context.model.data} name="data" displayDataTypes={false} enableClipboard={false} />
-      </div>
-    </div>);
-  }
+      </Styled.MainElement>
+      <Styled.MainElement>
+        <ReactJson src={model.data} name="data" displayDataTypes={false} enableClipboard={false} />
+      </Styled.MainElement>
+    </React.Fragment>);
 }
 
-export default createForm(form)(Demo);`;
+export default createForm(form)(DemoForm);`;
 
 export default {
   exampleName: 'dependencies-changes-circular',

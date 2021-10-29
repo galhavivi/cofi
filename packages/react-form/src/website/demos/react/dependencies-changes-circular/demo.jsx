@@ -3,27 +3,25 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactJson from 'react-json-view';
 import { createForm, FormContext, Field } from '../../../../lib';
 import Styled from '../../../components/StyledComponents';
 import form from './form';
 
-class App extends React.Component {
-  static contextType = FormContext;
+const DemoForm = () => {
+  const { model } = useContext(FormContext);
 
-  render() {
-    return (
-      <React.Fragment>
-        <Styled.MainElement>
-          <Field id="first" />
-          <Field id="second" />
-        </Styled.MainElement>
-        <Styled.MainElement>
-          <ReactJson src={this.context.model.data} name="data" displayDataTypes={false} enableClipboard={false} />
-        </Styled.MainElement>
-      </React.Fragment>);
-  }
-}
+  return (
+    <React.Fragment>
+      <Styled.MainElement>
+        <Field id="first" />
+        <Field id="second" />
+      </Styled.MainElement>
+      <Styled.MainElement>
+        <ReactJson src={model.data} name="data" displayDataTypes={false} enableClipboard={false} />
+      </Styled.MainElement>
+    </React.Fragment>);
+};
 
-export default createForm(form)(App);
+export default createForm(form)(DemoForm);
