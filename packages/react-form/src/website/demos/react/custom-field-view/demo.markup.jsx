@@ -15,7 +15,7 @@ const DemoForm = () => {
 
   const reset = useCallback(() => actions.reset(), [actions]);
 
-  const save = useCallback(() => console.log('Saving data to the server...', model.data), [actions]); // eslint-disable-line
+  const save = useCallback(() => console.log('Saving data to the server...', model.data), [model.data]); // eslint-disable-line
 
   return (<>
     <Styled.MainElement>
