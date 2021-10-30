@@ -12,16 +12,15 @@ import form from './form';
 const DemoForm = () => {
   const { model } = useContext(FormContext);
 
-  return (
-    <React.Fragment>
-      <Styled.MainElement>
-        <Field id="first" />
-        <Field id="second" />
-      </Styled.MainElement>
-      <Styled.MainElement>
-        <ReactJson src={model.data} name="data" displayDataTypes={false} enableClipboard={false} />
-      </Styled.MainElement>
-    </React.Fragment>);
+  return (<>
+    <Styled.MainElement>
+      <Field id="first" />
+      <Field id="second" />
+    </Styled.MainElement>
+    <Styled.MainElement>
+      <ReactJson src={model.data} name="data" displayDataTypes={false} enableClipboard={false} />
+    </Styled.MainElement>
+  </>);
 };
 
 export default createForm(form)(DemoForm);

@@ -18,20 +18,19 @@ const DemoForm = () => {
     await actions.changeData({});
   }, [actions]);
 
-  return (
-    <React.Fragment>
-      <Styled.MainElement>
-        <Field id="netflixContent" />
-        <Field id="hboContent" />
-        <Styled.FormFooter>
-          <Button disabled={!model.dirty || model.invalid || model.processing} onClick={save}
-            aria-label="Save" color="primary" variant="contained">Save</Button>
-        </Styled.FormFooter>
-      </Styled.MainElement>
-      <Styled.MainElement>
-        <ReactJson src={model.data} name="data" displayDataTypes={false} enableClipboard={false} />
-      </Styled.MainElement>
-    </React.Fragment>);
+  return (<>
+    <Styled.MainElement>
+      <Field id="netflixContent" />
+      <Field id="hboContent" />
+      <Styled.FormFooter>
+        <Button disabled={!model.dirty || model.invalid || model.processing} onClick={save}
+          aria-label="Save" color="primary" variant="contained">Save</Button>
+      </Styled.FormFooter>
+    </Styled.MainElement>
+    <Styled.MainElement>
+      <ReactJson src={model.data} name="data" displayDataTypes={false} enableClipboard={false} />
+    </Styled.MainElement>
+  </>);
 };
 
 export default createForm(form)(DemoForm);

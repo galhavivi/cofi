@@ -19,22 +19,21 @@ const DemoForm = () => {
     setEdit(!edit);
     setConfig(edit ? formEdit : formView);
   }, [edit]);
-  return (
-    <React.Fragment>
-      <Form model={config.model} resources={config.resources}>
-        <Styled.MainElement>
-          <Field id="id" />
-          <Field id="firstName" />
-          <Field id="lastName" />
-          <Styled.FormFooter>
-            <Button onClick={change}>Change Form</Button>
-          </Styled.FormFooter>
-        </Styled.MainElement>
-        <Styled.MainElement>
-          <DataViewer />
-        </Styled.MainElement>
-      </Form>
-    </React.Fragment>);
+  return (<>
+    <Form model={config.model} resources={config.resources}>
+      <Styled.MainElement>
+        <Field id="id" />
+        <Field id="firstName" />
+        <Field id="lastName" />
+        <Styled.FormFooter>
+          <Button onClick={change}>Change Form</Button>
+        </Styled.FormFooter>
+      </Styled.MainElement>
+      <Styled.MainElement>
+        <DataViewer />
+      </Styled.MainElement>
+    </Form>
+  </>);
 };
 
 export default DemoForm;
