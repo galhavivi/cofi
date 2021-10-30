@@ -3,40 +3,39 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-import React from 'react';
+import React, { useCallback, useContext } from 'react';
 import Button from '@material-ui/core/Button';
 import ReactJson from 'react-json-view';
 import { createForm, FormContext, Field } from '../../../../lib';
 import Styled from '../../../components/StyledComponents';
 import form from './form';
 
-class App extends React.Component {
-  static contextType = FormContext;
 
-  render() {
-    return (
-      <React.Fragment>
-        <Styled.MainElement>
-          <Field id="firstName" />
-          <Field id="lastName" />
-          <Styled.FormFooter>
-            <Button disabled={!this.context.model.dirty || this.context.model.invalid
-              || this.context.model.processing} onClick={this.save}
-            aria-label="Save" color="primary" variant="contained">Save</Button>
-          </Styled.FormFooter>
-        </Styled.MainElement>
-        <Styled.MainElement>
-          <ReactJson src={this.context.model.data} name="data" displayDataTypes={false} enableClipboard={false} />
-        </Styled.MainElement>
-      </React.Fragment>);
-  }
+const DemoForm = () => {
+  const { model, actions } = useContext(FormContext);
 
-  save = async () => {
-    const success = await this.context.actions.submit();
+  const save = useCallback(async () => {
+    const success = await actions.submit();
     if (success) {
-      this.context.actions.changeData({});
+      actions.changeData({});
     }
-  }
-}
+  }, [actions]);
 
-export default createForm(form)(App);
+  return (<>
+    <Styled.MainElement>
+      <Field id="firstName" />
+      <Field id="lastName" />
+      <Styled.FormFooter>
+        <Button disabled={!model.dirty || model.invalid
+          || model.processing} onClick={save}
+        aria-label="Save" color="primary" variant="contained">Save</Button>
+      </Styled.FormFooter>
+    </Styled.MainElement>
+    <Styled.MainElement>
+      <ReactJson src={model.data} name="data" displayDataTypes={false} enableClipboard={false} />
+    </Styled.MainElement>
+  </>);
+};
+
+export default createForm(form)(DemoForm);
+

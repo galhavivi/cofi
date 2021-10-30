@@ -3,7 +3,7 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-const demo = `import React, { useContext } from 'react';
+const demo = `import React, { useContext, useCallback } from 'react';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import ReactJson from 'react-json-view';
@@ -39,14 +39,15 @@ const getFormDefinition = () => {
 const Demo = () => {
   const { model, actions } = useContext(FormContext);
 
-  const save = async () => {
+  const save = useCallback(async () => {
     const result = await actions.submit();
     if (result) {
       actions.changeData({});
     }
-  };
+  }, [actions]);
 
-  const changeRole = () => actions.changeContext({ userRole: model.context.userRole === 'NORMAL' ? 'ADMIN' : 'NORMAL' });
+  const changeRole = useCallback(() => actions.changeContext({ userRole: model.context.userRole === 'NORMAL'
+    ? 'ADMIN' : 'NORMAL' }), [actions, model.context]);
 
   return (<>
       <div aria-label="Form">
