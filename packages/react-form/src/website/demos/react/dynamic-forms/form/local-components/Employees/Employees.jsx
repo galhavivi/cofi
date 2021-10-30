@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { clone, cloneDeep } from 'lodash';
 import { withStyles } from '@material-ui/core/styles';
@@ -9,25 +9,21 @@ import { createForm, FormContext, Field } from '../../../../../../../lib';
 import employeeForm from './form';
 
 
-class Employee extends React.Component {
-  static contextType = FormContext;
+const Employee = ({ onSave, onCancel }) => {
+  const { model } = useContext(FormContext);
 
-  render() {
-    return (<div>
-      <h3>New Employee</h3>
-      <Field id="firstName" />
-      <Field id="lastName" />
-      <Button disabled={!this.context.model.dirty || this.context.model.invalid
-        || this.context.model.processing} onClick={this.save}
-      aria-label="Save" color="primary" variant="contained">Save</Button>
-      <Button onClick={this.props.onCancel}>Cancel</Button>
-    </div>);
-  }
+  const save = useCallback(() => onSave(model.data), [onSave, model.data]);
 
-  save = () => {
-    this.props.onSave(this.context.model.data);
-  }
-}
+  return (<div>
+    <h3>New Employee</h3>
+    <Field id="firstName" />
+    <Field id="lastName" />
+    <Button disabled={!model.dirty || model.invalid
+      || model.processing} onClick={save}
+    aria-label="Save" color="primary" variant="contained">Save</Button>
+    <Button onClick={onCancel}>Cancel</Button>
+  </div>);
+};
 
 const getEmployeeForm = () => {
   const form = cloneDeep(employeeForm); // formDefinition is shared also for example code usage
@@ -37,12 +33,12 @@ const getEmployeeForm = () => {
 const EmployeeForm = getEmployeeForm();
 
 export const RemoveButton = styled.span`
-cursor: pointer;
-font-size: 11px;
-color: #0095ff;
-position: relative;
-top: 0px;
-margin-left: 5px;
+  cursor: pointer;
+  font-size: 11px;
+  color: #0095ff;
+  position: relative;
+  top: 0px;
+  margin-left: 5px;
 `;
 
 function getModalStyle() {
@@ -66,66 +62,47 @@ const styles = theme => ({
   },
 });
 
-class EmployeeModal extends React.Component {
-  static propTypes = {
-    value: PropTypes.array.isRequired,
-    state: PropTypes.object,
-    onValueChange: PropTypes.func.isRequired,
-    onStateChange: PropTypes.func.isRequired,
-  }
+const EmployeeModal = ({ value = [], state, onStateChange, onValueChange, classes }) => {
 
-  static defaultProps = {
-    value: [],
-  }
+  const close = useCallback(() => onStateChange({ ...state, isModalOpen: false }), [onStateChange, state]);
 
-  open = () => {
-    this.props.onStateChange({ ...this.props.state, isModalOpen: true });
-  };
+  const open = useCallback(() => onStateChange({ ...state, isModalOpen: true }), [onStateChange, state]);
 
-  add = (employee) => {
-    const value = clone(this.props.value);
-    value.push(employee);
-    this.props.onValueChange(value);
-    this.close();
-  };
+  const add = useCallback((employee) => {
+    const newValue = clone(value);
+    newValue.push(employee);
+    onValueChange(newValue);
+    close();
+  }, [onValueChange, value, close]);
 
-  remove = (index) => {
-    const value = clone(this.props.value);
-    value.splice(index, 1);
-    this.props.onValueChange(value);
-  };
+  const remove = useCallback((index) => {
+    const newValue = clone(value);
+    newValue.splice(index, 1);
+    onValueChange(newValue);
+  }, [onValueChange, value]);
 
-  close = () => {
-    this.props.onStateChange({ ...this.props.state, isModalOpen: false });
-  };
-
-  render() {
-    const { classes } = this.props;
-
-    // const EmployeeForm = getEmployeeForm();
-
-    return (
-      <div>
-        <ul>
-          {
-            this.props.value.map((employee, index) => (<li key={index}>
-              {index + 1}. {employee.firstName} <RemoveButton onClick={() => { this.remove(index); }}>X</RemoveButton>
-            </li>))
-          }
-        </ul>
-
-        <Button color="primary" onClick={this.open}>Add New</Button>
-
-        <Modal
-          open={this.props.state.isModalOpen === true}
-          onClose={this.close}>
-          <div style={getModalStyle()} className={classes.paper}>
-            <EmployeeForm onSave={this.add} onCancel={this.close} />
-          </div>
-        </Modal>
+  return (<div>
+    <ul>
+      {
+        value.map((employee, index) => (<li key={index}>
+          {index + 1}. {employee.firstName} <RemoveButton onClick={() => { remove(index); }}>X</RemoveButton>
+        </li>))
+      }
+    </ul>
+    <Button color="primary" onClick={open}>Add New</Button>
+    <Modal open={state.isModalOpen === true} onClose={close}>
+      <div style={getModalStyle()} className={classes.paper}>
+        <EmployeeForm onSave={add} onCancel={close} />
       </div>
-    );
-  }
-}
+    </Modal>
+  </div>);
+};
+
+EmployeeModal.propTypes = {
+  value: PropTypes.array.isRequired,
+  state: PropTypes.object,
+  onValueChange: PropTypes.func.isRequired,
+  onStateChange: PropTypes.func.isRequired,
+};
 
 export default withStyles(styles)(EmployeeModal);
