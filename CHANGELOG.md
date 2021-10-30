@@ -4,6 +4,10 @@
 
 Changes that have landed in master but are not yet released.
 
+### react-kit
+
+* Refactor react-form demo's code to functional components.
+
 ## v2.0.0 (October 24, 2021)
 
 ### js-kit

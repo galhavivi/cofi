@@ -3,7 +3,7 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-import React, { useContext } from 'react';
+import React, { useContext, useCallback } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
@@ -72,14 +72,15 @@ const getFormDefinition = () => {
 const Demo = () => {
   const { model, actions } = useContext(FormContext);
 
-  const save = async () => {
+  const save = useCallback(async () => {
     const result = await actions.submit();
     if (result) {
       actions.changeData({});
     }
-  };
+  }, [actions]);
 
-  const changeRole = () => actions.changeContext({ userRole: model.context.userRole === 'NORMAL' ? 'ADMIN' : 'NORMAL' });
+  const changeRole = useCallback(() => actions.changeContext({ userRole: model.context.userRole === 'NORMAL'
+    ? 'ADMIN' : 'NORMAL' }), [actions, model.context]);
 
   return (<React.Fragment>
     <Styled.MainElement>

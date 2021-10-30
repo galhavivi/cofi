@@ -3,35 +3,34 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-const demo = `import React from 'react';
+const demo = `import React, { useCallback, useContext } from 'react';
 import { createForm, FormContext, createForm } from '@cofi/react-form';
 import Button from '@material-ui/core/Button';
 import ReactJson from 'react-json-view';
 import formDefinition from './form/index.js';
 
-class Demo extends React.Component {
-  static contextType = FormContext;
+const DemoForm = () => {
+  const { model, actions } = useContext(FormContext);
 
-  render() {
-    return (<div>
-      <div>
+  const save = useCallback(() => actions.changeData({}), [actions]);
+
+  return (
+    <React.Fragment>
+      <Styled.MainElement>
         <Field id="name" />
         <Field id="lastName" />
-        <Button disabled={!this.context.form.dirty || this.context.form.invalid || this.context.form.processing}
-                onClick={this.save}>Save</Button>
-      </div>
-      <div>
-        <ReactJson src={this.context.form.data} name="data" displayDataTypes={false} enableClipboard={false} />
-      </div>
-    </div>);
-  }
+        <Styled.FormFooter>
+          <Button disabled={!model.dirty || model.invalid || model.processing} onClick={save}
+            aria-label="Save" color="primary" variant="contained">Save</Button>
+        </Styled.FormFooter>
+      </Styled.MainElement>
+      <Styled.MainElement>
+        <ReactJson src={model.data} name="data" displayDataTypes={false} enableClipboard={false} />
+      </Styled.MainElement>
+    </React.Fragment>);
+};
 
-  save = () => {
-    this.context.actions.changeData({});
-  }
-}
-
-export default createForm(formDefinition)(Demo);`;
+export default createForm(form)(DemoForm);`;
 
 export default {
   exampleName: 'dependencies-changes-updates-value',

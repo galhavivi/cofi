@@ -3,7 +3,7 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-const demo = `import React from 'react';
+const demo = `import React, { useCallback, useContext } from 'react';
 import { createForm, FormContext, createForm } from '@cofi/react-form';
 import Button from '@material-ui/core/Button';
 import ReactJson from 'react-json-view';

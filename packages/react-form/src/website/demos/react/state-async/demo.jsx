@@ -3,7 +3,7 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-import React from 'react';
+import React, { useCallback, useContext } from 'react';
 import Button from '@material-ui/core/Button';
 import ReactJson from 'react-json-view';
 import { createForm, FormContext, Field } from '../../../../lib';
@@ -11,28 +11,23 @@ import Styled from '../../../components/StyledComponents';
 import form from './form';
 
 
-class Demo extends React.Component {
-  static contextType = FormContext;
+const DemoForm = () => {
+  const { model, actions } = useContext(FormContext);
 
-  render() {
-    return (
-      <React.Fragment>
-        <Styled.MainElement>
-          <Field id="hobbies" />
-          <Styled.FormFooter>
-            <Button disabled={this.context.model.invalid} onClick={this.reset}
-              aria-label="Reset" variant="contained" color="primary">Reset</Button>
-          </Styled.FormFooter>
-        </Styled.MainElement>
-        <Styled.MainElement>
-          <ReactJson src={this.context.model.data} name="data" displayDataTypes={false} enableClipboard={false} />
-        </Styled.MainElement>
-      </React.Fragment>);
-  }
+  const reset = useCallback(() => actions.reset(), [actions]);
 
-  reset = () => {
-    this.context.actions.reset();
-  }
-}
+  return (<>
+    <Styled.MainElement>
+      <Field id="hobbies" />
+      <Styled.FormFooter>
+        <Button disabled={model.invalid} onClick={reset}
+          aria-label="Reset" variant="contained" color="primary">Reset</Button>
+      </Styled.FormFooter>
+    </Styled.MainElement>
+    <Styled.MainElement>
+      <ReactJson src={model.data} name="data" displayDataTypes={false} enableClipboard={false} />
+    </Styled.MainElement>
+  </>);
+};
 
-export default createForm(form)(Demo);
+export default createForm(form)(DemoForm);

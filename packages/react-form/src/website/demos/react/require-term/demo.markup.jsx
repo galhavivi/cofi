@@ -3,35 +3,33 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-const demo = `import React from 'react';
+const demo = `import React, { useCallback, useContext } from 'react';
 import { createForm, FormContext, createForm } from '@cofi/react-form';
 import Button from '@material-ui/core/Button';
 import ReactJson from 'react-json-view';
 import form from './form/index.js';
 
 
-class Demo extends React.Component {
-  static contextType = FormContext;
+const DemoForm = () => {
+  const { model, actions } = useContext(FormContext);
 
-  render() {
-    return (<div>
-      <div>
-        <Field id="firstName" />
-        <Button disabled={!this.context.model.dirty || this.context.model.invalid || this.context.model.processing}
-          onClick={this.save}>Save</Button>
-      </div>
-      <div>
-        <ReactJson src={this.context.model.data} name="data" displayDataTypes={false} enableClipboard={false} />
-      </div>
-    </div>);
-  }
+  const save = useCallback(() => actions.changeData({}), [actions]);
 
-  save = () => {
-    this.context.actions.changeData({});
-  }
-}
+  return (<>
+    <Styled.MainElement>
+      <Field id="firstName" />
+      <Styled.FormFooter>
+        <Button disabled={!model.dirty || model.invalid || model.processing} onClick={save}
+          aria-label="Save" color="primary" variant="contained">Save</Button>
+      </Styled.FormFooter>
+    </Styled.MainElement>
+    <Styled.MainElement>
+      <ReactJson src={model.data} name="data" displayDataTypes={false} enableClipboard={false} />
+    </Styled.MainElement>
+  </>);
+};
 
-export default createForm(form)(Demo);`;
+export default createForm(form)(DemoForm);`;
 
 export default {
   exampleName: 'require-term',

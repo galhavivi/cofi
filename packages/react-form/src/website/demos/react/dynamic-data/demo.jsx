@@ -3,70 +3,60 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-import React from 'react';
+import React, { useState, useContext, useCallback } from 'react';
 import Button from '@material-ui/core/Button';
 import { createForm, FormContext, Field } from '../../../../lib';
 import Styled from '../../../components/StyledComponents';
 import form from './form';
-import users from './users';
+import mockUsers from './users';
 
 const userStyle = { width: '150px', display: 'inline-block' };
 
-class App extends React.Component {
-  static contextType = FormContext;
+const DemoForm = () => {
+  const [users, setUsers] = useState(mockUsers);
+  const [editingIndex, setEditingIndex] = useState();
+  const { model, actions } = useContext(FormContext);
 
-  constructor(props) {
-    super(props);
+  const save = useCallback(() => {
+    const newUsers = [...users];
 
-    this.state = {
-      users,
-    };
-  }
-
-  render() {
-    return (
-      <React.Fragment>
-        <Styled.MainElement>
-          {
-            this.state.users.map((user, index) => (<p key={user.firstName} aria-label="User">
-              <span style={userStyle}>{index + 1}. {user.firstName} {user.lastName} </span>
-              <Button onClick={() => this.edit(user, index)} aria-label="Edit" color="primary">Edit</Button>
-            </p>))
-          }
-        </Styled.MainElement>
-        <Styled.MainElement>
-          <Styled.SectionTitle>User</Styled.SectionTitle>
-          <Field id="firstName" />
-          <Field id="lastName" />
-          <Field id="address" />
-          <Styled.FormFooter>
-            <Button disabled={!this.context.model.dirty || this.context.model.invalid
-              || this.context.model.processing} onClick={this.save}
-            aria-label="Save" color="primary" variant="contained">Save</Button>
-          </Styled.FormFooter>
-        </Styled.MainElement>
-      </React.Fragment>);
-  }
-
-  edit = (user, index) => {
-    // for more complicated forms that includes fields with states - replace the entire form definition instead changeData
-    this.context.actions.changeData(user);
-    this.editingIndex = index;
-  }
-
-  save = () => {
-    const users = [...this.state.users];
-
-    if (this.editingIndex !== undefined) {
-      users[this.editingIndex] = this.context.model.data;
+    if (editingIndex !== undefined) {
+      newUsers[editingIndex] = model.data;
     } else {
-      users.push(this.context.model.data);
+      newUsers.push(model.data);
     }
 
-    this.setState({ users });
-    delete this.editingIndex;
-    this.context.actions.changeData({});
-  }
-}
+    setUsers(newUsers);
+    setEditingIndex();
+    actions.changeData({});
+  }, [actions, users, setUsers, editingIndex, setEditingIndex, model.data]);
 
-export default createForm(form)(App);
+  const edit = useCallback((user, index) => {
+    // for more complicated forms that includes fields with states - replace the entire form definition instead changeData
+    actions.changeData(user);
+    setEditingIndex(index);
+  }, [actions, setEditingIndex]);
+
+  return (<>
+    <Styled.MainElement>
+      {
+        users.map((user, index) => (<p key={user.firstName} aria-label="User">
+          <span style={userStyle}>{index + 1}. {user.firstName} {user.lastName} </span>
+          <Button onClick={() => edit(user, index)} aria-label="Edit" color="primary">Edit</Button>
+        </p>))
+      }
+    </Styled.MainElement>
+    <Styled.MainElement>
+      <Styled.SectionTitle>User</Styled.SectionTitle>
+      <Field id="firstName" />
+      <Field id="lastName" />
+      <Field id="address" />
+      <Styled.FormFooter>
+        <Button disabled={!model.dirty || model.invalid || model.processing} onClick={save}
+          aria-label="Save" color="primary" variant="contained">Save</Button>
+      </Styled.FormFooter>
+    </Styled.MainElement>
+  </>);
+};
+
+export default createForm(form)(DemoForm);

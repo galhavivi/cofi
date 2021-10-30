@@ -3,65 +3,44 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-const demo = `import React from 'react';
+const demo = `import React, { useCallback, useContext, useState } from 'react';
 import { createForm, FormContext, createForm } from '@cofi/react-form';
 import Button from '@material-ui/core/Button';
 import ReactJson from 'react-json-view';
 import form from './form/index';
 
-class Form extends React.Component {
-  static contextType = FormContext;
+const DemoForm = ({ onSwitchUser }) => {
+  const { model, actions } = useContext(FormContext);
 
-  render() {
-    return (
-      <div>
-        <div>
-          <Field id="resetPassword" />
-          <Button disabled={!this.context.model.dirty || this.context.model.invalid
-            || this.context.model.processing} onClick={this.save}
+  const save = useCallback(() => actions.changeData({}), [actions]);
+
+  return (<>
+    <Styled.MainElement>
+      <Button className="switch-user" color="secondary" variant="contained" 
+        onClick={onSwitchUser}>Switch User</Button>
+      <h4 className="logged-in-user">Current User: {model.context.userType}</h4>
+      <Field id="resetPassword" />
+      <Styled.FormFooter>
+        <Button disabled={!model.dirty || model.invalid || model.processing} onClick={save}
           aria-label="Save" color="primary" variant="contained">Save</Button>
-        </div>
-        <ReactJson src={this.context.model.data} name="data" displayDataTypes={false} enableClipboard={false} />
-      </div>);
-  }
+      </Styled.FormFooter>
+    </Styled.MainElement>
+    <Styled.MainElement>
+      <ReactJson src={model.data} name="data" displayDataTypes={false} enableClipboard={false} />
+    </Styled.MainElement>
+  </>);
+};
 
-  save = () => {
-    this.context.actions.changeData({});
-  }
-}
+const MyForm = createForm(form)(DemoForm);
 
-const MyForm = createForm(form)(Form);
+const App = () => {
+  const [appData, setAppData] = useState({ userType: 'ADMIN' });
 
-class App extends React.Component {
-  static contextType = FormContext;
+  const switchUser = useCallback(() => setAppData({ userType: appData.userType === 'ADMIN' ? 'NORMAL' : 'ADMIN' }),
+    [appData, setAppData]);
 
-  constructor(props) {
-    super(props);
-    this.state = { 
-      appData: {
-        userType: 'ADMIN',
-      },
-    };
-  }
-
-  render() {
-    return (<div>
-      <Button className="switch-user" color="secondary" variant="contained" onClick={this.switchUser}>Switch User</Button>
-      <h4 className="logged-in-user">Current User: {this.state.appData.userType}</h4>
-      <MyForm context={this.state.appData} />
-    </div>);
-  }
-
-  switchUser = () => {
-    // update the form's context reference, to trigger "changeContext" inside the form
-    // note - from inside the form (in a child component) you can use context.actions.changeState
-    this.setState({ 
-      appData: { 
-        userType: this.state.appData.userType === 'ADMIN' ? 'NORMAL' : 'ADMIN',
-      },
-    });
-  }
-}
+  return (<MyForm onSwitchUser={switchUser} context={appData} />);
+};
 
 export default App;`;
 

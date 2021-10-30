@@ -3,7 +3,7 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { cloneDeep } from 'lodash';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
@@ -16,7 +16,7 @@ import usersList from './users';
 
 const formEdit = cloneDeep(editForm);
 const formDetails = cloneDeep(detailsForm);
-const users = cloneDeep(usersList); // users is shared also for example code usage
+const clonedUsersList = cloneDeep(usersList); // users is shared also for example code usage
 
 const getForm = (data, orgForm) => {
   const form = cloneDeep(orgForm);
@@ -24,119 +24,108 @@ const getForm = (data, orgForm) => {
   return form;
 };
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
+const initialStateUsers = {};
 
-    const stateUsers = {};
+clonedUsersList.forEach((user) => {
+  initialStateUsers[user.id] = { data: user, form: getForm(user, formDetails) };
+});
 
-    users.forEach((user) => {
-      stateUsers[user.id] = { data: user, form: getForm(user, formDetails) };
-    });
+const App = () => {
+  const [users, setUsers] = useState(initialStateUsers);
+  const [editing, setEditing] = useState([]);
+  
+  const cancel = useCallback((userId) => {
+    const newUsers = Object.assign({}, users);
+    newUsers[userId].form = getForm(newUsers[userId].data, formDetails);
+    const newEditing = [...editing];
+    const index = newEditing.indexOf(userId);
+    newEditing.splice(index, 1);
 
-    this.state = {
-      users: stateUsers,
-      editing: [],
-    };
-  }
+    setUsers(newUsers);
+    setEditing(newEditing);
+  }, [users, editing, setEditing, setUsers]);
 
-  edit(userId) {
-    const users = Object.assign({}, this.state.users);
-    users[userId].form = getForm(users[userId].data, formEdit);
+  const edit = useCallback((userId) => {
+    const newUsers = Object.assign({}, users);
+    newUsers[userId].form = getForm(newUsers[userId].data, formEdit);
 
-    this.setState({
-      editing: [...this.state.editing, userId],
-      users,
-    });
-  }
+    setUsers(newUsers);
+    setEditing([...editing, userId]);
+  }, [users, setUsers, setEditing, editing]);
 
-  save(user) {
+  const save = useCallback((user) => {
     const userId = user.id;
-    const users = Object.assign({}, this.state.users);
-    users[userId].data = user;
-    users[userId].form = getForm(users[userId].data, formDetails);
+    const newUsers = Object.assign({}, users);
+    newUsers[userId].data = user;
+    newUsers[userId].form = getForm(newUsers[userId].data, formDetails);
 
-    const editing = [...this.state.editing];
-    const index = editing.indexOf(userId);
-    editing.splice(index, 1);
+    const newEditing = [...editing];
+    const index = newEditing.indexOf(userId);
+    newEditing.splice(index, 1);
 
-    this.setState({
-      editing,
-      users,
-    });
-  }
+    setUsers(newUsers);
+    setEditing(newEditing);
+  }, [users, editing, setEditing, setUsers]);
 
-  cancel(userId) {
-    const users = Object.assign({}, this.state.users);
-    users[userId].form = getForm(users[userId].data, formDetails);
-    const editing = [...this.state.editing];
-    const index = editing.indexOf(userId);
-    editing.splice(index, 1);
 
-    this.setState({
-      editing,
-      users,
-    });
-  }
+  const headerStyle = {
+    fontWeight: 'bold',
+    marginBottom: '20px',
+    borderBottom: '1px solid black',
+    paddingBottom: '20px',
+  };
 
-  render() {
-    const headerStyle = {
-      fontWeight: 'bold',
-      marginBottom: '20px',
-      borderBottom: '1px solid black',
-      paddingBottom: '20px',
-    };
+  // prepare row to render
+  const rows = clonedUsersList.map((orgUser) => {
+    const user = users[orgUser.id].data;
+    const { model, resources } = users[user.id].form;
+    const isUserEditing = editing.includes(user.id);
 
-    // prepare row to render
-    const rows = users.map((orgUser) => {
-      const user = this.state.users[orgUser.id].data;
-      const { model, resources } = this.state.users[user.id].form;
-      const isUserEditing = this.state.editing.includes(user.id);
-
-      return (<Grid container={true} item={true} xs={12} key={user.id}>
-        <Form model={model} resources={resources}>
-          <Grid item={true} xs={1}>
-            <Field id="id" />
-          </Grid>
-          <Grid item={true} xs={2}>
-            <Field id="firstName" />
-          </Grid>
-          <Grid item={true} xs={2}>
-            <Field id="lastName" />
-          </Grid>
-          <Grid item={true} xs={4}>
-            <Field id="facebook" />
-          </Grid>
-          <Grid item={true} xs={3}>
-            {
-              isUserEditing
-              && <div>
-                <SaveButton onClick={(context) => { this.save(context.model.data); }}>Save</SaveButton>
-                <Button color="primary" onClick={() => { this.cancel(user.id); }}>Cancel</Button>
-              </div>
-            }
-            {
-              !isUserEditing
-              && <Button
-                color="primary"
-                onClick={() => { this.edit(user.id); }}>Edit</Button>
-            }
-          </Grid>
-        </Form>
-      </Grid>);
-    });
-
-    return (<Styled.MainElementLarge>
-      <Grid container={true}>
-        <Grid container={true} item={true} xs={12} style={headerStyle}>
-          <Grid item={true} xs={1}>Id</Grid>
-          <Grid item={true} xs={2}>First Name</Grid>
-          <Grid item={true} xs={2}>Last Name</Grid>
-          <Grid item={true} xs={4}>Facebook</Grid>
-          <Grid item={true} xs={3}>Edit</Grid>
+    return (<Grid container={true} item={true} xs={12} key={user.id}>
+      <Form model={model} resources={resources}>
+        <Grid item={true} xs={1}>
+          <Field id="id" />
         </Grid>
-        {rows}
+        <Grid item={true} xs={2}>
+          <Field id="firstName" />
+        </Grid>
+        <Grid item={true} xs={2}>
+          <Field id="lastName" />
+        </Grid>
+        <Grid item={true} xs={4}>
+          <Field id="facebook" />
+        </Grid>
+        <Grid item={true} xs={3}>
+          {
+            isUserEditing
+            && <div>
+              <SaveButton onClick={(context) => { save(context.model.data); }}>Save</SaveButton>
+              <Button color="primary" onClick={() => { cancel(user.id); }}>Cancel</Button>
+            </div>
+          }
+          {
+            !isUserEditing
+            && <Button
+              color="primary"
+              onClick={() => { edit(user.id); }}>Edit</Button>
+          }
+        </Grid>
+      </Form>
+    </Grid>);
+  });
+
+  return (<Styled.MainElementLarge>
+    <Grid container={true}>
+      <Grid container={true} item={true} xs={12} style={headerStyle}>
+        <Grid item={true} xs={1}>Id</Grid>
+        <Grid item={true} xs={2}>First Name</Grid>
+        <Grid item={true} xs={2}>Last Name</Grid>
+        <Grid item={true} xs={4}>Facebook</Grid>
+        <Grid item={true} xs={3}>Edit</Grid>
       </Grid>
-    </Styled.MainElementLarge>);
-  }
-}
+      {rows}
+    </Grid>
+  </Styled.MainElementLarge>);
+};
+
+export default App;
