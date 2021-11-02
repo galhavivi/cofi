@@ -4,7 +4,7 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-const demo = `import React from 'react';
+const demo = `import React, { useContext, useMemo } from 'react';
 import { FormContext, createForm } from '@cofi/react-form';
 import ReactBreakpoints, { Media } from 'react-breakpoints';
 import Item from '@cofi/react-layout/Item';
@@ -13,84 +13,78 @@ import form from './form';
 import sections from './sections';
 import sectionsMobile from './sections-mobile';
 
-class Demo extends React.Component {
-  static contextType = FormContext;
+const Demo = () => {
+  const { model } = useContext(FormContext);
 
-  constructor(props) {
-    super(props);
+  const mainActions = useMemo(() => [{
+    label: 'Cancel',
+    type: 'tertiary',
+    onClick: () => console.log('Cancel', model.data), // eslint-disable-line
+  }, {
+    label: 'Save & Close',
+    type: 'secondary',
+    disable: () => !model.dirty || model.invalid || model.processing,
+    onClick: () => console.log('Save & Close', model.data), // eslint-disable-line
+  }, {
+    label: 'Save',
+    type: 'primary',
+    icon: SaveIcon,
+    disable: () => !model.dirty || model.invalid || model.processing,
+    onClick: () => console.log('Save & Close', model.data), // eslint-disable-line
+  }], [model.data, model.dirty, model.invalid, model.processing]);
 
-    const mainActions = [{
-      label: 'Cancel',
-      type: 'tertiary',
-      onClick: () => console.log('Cancel', this.context.model.data), // eslint-disable-line
-    }, {
-      label: 'Save & Close',
-      type: 'secondary',
-      disable: () => !this.context.model.dirty || this.context.model.invalid || this.context.model.processing,
-      onClick: () => console.log('Save & Close', this.context.model.data), // eslint-disable-line
-    }, {
-      label: 'Save',
-      type: 'primary',
-      icon: SaveIcon,
-      disable: () => !this.context.model.dirty || this.context.model.invalid || this.context.model.processing,
-      onClick: () => console.log('Save & Close', this.context.model.data), // eslint-disable-line
-    }];
+  const optionsActions = useMemo(() => [{
+    label: 'Archive',
+    onClick: () => {},
+  }, {
+    label: 'History',
+    onClick: () => {},
+    exclude: () => model.data.department === 'HR',
+  }, {
+    label: 'Report To HR',
+    onClick: () => {},
+    disable: () => model.data.department === 'HR',
+  }, {
+    label: 'Delete',
+    onClick: () => {},
+  }], [model.data]);
 
-    const optionsActions = [{
-      label: 'Archive',
-      onClick: () => {},
-    }, {
-      label: 'History',
-      onClick: () => {},
-      exclude: () => this.context.model.data.department === 'HR',
-    }, {
-      label: 'Report To HR',
-      onClick: () => {},
-      disable: () => this.context.model.data.department === 'HR',
-    }, {
-      label: 'Delete',
-      onClick: () => {},
-    }];
-
-    this.sizes = {
-      mobile: {
-        size: 320,
-        item: {
-          title: 'Employee',
-          layout: 'mobile',
-          sections: sectionsMobile,
-          mainActions,
-          optionsActions,
-        },
+  const sizes = useMemo(() => ({
+    mobile: {
+      size: 320,
+      item: {
+        title: 'Employee',
+        layout: 'mobile',
+        sections: sectionsMobile,
+        mainActions,
+        optionsActions,
       },
-      desktop: {
-        size: 1200,
-        item: {
-          title: 'Employee',
-          layout: 'scroll',
-          sections,
-          mainActions,
-          optionsActions,
-        },
+    },
+    desktop: {
+      size: 1200,
+      item: {
+        title: 'Employee',
+        layout: 'scroll',
+        sections,
+        mainActions,
+        optionsActions,
       },
-    };
-  }
+    },
+  }), [mainActions, optionsActions]);
 
-  render() {
-    const reactBreakpoints = {};
-    Object.keys(this.sizes).forEach((key) => {
-      reactBreakpoints[key] = this.sizes[key].size;
-    });
+  const reactBreakpoints = {};
+  Object.keys(sizes).forEach((key) => {
+    reactBreakpoints[key] = sizes[key].size;
+  });
 
-    return (<Styled.ItemWrapper>
-      <ReactBreakpoints breakpoints={reactBreakpoints} debounceResize={true} debounceDelay={200}>
-        <Media>
-          {({ currentBreakpoint }) => <Item { ...this.sizes[currentBreakpoint].item } />}
-        </Media>
-      </ReactBreakpoints>
-    </Styled.ItemWrapper>);
-  }
-}
+  return (<Styled.ItemWrapper>
+    <ReactBreakpoints breakpoints={reactBreakpoints} debounceResize={true} debounceDelay={200}>
+      <Media>
+        {({ currentBreakpoint }) => <Item { ...sizes[currentBreakpoint].item } />}
+      </Media>
+    </ReactBreakpoints>
+  </Styled.ItemWrapper>);
+};
 
 export default createForm(form)(Demo);
 `;

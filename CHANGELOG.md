@@ -6,7 +6,11 @@ Changes that have landed in master but are not yet released.
 
 ### react-kit
 
-* Refactor react-form demo's code to functional components.
+* Refactor react-form demo's code to functional components. [Issue 14](https://github.com/galhavivi/cofi/issues/14)
+
+### react-layout
+
+* Refactor react-layout demo's code to functional components. [Issue 16](https://github.com/galhavivi/cofi/issues/16)
 
 ## v2.0.0 (October 24, 2021)
 
