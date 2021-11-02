@@ -3,7 +3,7 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useMemo } from 'react';
 import { FormContext, createForm } from '@cofi/react-form';
 import FormErrors from '@cofi/react-components/form/FormErrors';
 import { iterateBoxes } from '../../../lib/Box/utils';
@@ -47,20 +47,20 @@ const scrollToField = (fieldId) => {
 };
 
 const Demo = () => {
-  const context = useContext(FormContext);
+  const { model } = useContext(FormContext);
   const [step, setStep] = useState(0);
 
   // prepare tabs
-  const tabs = {
+  const tabs = useMemo(() => ({
     items: sections.map((section, index) => ({ value: section.id, label: section.title, disabled: index !== step })),
     value: sections[step].id,
     onChange: (e, sectionId) => setStep(sections.findIndex(x => x.id === sectionId)),
-  };
+  }), [step]);
 
   // prepare footer actions
-  const isSectionInvalid = isSectionFieldsInvalid(sections[step], context.model);
+  const isSectionInvalid = useMemo(() => isSectionFieldsInvalid(sections[step], model), [model, step]);
 
-  const actions = {
+  const actions = useMemo(() => ({
     PREV: {
       label: 'Prev',
       type: 'secondary',
@@ -87,22 +87,22 @@ const Demo = () => {
     SAVE: {
       label: 'Save',
       type: 'primary',
-      disable: () => !this.context.model.dirty || this.context.model.invalid || this.context.model.processing,
-      onClick: () => console.log('Save', context.model.data), // eslint-disable-line
+      disable: () => !model.dirty || model.invalid || model.processing,
+      onClick: () => console.log('Save', model.data), // eslint-disable-line
       elementRef: refs.button,
       popover: {
         title: 'Handle Fields',
         targetRef: refs.button,
-        open: () => context.model.invalid,
+        open: () => model.invalid,
         component: FormErrors,
         props: { 
           onClickField: scrollToField,
         },
       },
     },
-  };
+  }), [isSectionInvalid, model.data, model.dirty, model.invalid, model.processing, step]);
 
-  const item = {
+  const item = useMemo(() => ({
     title: 'Employee',
     sections: [sections[step]],
     sectionsRef: refs.sections,
@@ -110,7 +110,7 @@ const Demo = () => {
     footer: {
       actions: [actions.PREV, (step === (sections.length - 1)) ? actions.SAVE : actions.NEXT],
     },
-  };
+  }), [step, tabs, actions.PREV, actions.SAVE, actions.NEXT]);
 
   return (<Styled.ItemWrapper><ItemView {...item} /></Styled.ItemWrapper>);
 };
