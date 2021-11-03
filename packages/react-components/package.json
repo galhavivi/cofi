@@ -13,7 +13,7 @@
     "access": "public"
   },
   "scripts": {
-    "start": "npx styleguidist server",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && npx styleguidist server",
     "build-package": "rm -rf dist/* && node ../../node_modules/@babel/cli/bin/babel.js  src/lib --out-dir dist --copy-files && cp package.json ./dist && cp .npmrc ./dist",
     "build-website": "rm -rf ./build && npx styleguidist build && mv styleguide build",
     "test": "node node_modules/@cofi/react-kit/scripts/test.js",

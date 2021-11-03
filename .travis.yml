@@ -1,6 +1,6 @@
 language: node_js
 node_js: 
-  - "12.14.0"
+  - "17.0.1"
 dist: trusty
 env:
   - NODE_ENV=production CI=true
@@ -10,35 +10,38 @@ cache:
     - "node_modules"
 before_install:
   - echo cicd - install npm 
-  - npm i -g npm@6.13.6
+  - npm i -g npm@8.1.0
 install:
   - echo cicd - install root dependencies
   - npm ci
 
   - echo cicd - install global dependencies
-  - npm i -g npx serve gh-pages@2.2.0 --force
+  - npm i -g npx -y serve gh-pages@2.2.0 --force
 
   - echo cicd - clean npm cache
-  - npx lerna exec -- npm cache clean --force
+  - npx -y lerna exec -- npm cache clean --force
+
+  - echo cicd - set option to not fail when peer dependencies requirements fail
+  - npm config set legacy-peer-deps true
 
   - echo cicd - install and link all local packages to dist folders regardless of matching version range
   - echo cicd - note - lerna looks on package.json -> publishConfig -> directory to link to it
-  - npx lerna bootstrap --force-local --hoist --ci -- --production=false
+  - npx -y lerna bootstrap --force-local --hoist --ci -- --production=false
 
   - echo cicd - build packages to dist folder
-  - npx lerna run build-package
+  - npx -y lerna run build-package
 jobs:
   include:
     - stage: "Test"
 
       name: "Lint" 
-      script: npx lerna run lint
+      script: npx -y lerna run lint
 
     - name: "Unit Tests" 
-      script: npx lerna exec -- npm run test -- --coverage
+      script: npx -y lerna exec -- npm run test -- --coverage
 
     - name: "E2E Tests"
-      script: npx lerna run ci-e2e
+      script: npx -y lerna run ci-e2e
 
     - stage: "Deploy"
 

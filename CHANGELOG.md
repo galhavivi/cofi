@@ -4,6 +4,9 @@
 
 Changes that have landed in master but are not yet released.
 
+### environment
+
+* Upgrade to Node 17. [Issue 18](https://github.com/galhavivi/cofi/issues/18)
 ### react-kit
 
 * Refactor react-form demo's code to functional components. [Issue 14](https://github.com/galhavivi/cofi/issues/14)
