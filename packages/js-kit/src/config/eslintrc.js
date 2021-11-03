@@ -14,11 +14,12 @@ module.exports = {
   root: true,
 
   plugins: ['no-for-of-loops', 'import', 'json'],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: 2017,
     sourceType: 'module',
     allowImportExportEverywhere: true,
+    requireConfigFile: false,
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
     },
