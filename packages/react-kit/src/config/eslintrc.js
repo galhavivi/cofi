@@ -22,7 +22,7 @@ module.exports = {
   },
 
   plugins: ['jest', 'no-for-of-loops', 'react', 'import', 'json', 'react-hooks'],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: 2017,
     sourceType: 'module',

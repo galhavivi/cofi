@@ -83,5 +83,5 @@ export default class Dropdown extends React.Component {
     let value = e.target.value !== '' ? JSON.parse(e.target.value) : e.target.value;
     value = value === '' ? undefined : value;
     this.props.onValueChange(value);
-  }
+  };
 }

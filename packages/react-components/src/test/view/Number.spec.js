@@ -14,7 +14,7 @@ describe('<Number />', () => {
 
   beforeEach(() => {
     component = shallow(
-      getComponent(value, state)
+      getComponent(value, state),
     );
   });
   it('should render provided data', () => {

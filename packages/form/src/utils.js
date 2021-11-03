@@ -25,7 +25,7 @@ import {
 import isTermTruthy from './term-evaluator';
 import hooks from './hooks';
 
-const isPromise = result => result && isFunction(result.then);
+const isPromise = (result) => result && isFunction(result.then);
 
 export const evaluateValue = (fieldId, model, value) => (isFunction(value)
   ? value(getFieldEvaluateValueProps(fieldId, model)) : value);
@@ -41,11 +41,11 @@ export const isFieldDirty = (fieldId, model) => {
 };
 
 export function isFormDirty(model) {
-  return Object.values(model.fields).filter(field => !field.excluded).some(field => field.dirty);
+  return Object.values(model.fields).filter((field) => !field.excluded).some((field) => field.dirty);
 }
 
 export function isFormInvalid(model) {
-  return Object.values(model.fields).filter(field => !field.excluded).some(field => field.invalid);
+  return Object.values(model.fields).filter((field) => !field.excluded).some((field) => field.invalid);
 }
 
 export const isFieldEmpty = (fieldId, model) => {
@@ -55,7 +55,7 @@ export const isFieldEmpty = (fieldId, model) => {
 
 export function getFormErrors(model) {
   const errors = {};
-  Object.keys(model.fields).filter(fieldId => !model.fields[fieldId].excluded).forEach((fieldId) => {
+  Object.keys(model.fields).filter((fieldId) => !model.fields[fieldId].excluded).forEach((fieldId) => {
     if (model.fields[fieldId].errors.length) {
       errors[fieldId] = model.fields[fieldId].errors;
     }
@@ -64,84 +64,75 @@ export function getFormErrors(model) {
 }
 
 export function evaluateTerm(id, model, resources, termName, flagName) {
-    const fieldTerms = model.fields[id][termName];
-    if (!fieldTerms) {
-      return Promise.resolve(model.fields[id][flagName]);
-    }
-    const getTermsProps = (term, defaultArgs) => getFieldTermsProps(id, model, term.args, defaultArgs);
-    return isTermTruthy(fieldTerms, resources.terms, getTermsProps);
+  const fieldTerms = model.fields[id][termName];
+  if (!fieldTerms) {
+    return Promise.resolve(model.fields[id][flagName]);
+  }
+  const getTermsProps = (term, defaultArgs) => getFieldTermsProps(id, model, term.args, defaultArgs);
+  return isTermTruthy(fieldTerms, resources.terms, getTermsProps);
 }
 
-export function validateField(id, model, resources) {
-  return new Promise(async (resolve) => {
-    const field = model.fields[id];
+export async function validateField(id, model, resources) {
+  const field = model.fields[id];
 
-    // calc require term
-    let { required } = field;
-    if (field.requireTerm) {
-      required = await evaluateTerm(id, model, resources, 'requireTerm', 'required');
-    }
+  // calc require term
+  let { required } = field;
+  if (field.requireTerm) {
+    required = await evaluateTerm(id, model, resources, 'requireTerm', 'required');
+  }
 
-    // handle empty value
-    if (isFieldEmpty(id, model)) {
-      const errors = !required ? [] : [{
-        name: 'required',
-        message: hooks.emptyMessage(getEmptyMessageProps(id, model)),
-      }];
-      resolve({
- errors, required, empty: true, invalid: errors.length > 0,
-});
-      return;
-    }
+  // handle empty value
+  if (isFieldEmpty(id, model)) {
+    const errors = !required ? [] : [{
+      name: 'required',
+      message: hooks.emptyMessage(getEmptyMessageProps(id, model)),
+    }];
+    return { errors, required, empty: true, invalid: errors.length > 0 };
+  }
 
-    // run validators when value not empty
-    const errors = [];
-    const asyncValidators = [];
+  // run validators when value not empty
+  const errors = [];
+  const asyncValidators = [];
 
-    (field.validators || []).forEach((validator) => {
-      const validatorFunc = resources.validators[validator.name].func;
-      const { defaultArgs } = resources.validators[validator.name];
+  (field.validators || []).forEach((validator) => {
+    const validatorFunc = resources.validators[validator.name].func;
+    const { defaultArgs } = resources.validators[validator.name];
 
-      const props = getFieldValidatorFuncProps(id, model, validator.name, defaultArgs);
-      const result = validatorFunc(props);
-      if (isPromise(result)) {
-        asyncValidators.push({
- id, validatorName: validator.name, defaultArgs, promise: result,
-});
-      } else {
-        const valid = isPlainObject(result) ? result.valid : result;
-        const dynamicArgs = isPlainObject(result) ? result.args : undefined;
-        if (!valid) {
-          const validatorName = validator.name;
-          errors.push({
-            name: validatorName,
-            message: getFieldErrorMessage(id, model, resources, validatorName, defaultArgs, dynamicArgs),
-          });
-        }
+    const props = getFieldValidatorFuncProps(id, model, validator.name, defaultArgs);
+    const result = validatorFunc(props);
+    if (isPromise(result)) {
+      asyncValidators.push({ id, validatorName: validator.name, defaultArgs, promise: result });
+    } else {
+      const valid = isPlainObject(result) ? result.valid : result;
+      const dynamicArgs = isPlainObject(result) ? result.args : undefined;
+      if (!valid) {
+        const validatorName = validator.name;
+        errors.push({
+          name: validatorName,
+          message: getFieldErrorMessage(id, model, resources, validatorName, defaultArgs, dynamicArgs),
+        });
       }
-    });
-
-    Promise.all(asyncValidators.map(x => x.promise)).then((values) => {
-      values.forEach((result, index) => {
-        const valid = isPlainObject(result) ? result.valid : result;
-        const dynamicArgs = isPlainObject(result) ? result.args : undefined;
-        if (!valid) {
-          const item = asyncValidators[index];
-          errors.push({
-            name: item.validatorName,
-            message: getFieldErrorMessage(id, model, resources, item.validatorName, item.defaultArgs, dynamicArgs),
-          });
-        }
-      });
-      resolve({
- required, errors, empty: false, invalid: errors.length > 0,
-});
-    });
+    }
   });
+
+  const values = await Promise.all(asyncValidators.map((x) => x.promise));
+  values.forEach((result, index) => {
+    const valid = isPlainObject(result) ? result.valid : result;
+    const dynamicArgs = isPlainObject(result) ? result.args : undefined;
+    if (!valid) {
+      const item = asyncValidators[index];
+      errors.push({
+        name: item.validatorName,
+        message: getFieldErrorMessage(id, model, resources, item.validatorName, item.defaultArgs, dynamicArgs),
+      });
+    }
+  });
+
+  return { required, errors, empty: false, invalid: errors.length > 0 };
 }
 
 export function getDependentFieldsIds(id, model) {
-  return Object.keys(model.fields).filter(fieldId => (model.fields[fieldId].dependencies || []).includes(id));
+  return Object.keys(model.fields).filter((fieldId) => (model.fields[fieldId].dependencies || []).includes(id));
 }
 
 export function getDependenciesChangeResult(id, model, resources) {

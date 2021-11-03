@@ -61,7 +61,7 @@ function checkFieldsDefinedAsObject(form) {
 
 // check that all fields has path
 function checkFieldsPath(form) {
-  const fieldId = Object.keys(form.model.fields).find(id => !form.model.fields[id].path);
+  const fieldId = Object.keys(form.model.fields).find((id) => !form.model.fields[id].path);
   if (fieldId) {
     throwError(ERROR_PREFIX, errors.MISSING_FIELD_PATH, form, {}, [fieldId]);
   }
@@ -72,7 +72,7 @@ function checkFieldsPath(form) {
 // and it should also be defined in resources.components
 function checkComponents(form) {
   const { model, resources } = form;
-  const fieldId = Object.keys(model.fields).find(id => model.fields[id].component
+  const fieldId = Object.keys(model.fields).find((id) => model.fields[id].component
     && (!model.fields[id].component.name
      || !resources.components
      || !resources.components[model.fields[id].component.name]
@@ -85,8 +85,9 @@ function checkComponents(form) {
 // check that if stateChange is defined - it should be a function
 function checkComponentsStateChange(form) {
   const { resources } = form;
-  const componentName = Object.keys(resources.components || {}).find(name => !isUndefined(resources.components[name].stateChange)
-     && !isFunction(resources.components[name].stateChange));
+  const componentName = Object.keys(resources.components || {})
+    .find((name) => !isUndefined(resources.components[name].stateChange)
+      && !isFunction(resources.components[name].stateChange));
   if (componentName) {
     throwError(ERROR_PREFIX, errors.INVALID_STATE_CHANGE, form, {}, [componentName]);
   }
@@ -97,7 +98,7 @@ function checkComponentsStateChange(form) {
 function checkRedundantConversions(form) {
   const { model } = form;
   ['formatter', 'parser'].forEach((conversionName) => {
-    const fieldId = Object.keys(model.fields).find(id => model.fields[id][conversionName] && !model.fields[id].component);
+    const fieldId = Object.keys(model.fields).find((id) => model.fields[id][conversionName] && !model.fields[id].component);
     if (fieldId) {
       const { name } = model.fields[fieldId][conversionName];
       throwError(ERROR_PREFIX, errors.REDUNDANT_CONVERSION, form, {}, [fieldId, conversionName, name]);
@@ -110,7 +111,7 @@ function checkRedundantConversions(form) {
 function checkConversions(form) {
   const { model, resources } = form;
   ['formatter', 'parser'].forEach((conversionName) => {
-    const fieldId = Object.keys(model.fields).find(id => model.fields[id][conversionName]
+    const fieldId = Object.keys(model.fields).find((id) => model.fields[id][conversionName]
       && (!resources.conversions
         || !isPlainObject(resources.conversions[model.fields[id][conversionName].name])
         || !isFunction(resources.conversions[model.fields[id][conversionName].name].func)));
@@ -124,10 +125,10 @@ function checkConversions(form) {
 // check that all fields if they defined dependencies - they also should be defined in model.fields as well
 function checkFieldsDependencies(form) {
   const { model } = form;
-  const fieldId = Object.keys(model.fields).find(id => model.fields[id].dependencies
-    && model.fields[id].dependencies.find(id => isUndefined(model.fields[id])));
+  const fieldId = Object.keys(model.fields).find((id) => model.fields[id].dependencies
+    && model.fields[id].dependencies.find((id) => isUndefined(model.fields[id])));
   if (fieldId) {
-    const dependOnField = model.fields[fieldId].dependencies.find(id => isUndefined(model.fields[id]));
+    const dependOnField = model.fields[fieldId].dependencies.find((id) => isUndefined(model.fields[id]));
     throwError(ERROR_PREFIX, errors.MISSING_DEPENDENCIES_FIELD, form, {}, [fieldId, dependOnField]);
   }
 }
@@ -135,7 +136,7 @@ function checkFieldsDependencies(form) {
 // check that all fields if they defined dependenciesChange - it should be defined in resources.dependenciesChanges object as well
 function checkFieldsDependenciesChange(form) {
   const { model, resources } = form;
-  const fieldId = Object.keys(model.fields).find(id => model.fields[id].dependenciesChange
+  const fieldId = Object.keys(model.fields).find((id) => model.fields[id].dependenciesChange
     && (!resources.dependenciesChanges
       || !isPlainObject(resources.dependenciesChanges[model.fields[id].dependenciesChange.name])
       || !isFunction(resources.dependenciesChanges[model.fields[id].dependenciesChange.name].func)));
@@ -149,13 +150,13 @@ function checkFieldsDependenciesChange(form) {
 // with func and message
 function checkValidators(form) {
   const { model, resources } = form;
-  const fieldId = Object.keys(model.fields).find(id => model.fields[id].validators
-    && model.fields[id].validators.find(validator => isUndefined(resources.validators)
+  const fieldId = Object.keys(model.fields).find((id) => model.fields[id].validators
+    && model.fields[id].validators.find((validator) => isUndefined(resources.validators)
       || !isPlainObject(resources.validators[validator.name])
       || !isFunction(resources.validators[validator.name].func)
       || !isFunction(resources.validators[validator.name].message)));
   if (fieldId) {
-    const validator = model.fields[fieldId].validators.find(validator => isUndefined(resources.validators)
+    const validator = model.fields[fieldId].validators.find((validator) => isUndefined(resources.validators)
       || !isPlainObject(resources.validators[validator.name])
       || !isFunction(resources.validators[validator.name].func)
       || !isFunction(resources.validators[validator.name].message));
@@ -168,12 +169,12 @@ function checkValidators(form) {
 function checkTerms(form) {
   const { model, resources } = form;
   ['excludeTerm', 'disableTerm', 'requireTerm'].forEach((termName) => {
-    const fieldId = Object.keys(model.fields).find(id => model.fields[id][termName]
-      && getTermsFuncNames(model.fields[id][termName]).find(name => !resources.terms
+    const fieldId = Object.keys(model.fields).find((id) => model.fields[id][termName]
+      && getTermsFuncNames(model.fields[id][termName]).find((name) => !resources.terms
         || !isPlainObject(resources.terms[name])
         || !isFunction(resources.terms[name].func)));
     if (fieldId) {
-      const name = getTermsFuncNames(model.fields[fieldId][termName]).find(name => !resources.terms
+      const name = getTermsFuncNames(model.fields[fieldId][termName]).find((name) => !resources.terms
         || !isFunction(resources.terms[name]));
       throwError(ERROR_PREFIX, errors.MISSING_TERM, form, {}, [fieldId, termName, name]);
     }
@@ -196,7 +197,7 @@ function getTermsFuncNames(term, names = []) {
   if (term.name) {
     names.push(term.name);
   } else {
-    (term.terms || []).forEach(t => getTermsFuncNames(t, names));
+    (term.terms || []).forEach((t) => getTermsFuncNames(t, names));
   }
   return names;
 }
@@ -208,7 +209,7 @@ function checkHooks(form) {
     throwError(ERROR_PREFIX, errors.MISSING_HOOKS, { resources });
   }
   const supportedHooks = Object.keys(hooks);
-  const hook = Object.keys(resources.hooks).find(key => !supportedHooks.includes(key));
+  const hook = Object.keys(resources.hooks).find((key) => !supportedHooks.includes(key));
   if (hook) {
     throwError(ERROR_PREFIX, errors.INVALID_HOOK, form, {}, [hook, supportedHooks]);
   }
@@ -218,7 +219,7 @@ function checkHooks(form) {
 // NOTE: dont throw error - this is just a wanning.
 function checkDependenciesCircularPotential(form) {
   const { model } = form;
-  const fieldId = Object.keys(model.fields).find(id => model.fields[id].dependencies
+  const fieldId = Object.keys(model.fields).find((id) => model.fields[id].dependencies
     && isPotentialCircularDependencies(model, id));
 
   if (fieldId) {

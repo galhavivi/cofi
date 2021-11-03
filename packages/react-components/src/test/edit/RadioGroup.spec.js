@@ -26,7 +26,7 @@ describe('<RadioGroup />', () => {
 
   it('should render provided data', () => {
     component = shallow(
-      getComponent(value, state, disabled, invalid, onValueChangeSpy)
+      getComponent(value, state, disabled, invalid, onValueChangeSpy),
     );
     expect(component).toMatchSnapshot();
   });

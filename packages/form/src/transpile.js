@@ -18,10 +18,10 @@ const indexes = {
   requireTerm: 0,
 };
 
-const isModelComponentDef = c => isObject(c) && Object.keys(c).includes('name');
-const isResourceComponentDef = c => c && c.renderer;
-const isActualComponentInModel = c => c && (isFunction(c) || !isModelComponentDef(c));
-const isActualComponentInResources = c => !isResourceComponentDef(c);
+const isModelComponentDef = (c) => isObject(c) && Object.keys(c).includes('name');
+const isResourceComponentDef = (c) => c && c.renderer;
+const isActualComponentInModel = (c) => c && (isFunction(c) || !isModelComponentDef(c));
+const isActualComponentInResources = (c) => !isResourceComponentDef(c);
 
 export default function transpileForm({ model = {}, resources = {} }) {
   const form = { model: cloneDeep(model), resources: cloneDeep(resources) };

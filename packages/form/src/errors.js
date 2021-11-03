@@ -46,17 +46,17 @@ export const errors = {
   },
   MISSING_FIELD_PATH: {
     code: 'MISSING_FIELD_PATH',
-    message: fieldId => `field "${fieldId}" should define path`,
+    message: (fieldId) => `field "${fieldId}" should define path`,
   },
   MISSING_COMPONENT: {
     code: 'MISSING_COMPONENT',
-    message: fieldId => `field "${fieldId}" defined a component, in the model, `
+    message: (fieldId) => `field "${fieldId}" defined a component, in the model, `
     + `which do not match the definition in resources object. Example: for `
     + `model.fields.firstName.component = { name: 'Select' }, define resources.components.Select = { renderer: MyComponent }`,
   },
   INVALID_STATE_CHANGE: {
     code: 'INVALID_STATE_CHANGE',
-    message: name => `component "${name}" defined a stateChange handler, which is not a function`,
+    message: (name) => `component "${name}" defined a stateChange handler, which is not a function`,
   },
   REDUNDANT_CONVERSION: {
     code: 'REDUNDANT_CONVERSION',
@@ -70,7 +70,7 @@ export const errors = {
   },
   MISSING_FORMATTER_OR_PARSER: {
     code: 'MISSING_FORMATTER_OR_PARSER',
-    message: fieldId => `field "${fieldId}" defined only one of parser or formatter, `
+    message: (fieldId) => `field "${fieldId}" defined only one of parser or formatter, `
     + 'but for editable component both formatter and parser should be defined',
   },
   MISSING_DEPENDENCIES_FIELD: {
@@ -130,15 +130,15 @@ export const errors = {
   },
   INVALID_LOG_LEVEL: {
     code: 'INVALID_LOG_LEVEL',
-    message: logLevel => `log level "${logLevel}" is not supported. `
+    message: (logLevel) => `log level "${logLevel}" is not supported. `
       + `Supported log levels are: "debug" / "warn" / "error" / "none"`,
   },
   INVALID_LOG_FUNCTION: {
     code: 'INVALID_LOG_FUNCTION',
-    message: type => `log "${type}" is not a function`,
+    message: (type) => `log "${type}" is not a function`,
   },
   ACTION_FAILED: {
     code: 'ACTION_FAILED',
-    message: type => `action "${type}" failed`,
+    message: (type) => `action "${type}" failed`,
   },
 };

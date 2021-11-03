@@ -17,42 +17,42 @@ import hooks from './hooks';
 
 export default {
   empty: {
-    func: props => hooks.isEmpty({ id: props.args.fieldId, value: getDependentValue(props) }),
+    func: (props) => hooks.isEmpty({ id: props.args.fieldId, value: getDependentValue(props) }),
   },
   equals: {
-    func: props => isEqual(getDependentValue(props), props.args.value),
+    func: (props) => isEqual(getDependentValue(props), props.args.value),
   },
   exists: {
-    func: props => !isNil(getDependentValue(props)),
+    func: (props) => !isNil(getDependentValue(props)),
   },
   lowerThan: {
-    func: props => lt(getDependentValue(props), props.args.value),
+    func: (props) => lt(getDependentValue(props), props.args.value),
   },
   greaterThan: {
-    func: props => gt(getDependentValue(props), props.args.value),
+    func: (props) => gt(getDependentValue(props), props.args.value),
   },
   lowerThanOrEquals: {
-    func: props => lte(getDependentValue(props), props.args.value),
+    func: (props) => lte(getDependentValue(props), props.args.value),
   },
   greaterThanOrEquals: {
-    func: props => gte(getDependentValue(props), props.args.value),
+    func: (props) => gte(getDependentValue(props), props.args.value),
   },
   equalsOne: {
-    func: props => pullAllWith(cloneDeep(props.args.value), [getDependentValue(props)], isEqual).length
+    func: (props) => pullAllWith(cloneDeep(props.args.value), [getDependentValue(props)], isEqual).length
       < props.args.value.length,
   },
   includes: {
-    func: props => pullAllWith(cloneDeep(getDependentValue(props)), [props.args.value], isEqual).length
+    func: (props) => pullAllWith(cloneDeep(getDependentValue(props)), [props.args.value], isEqual).length
     < getDependentValue(props).length,
   },
   includesOne: {
     defaultArgs: { value: [] },
-    func: props => pullAllWith(cloneDeep(getDependentValue(props)), props.args.value, isEqual).length
+    func: (props) => pullAllWith(cloneDeep(getDependentValue(props)), props.args.value, isEqual).length
     < getDependentValue(props).length,
   },
   includesAll: {
     defaultArgs: { value: [] },
-    func: props => pullAllWith(cloneDeep(getDependentValue(props)), props.args.value, isEqual).length
+    func: (props) => pullAllWith(cloneDeep(getDependentValue(props)), props.args.value, isEqual).length
     <= getDependentValue(props).length - props.args.value.length,
   },
 };

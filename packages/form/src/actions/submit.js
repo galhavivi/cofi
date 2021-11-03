@@ -39,7 +39,7 @@ const filterErrors = (model, fieldsErrors) => {
 
   const errors = {};
   // filter out unknown field ids, excluded fields and empty errors
-  Object.keys(fieldsErrors).filter(fieldId => model.fields[fieldId]
+  Object.keys(fieldsErrors).filter((fieldId) => model.fields[fieldId]
       && !model.fields[fieldId].excluded
       && !isEmpty(fieldsErrors[fieldId]))
     .forEach((fieldId) => {
@@ -49,7 +49,7 @@ const filterErrors = (model, fieldsErrors) => {
   return isEmpty(errors) ? undefined : errors;
 };
 
-const executeAction = formId => async (dispatch, getState) => {
+const executeAction = (formId) => async (dispatch, getState) => {
   const form = getState().forms[formId];
   const { model, resources } = form;
 

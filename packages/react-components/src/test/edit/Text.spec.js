@@ -31,14 +31,14 @@ describe('<Text />', () => {
 
   it('should render provided data', () => {
     component = shallow(
-      getComponent(value, state, disabled, invalid, onValueChangeSpy)
+      getComponent(value, state, disabled, invalid, onValueChangeSpy),
     );
     expect(component).toMatchSnapshot();
   });
 
   it('should trigger onValueChange callback on value change', () => {
     component = mount(
-      getComponent(value, state, disabled, invalid, onValueChangeSpy)
+      getComponent(value, state, disabled, invalid, onValueChangeSpy),
     );
     const newValue = 'banana';
     component.find('input').simulate('change', { target: { value: newValue } });

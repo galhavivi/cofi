@@ -56,5 +56,5 @@ export default class RadioGroup extends React.Component {
 
   onChange = (e) => {
     this.props.onValueChange(e.target.value);
-  }
+  };
 }

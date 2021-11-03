@@ -12,7 +12,6 @@ const internal = Symbol('internal');
 const external = Symbol('external');
 const destroyed = Symbol('destroyed');
 
-
 export default class Form {
   init(model, resources, settings, onUpdateForm = noop) {
     this[internal] = { model, resources, settings };

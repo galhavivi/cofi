@@ -38,7 +38,7 @@ export default class ItemView extends React.Component {
   static defaultProps = {
     size: 4,
     sections: [],
-  }
+  };
 
   render() {
     const Styled = Style(this.props.size, this.props.tabs !== undefined);

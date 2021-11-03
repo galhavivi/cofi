@@ -102,18 +102,18 @@ export const setLogger = (name = 'default', customLogger) => {
   }
 };
 
-const shouldLog = level => logLevelsValue[level] <= logLevelsValue[logLevel] && console;
+const shouldLog = (level) => logLevelsValue[level] <= logLevelsValue[logLevel] && console;
 
-const execLog = (func, props) => Object.values(loggers).forEach(logger => logger[func](props));
+const execLog = (func, props) => Object.values(loggers).forEach((logger) => logger[func](props));
 
 // error - CofiError object
-const errorInternal = error => shouldLog(logLevels.ERROR) && execLog('error', error);
+const errorInternal = (error) => shouldLog(logLevels.ERROR) && execLog('error', error);
 
 // props = { message, form }
-const warnInternal = props => shouldLog(logLevels.WARN) && execLog('warn', props);
+const warnInternal = (props) => shouldLog(logLevels.WARN) && execLog('warn', props);
 
 // props = { action, step, form }
-const debugInternal = props => shouldLog(logLevels.DEBUG) && execLog('debug', props);
+const debugInternal = (props) => shouldLog(logLevels.DEBUG) && execLog('debug', props);
 
 // used internally during form's lifecycle
 export default {

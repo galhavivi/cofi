@@ -14,11 +14,12 @@ module.exports = {
   root: true,
 
   plugins: ['no-for-of-loops', 'import', 'json'],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: 2017,
     sourceType: 'module',
     allowImportExportEverywhere: true,
+    requireConfigFile: false,
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
     },
@@ -92,7 +93,7 @@ module.exports = {
       variables: false
     }],
     'no-useless-concat': OFF,
-    'object-curly-newline': ERROR,
+    'object-curly-newline': OFF,
     quotes: [ERROR, 'single', {
       avoidEscape: true,
       allowTemplateLiterals: true
@@ -117,7 +118,7 @@ module.exports = {
       code: 130
     }],
     'no-console': ERROR,
-    'no-param-reassign': OFF
+    'no-param-reassign': OFF,
   },
 
   globals: {

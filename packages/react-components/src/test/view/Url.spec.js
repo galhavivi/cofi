@@ -13,7 +13,7 @@ describe('<Url />', () => {
 
   beforeEach(() => {
     component = shallow(
-      getComponent(value)
+      getComponent(value),
     );
   });
   it('should render provided data', () => {

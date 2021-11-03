@@ -77,14 +77,15 @@ function createModel(initialModel) {
 }
 
 export function getEnrichedComponent(component) {
-  return Object.assign({
+  return {
     name: undefined,
     state: {}, // view state - changes on each action, before debounce. used by ui (cuz same as modelState at that point)
     modelState: component.state || {}, // model state - changed only when debounce evaluates (for prevState usage)
     prevState: undefined,
     prevValue: undefined,
     ready: false, // will be true after first format finish, and component.value will be set
-  }, component);
+    ...component,
+  };
 }
 
 function createResources(initialResources) {

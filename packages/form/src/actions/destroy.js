@@ -34,6 +34,6 @@ export const createPendingAction = (formId, resolve) => ({
   resolve,
 });
 
-const executeAction = formId => async (dispatch) => {
+const executeAction = (formId) => async (dispatch) => {
   dispatch(removeForm(formId));
 };

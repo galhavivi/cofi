@@ -65,5 +65,5 @@ export default class Text extends React.Component {
 
   onValueChange = (e) => {
     this.props.onValueChange(e.target.value);
-  }
+  };
 }

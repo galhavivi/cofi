@@ -48,5 +48,5 @@ export default class Url extends React.Component {
 
   onValueChange = (e) => {
     this.props.onValueChange(e.target.value);
-  }
+  };
 }

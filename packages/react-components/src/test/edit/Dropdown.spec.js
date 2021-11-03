@@ -40,14 +40,14 @@ describe('<Dropdown />', () => {
 
   it('should render provided data', () => {
     component = shallow(
-      getComponent(value, state, disabled, invalid, onValueChangeSpy)
+      getComponent(value, state, disabled, invalid, onValueChangeSpy),
     );
     expect(component).toMatchSnapshot();
   });
 
   it('should trigger onValueChange callback on value change', () => {
     component = mount(
-      getComponent(value, state, disabled, invalid, onValueChangeSpy)
+      getComponent(value, state, disabled, invalid, onValueChangeSpy),
     );
     const newValue = 'FASHION';
     const stringifiedNewValue = JSON.stringify(newValue); // value is stringify in the component
