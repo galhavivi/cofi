@@ -24,7 +24,7 @@ function convertStringToFunction(value = '') {
   // return string to multi line
   const bodyMultiLine = body.replace(/ COFI_NEW_LINE /g, '\n');
 
-  return Function.apply(0, args.concat(bodyMultiLine));
+  return Function.apply(0, args.concat(bodyMultiLine)); // eslint-disable-line
 }
 
 const resourceStringToFunction = (resource) => {
