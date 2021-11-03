@@ -55,5 +55,5 @@ export default class CreatableMultiSelect extends React.Component {
   onValueChange = (selected) => {
     const newValue = !selected ? undefined : selected.map(item => item.value);
     this.props.onValueChange(newValue);
-  }
+  };
 }

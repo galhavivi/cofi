@@ -25,14 +25,14 @@ describe('<SearchInput />', () => {
 
   it('should render provided data', () => {
     component = shallow(
-      getComponent(value, placeholder, disabled, onChangeSpy, onSearchSpy)
+      getComponent(value, placeholder, disabled, onChangeSpy, onSearchSpy),
     );
     expect(component).toMatchSnapshot();
   });
 
   it('should trigger onChange callback on value change', () => {
     component = mount(
-      getComponent(value, placeholder, disabled, onChangeSpy, onSearchSpy)
+      getComponent(value, placeholder, disabled, onChangeSpy, onSearchSpy),
     );
     const newValue = 'banana';
     component.find('input').simulate('change', { target: { value: newValue } });
@@ -41,7 +41,7 @@ describe('<SearchInput />', () => {
 
   it('should trigger onSearch callback on enter', () => {
     component = mount(
-      getComponent(value, placeholder, disabled, onChangeSpy, onSearchSpy)
+      getComponent(value, placeholder, disabled, onChangeSpy, onSearchSpy),
     );
     component.find('input').simulate('keypress', { charCode: 13 });
     expect(onSearchSpy).toHaveBeenCalledWith(value);
@@ -49,7 +49,7 @@ describe('<SearchInput />', () => {
 
   it('should not trigger onSearch callback on keypress that is not enter', () => {
     component = mount(
-      getComponent(value, placeholder, disabled, onChangeSpy, onSearchSpy)
+      getComponent(value, placeholder, disabled, onChangeSpy, onSearchSpy),
     );
     component.find('input').simulate('keypress', { charCode: 10 });
     expect(onSearchSpy).not.toHaveBeenCalled();
@@ -57,7 +57,7 @@ describe('<SearchInput />', () => {
 
   it('should trigger onSearch callback on search icon click', () => {
     component = mount(
-      getComponent(value, placeholder, disabled, onChangeSpy, onSearchSpy)
+      getComponent(value, placeholder, disabled, onChangeSpy, onSearchSpy),
     );
     component.find('button').simulate('click');
     expect(onSearchSpy).toHaveBeenCalledWith(value);

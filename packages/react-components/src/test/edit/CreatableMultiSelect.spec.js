@@ -27,7 +27,7 @@ describe('<CreatableMultiSelect />', () => {
 
   it('Should render provided data', () => {
     component = shallow(
-      getComponent(value, state, disabled, required, onValueChangeSpy, onStateChangeSpy)
+      getComponent(value, state, disabled, required, onValueChangeSpy, onStateChangeSpy),
     );
     expect(component).toMatchSnapshot();
   });
@@ -35,7 +35,7 @@ describe('<CreatableMultiSelect />', () => {
   it('Should render provided data - disabled', () => {
     disabled = true;
     component = shallow(
-      getComponent(value, state, disabled, required, onValueChangeSpy, onStateChangeSpy)
+      getComponent(value, state, disabled, required, onValueChangeSpy, onStateChangeSpy),
     );
     expect(component).toMatchSnapshot();
   });
@@ -43,14 +43,14 @@ describe('<CreatableMultiSelect />', () => {
   it('Should render provided data - required', () => {
     required = true;
     component = shallow(
-      getComponent(value, state, disabled, required, onValueChangeSpy, onStateChangeSpy)
+      getComponent(value, state, disabled, required, onValueChangeSpy, onStateChangeSpy),
     );
     expect(component).toMatchSnapshot();
   });
 
   it('onValueChange - new value defined - ok', () => {
     component = mount(
-      getComponent(value, state, disabled, required, onValueChangeSpy, onStateChangeSpy)
+      getComponent(value, state, disabled, required, onValueChangeSpy, onStateChangeSpy),
     );
     const controller = component.instance();
     const newValue = [{ value: 'purple', label: 'purple' }];
@@ -60,7 +60,7 @@ describe('<CreatableMultiSelect />', () => {
 
   it('onValueChange - new value undefined - ok', () => {
     component = mount(
-      getComponent(value, state, disabled, required, onValueChangeSpy, onStateChangeSpy)
+      getComponent(value, state, disabled, required, onValueChangeSpy, onStateChangeSpy),
     );
     const controller = component.instance();
     const newValue = undefined;

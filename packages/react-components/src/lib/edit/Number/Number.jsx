@@ -73,5 +73,5 @@ export default class Number extends React.Component {
     let value = parseFloat(e.target.value);
     value = isNaN(value) ? undefined : value; // eslint-disable-line
     this.props.onValueChange(value);
-  }
+  };
 }

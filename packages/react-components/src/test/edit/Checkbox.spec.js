@@ -27,14 +27,14 @@ describe('<Checkbox />', () => {
 
   it('should render provided data', () => {
     component = shallow(
-      getComponent(value, state, disabled, onValueChangeSpy)
+      getComponent(value, state, disabled, onValueChangeSpy),
     );
     expect(component).toMatchSnapshot();
   });
 
   it('should trigger onValueChange callback on check change', () => {
     component = mount(
-      getComponent(value, state, disabled, onValueChangeSpy)
+      getComponent(value, state, disabled, onValueChangeSpy),
     );
     const newValue = true;
     component.find('input[type="checkbox"]').simulate('change', {
