@@ -15,5 +15,5 @@ export default class SaveButton extends React.Component {
 
   save = () => {
     this.props.onClick(this.context);
-  }
+  };
 }

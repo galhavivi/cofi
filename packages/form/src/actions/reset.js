@@ -37,11 +37,11 @@ export const createPendingAction = (formId, resolve) => ({
   resolve,
 });
 
-const executeAction = formId => async (dispatch, getState) => {
+const executeAction = (formId) => async (dispatch, getState) => {
   const { model, resources, settings } = getState().forms[formId];
 
   // action - announce set form
-  const initialModel = Object.assign({}, model.initialModel, { initialModel: { ...model.initialModel } });
+  const initialModel = { ...model.initialModel, initialModel: { ...model.initialModel } };
   dispatch(setForm(initialModel, resources, settings));
 
   await executeActionInit(formId)(dispatch, getState);

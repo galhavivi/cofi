@@ -39,7 +39,7 @@ export const addPendingAction = (formId, action) => async (getState, dispatch) =
   }
 };
 
-const processQueue = formId => async (getState, dispatch) => {
+const processQueue = (formId) => async (getState, dispatch) => {
   let form = getState().forms[formId];
   const { model, resources } = form;
 
@@ -58,7 +58,7 @@ const processQueue = formId => async (getState, dispatch) => {
   let actionSuccess;
 
   try {
-    const actionScopeDispatch = step => dispatch(step, action);
+    const actionScopeDispatch = (step) => dispatch(step, action);
 
     // run before hooks
     await runBeforeHooks(formId, action, getState);
@@ -87,7 +87,7 @@ const processQueue = formId => async (getState, dispatch) => {
   dispatch(endAction(formId, action.id, action.type, action.data, { start, end }));
 
   // resolve prev debounce calls that were not processed (relevant for actions with debounce)
-  (action.debounceResolves || []).forEach(resolve => resolve());
+  (action.debounceResolves || []).forEach((resolve) => resolve());
 
   // resolve the action
   action.resolve(result);
@@ -111,7 +111,7 @@ const processQueue = formId => async (getState, dispatch) => {
 };
 
 function getNamedActionHook(resources, prefix, type) {
-  let formatterActionName = type.toLowerCase().replace(/_([a-z])/g, x => x.slice(1).toUpperCase());
+  let formatterActionName = type.toLowerCase().replace(/_([a-z])/g, (x) => x.slice(1).toUpperCase());
   formatterActionName = `${formatterActionName[0].toUpperCase()}${formatterActionName.slice(1)}`;
   return resources.hooks[`${prefix}${formatterActionName}`];
 }
@@ -153,8 +153,8 @@ async function runAfterHooks(formId, action, getState, afterNamedAction, afterDa
 }
 
 const resolveAction = (action) => {
-  (action.debounceResolves || []).forEach(resolve => resolve());
+  (action.debounceResolves || []).forEach((resolve) => resolve());
   action.resolve();
 };
 
-const isQueueClosed = formId => getState => !getState().forms[formId];
+const isQueueClosed = (formId) => (getState) => !getState().forms[formId];

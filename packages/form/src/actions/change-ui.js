@@ -73,8 +73,8 @@ const executeAction = (formId, fieldId, ui) => async (dispatch, getState) => {
 };
 
 const getPotentialModel = (model, fieldId, ui) => {
-  const potentialModel = Object.assign({}, model);
-  potentialModel.fields[fieldId] = Object.assign({}, potentialModel.fields[fieldId], ui);
+  const potentialModel = { ...model };
+  potentialModel.fields[fieldId] = { ...potentialModel.fields[fieldId], ...ui };
   return potentialModel;
 };
 

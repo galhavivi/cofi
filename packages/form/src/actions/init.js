@@ -35,7 +35,6 @@ import {
   evaluateDependentFields,
 } from './change-value';
 
-
 export default function init({ model, resources, settings }) {
   return (dispatch, getState) => new Promise((resolve) => {
     const form = createForm(model, resources, settings);
@@ -67,7 +66,7 @@ export const createPendingAction = (formId, resolve) => ({
   resolve,
 });
 
-export const executeAction = formId => async (dispatch, getState) => {
+export const executeAction = (formId) => async (dispatch, getState) => {
   // if persist model - evaluate form not needed
   const { model, resources } = getState().forms[formId];
   if (model.initializedData) return true;
@@ -88,13 +87,13 @@ export const executeAction = formId => async (dispatch, getState) => {
   return true;
 };
 
-export const evaluateForm = formId => async (dispatch, getState) => {
+export const evaluateForm = (formId) => async (dispatch, getState) => {
   // set formatted view values in one batch
   await formatFields(formId)(dispatch, getState);
 
   // init fields
   const { fields } = getState().forms[formId].model;
-  const initFieldsPromises = Object.keys(fields).map(fieldId => initField(formId, fieldId)(dispatch, getState));
+  const initFieldsPromises = Object.keys(fields).map((fieldId) => initField(formId, fieldId)(dispatch, getState));
   await Promise.all(initFieldsPromises);
 
   // action update form invalid
@@ -111,11 +110,11 @@ const initField = (formId, fieldId) => async (dispatch, getState) => {
   ]);
 };
 
-const formatFields = formId => async (dispatch, getState) => {
+const formatFields = (formId) => async (dispatch, getState) => {
   // format all fields
   const form = getState().forms[formId];
   const formatFieldsPromises = Object.keys(form.model.fields)
-    .map(fieldId => getFieldFormattedValue(fieldId, form.model, form.resources));
+    .map((fieldId) => getFieldFormattedValue(fieldId, form.model, form.resources));
   const viewValues = await Promise.all(formatFieldsPromises);
 
   const batch = {};

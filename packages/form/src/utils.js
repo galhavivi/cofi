@@ -25,7 +25,7 @@ import {
 import isTermTruthy from './term-evaluator';
 import hooks from './hooks';
 
-const isPromise = result => result && isFunction(result.then);
+const isPromise = (result) => result && isFunction(result.then);
 
 export const evaluateValue = (fieldId, model, value) => (isFunction(value)
   ? value(getFieldEvaluateValueProps(fieldId, model)) : value);
@@ -41,11 +41,11 @@ export const isFieldDirty = (fieldId, model) => {
 };
 
 export function isFormDirty(model) {
-  return Object.values(model.fields).filter(field => !field.excluded).some(field => field.dirty);
+  return Object.values(model.fields).filter((field) => !field.excluded).some((field) => field.dirty);
 }
 
 export function isFormInvalid(model) {
-  return Object.values(model.fields).filter(field => !field.excluded).some(field => field.invalid);
+  return Object.values(model.fields).filter((field) => !field.excluded).some((field) => field.invalid);
 }
 
 export const isFieldEmpty = (fieldId, model) => {
@@ -55,7 +55,7 @@ export const isFieldEmpty = (fieldId, model) => {
 
 export function getFormErrors(model) {
   const errors = {};
-  Object.keys(model.fields).filter(fieldId => !model.fields[fieldId].excluded).forEach((fieldId) => {
+  Object.keys(model.fields).filter((fieldId) => !model.fields[fieldId].excluded).forEach((fieldId) => {
     if (model.fields[fieldId].errors.length) {
       errors[fieldId] = model.fields[fieldId].errors;
     }
@@ -88,9 +88,7 @@ export function validateField(id, model, resources) {
         name: 'required',
         message: hooks.emptyMessage(getEmptyMessageProps(id, model)),
       }];
-      resolve({
- errors, required, empty: true, invalid: errors.length > 0,
-});
+      resolve({ errors, required, empty: true, invalid: errors.length > 0 });
       return;
     }
 
@@ -105,9 +103,7 @@ export function validateField(id, model, resources) {
       const props = getFieldValidatorFuncProps(id, model, validator.name, defaultArgs);
       const result = validatorFunc(props);
       if (isPromise(result)) {
-        asyncValidators.push({
- id, validatorName: validator.name, defaultArgs, promise: result,
-});
+        asyncValidators.push({ id, validatorName: validator.name, defaultArgs, promise: result });
       } else {
         const valid = isPlainObject(result) ? result.valid : result;
         const dynamicArgs = isPlainObject(result) ? result.args : undefined;
@@ -121,7 +117,7 @@ export function validateField(id, model, resources) {
       }
     });
 
-    Promise.all(asyncValidators.map(x => x.promise)).then((values) => {
+    Promise.all(asyncValidators.map((x) => x.promise)).then((values) => {
       values.forEach((result, index) => {
         const valid = isPlainObject(result) ? result.valid : result;
         const dynamicArgs = isPlainObject(result) ? result.args : undefined;
@@ -133,15 +129,13 @@ export function validateField(id, model, resources) {
           });
         }
       });
-      resolve({
- required, errors, empty: false, invalid: errors.length > 0,
-});
+      resolve({ required, errors, empty: false, invalid: errors.length > 0 });
     });
   });
 }
 
 export function getDependentFieldsIds(id, model) {
-  return Object.keys(model.fields).filter(fieldId => (model.fields[fieldId].dependencies || []).includes(id));
+  return Object.keys(model.fields).filter((fieldId) => (model.fields[fieldId].dependencies || []).includes(id));
 }
 
 export function getDependenciesChangeResult(id, model, resources) {

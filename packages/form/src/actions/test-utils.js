@@ -27,7 +27,7 @@ export async function testActions(initialStore, actions) {
     }
   };
 
-  const promises = actions.map(action => handleAction(getFormStore, setFormStore)(action.type, action.data));
+  const promises = actions.map((action) => handleAction(getFormStore, setFormStore)(action.type, action.data));
   await Promise.all(promises);
   return tracker;
 }

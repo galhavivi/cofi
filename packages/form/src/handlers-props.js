@@ -87,7 +87,7 @@ props:
 */
 export function getFieldTermsProps(id, model, args = {}, defaultArgs = {}) {
   const props = getBaseProps(id, model.fields, model.data, model.context);
-  props.args = Object.assign({}, defaultArgs, args);
+  props.args = { ...defaultArgs, ...args };
   return props;
 }
 
@@ -126,7 +126,7 @@ props:
 */
 export function getFieldComponentFormatterProps(id, model, args = {}, defaultArgs = {}) {
   const props = getBaseProps(id, model.fields, model.data, model.context);
-  props.args = Object.assign({}, defaultArgs, args);
+  props.args = { ...defaultArgs, ...args };
   return props;
 }
 
@@ -140,7 +140,7 @@ props:
 */
 export function getFieldComponentParserProps(id, model, args = {}, defaultArgs = {}) {
   const props = getBaseProps(id, model.fields, model.data, model.context);
-  props.args = Object.assign({}, defaultArgs, args);
+  props.args = { ...defaultArgs, ...args };
   props.value = model.fields[id].component.value;
   return props;
 }
@@ -158,12 +158,11 @@ props:
 export function getFieldDependenciesChangeProps(id, model, args = {}, defaultArgs = {}) {
   const field = model.fields[id];
   const props = getBaseProps(id, model.fields, model.data, model.context);
-  props.args = Object.assign({}, defaultArgs, args);
+  props.args = { ...defaultArgs, ...args };
   props.state = (field.component || {}).state;
   props.prevDependencies = getPrevDependencies(id, model);
   return props;
 }
-
 
 /*
 props:
@@ -201,8 +200,8 @@ props:
 export function getFieldValidatorFuncProps(id, model, validator, defaultArgs = {}) {
   const field = model.fields[id];
   const props = getBaseProps(id, model.fields, model.data, model.context);
-  const args = field.validators.find(x => x.name === validator).args || {};
-  props.args = Object.assign({}, defaultArgs, args);
+  const args = field.validators.find((x) => x.name === validator).args || {};
+  props.args = { ...defaultArgs, ...args };
   return props;
 }
 

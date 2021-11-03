@@ -90,7 +90,6 @@ const setViewValueToStore = (formId, fieldId, value, dependencies = []) => (disp
   trackDependencies(formId, fieldId, value, form, dependencies);
   verifyFieldFormatterAndParserPair(fieldId, form.model);
 
-
   if (form.model.fields[fieldId].component) {
     // set field component value (view value)
     const action = { type: Actions.CHANGE_VALUE, data: { formId, fieldId, value } };
@@ -242,14 +241,14 @@ function trackDependencies(formId, fieldId, value, form, dependencies) {
   dependencies.push({ fieldId, value });
 
   // if same field id and value return more than one time - throw a circular error
-  const isSameValue = dependencies.filter(x => (x.fieldId === fieldId) && isEqual(x.value, value)).length > 1;
+  const isSameValue = dependencies.filter((x) => (x.fieldId === fieldId) && isEqual(x.value, value)).length > 1;
 
   // if the same id returned with different value - don't allow more than 10 loops
   // (user might didn't infinite loop like increasing the value by 1 each loop cycle)
-  const isMaxLoops = dependencies.filter(x => x.fieldId === fieldId).length === MAX_CHANGE_VALUE_LOOPS;
+  const isMaxLoops = dependencies.filter((x) => x.fieldId === fieldId).length === MAX_CHANGE_VALUE_LOOPS;
 
   const prefix = 'Circular dependencies -';
-  const dependenciesStr = dependencies.map(x => x.fieldId).join(' -> ');
+  const dependenciesStr = dependencies.map((x) => x.fieldId).join(' -> ');
 
   if (isSameValue) {
     throwError(prefix, errors.CIRCULAR_DEPENDENCIES, form, { dependencies }, [fieldId, formId, dependenciesStr]);

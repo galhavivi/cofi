@@ -15,7 +15,7 @@ export default {
   submit: noop,
   toDto: ({ data }) => data,
   fromDto: ({ data }) => data,
-  isEmpty: props => isNil(props.value)
+  isEmpty: (props) => isNil(props.value)
       || isEqual(props.value, '')
       || isEqual(props.value, [])
       || isEqual(props.value, {}),
