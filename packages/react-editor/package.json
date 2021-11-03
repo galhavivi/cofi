@@ -15,7 +15,7 @@
     "access": "public"
   },
   "scripts": {
-    "start": "node node_modules/@cofi/react-kit/scripts/start.js",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && node node_modules/@cofi/react-kit/scripts/start.js",
     "build-package": "rm -rf dist/* && node ../../node_modules/@babel/cli/bin/babel.js  src/lib --out-dir dist --copy-files && cp package.json ./dist && cp .npmrc ./dist",
     "build-website": "node node_modules/@cofi/react-kit/scripts/build.js",
     "test": "echo no unit tests yet",
