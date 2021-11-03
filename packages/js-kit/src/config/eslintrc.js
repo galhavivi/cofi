@@ -93,7 +93,7 @@ module.exports = {
       variables: false
     }],
     'no-useless-concat': OFF,
-    'object-curly-newline': ERROR,
+    'object-curly-newline': OFF,
     quotes: [ERROR, 'single', {
       avoidEscape: true,
       allowTemplateLiterals: true
@@ -118,7 +118,7 @@ module.exports = {
       code: 130
     }],
     'no-console': ERROR,
-    'no-param-reassign': OFF
+    'no-param-reassign': OFF,
   },
 
   globals: {
