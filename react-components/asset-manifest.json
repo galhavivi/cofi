@@ -1,13 +1,17 @@
 {
   "files": {
-    "build/0.79efd46d.js": "https://galhavivi.github.io/cofi/react-components/build/0.79efd46d.js",
-    "main.js": "https://galhavivi.github.io/cofi/react-components/build/main.5abed4a1.js",
-    "runtime-main.js": "https://galhavivi.github.io/cofi/react-components/build/bundle.105de5e2.js",
-    "index.html": "https://galhavivi.github.io/cofi/react-components/index.html"
+    "main.css": "https://galhavivi.github.io/cofi/react-components/static/css/main.ccfce47e.chunk.css",
+    "main.js": "https://galhavivi.github.io/cofi/react-components/build/main.90a50ca4.js",
+    "runtime-main.js": "https://galhavivi.github.io/cofi/react-components/build/bundle.c0e43e4d.js",
+    "build/2.2cef8c45.js": "https://galhavivi.github.io/cofi/react-components/build/2.2cef8c45.js",
+    "build/2.2cef8c45.js.LICENSE.txt": "https://galhavivi.github.io/cofi/react-components/build/2.2cef8c45.js.LICENSE.txt",
+    "index.html": "https://galhavivi.github.io/cofi/react-components/index.html",
+    "static/css/main.ccfce47e.chunk.css.map": "https://galhavivi.github.io/cofi/react-components/static/css/main.ccfce47e.chunk.css.map"
   },
   "entrypoints": [
-    "build/bundle.105de5e2.js",
-    "build/0.79efd46d.js",
-    "build/main.5abed4a1.js"
+    "build/bundle.c0e43e4d.js",
+    "build/2.2cef8c45.js",
+    "static/css/main.ccfce47e.chunk.css",
+    "build/main.90a50ca4.js"
   ]
 }
