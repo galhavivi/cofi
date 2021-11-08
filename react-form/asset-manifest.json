@@ -1,17 +1,15 @@
 {
   "files": {
-    "main.css": "https://galhavivi.github.io/cofi/react-form/static/css/main.d84e2f79.css",
-    "main.js": "https://galhavivi.github.io/cofi/react-form/static/js/main.677d695f.js",
-    "main.css.map": "https://galhavivi.github.io/cofi/react-form/static/css/main.d84e2f79.css.map",
-    "main.js.map": "https://galhavivi.github.io/cofi/react-form/static/js/main.677d695f.js.map",
+    "main.css": "https://galhavivi.github.io/cofi/react-form/static/css/main.9284b3c6.css",
+    "main.js": "https://galhavivi.github.io/cofi/react-form/static/js/main.b3e3a6ec.js",
+    "main.css.map": "https://galhavivi.github.io/cofi/react-form/static/css/main.9284b3c6.css.map",
+    "main.js.map": "https://galhavivi.github.io/cofi/react-form/static/js/main.b3e3a6ec.js.map",
     "index.html": "https://galhavivi.github.io/cofi/react-form/index.html",
-    "precache-manifest.71291abebd299d2faca4bb017fc05343.js": "https://galhavivi.github.io/cofi/react-form/precache-manifest.71291abebd299d2faca4bb017fc05343.js",
-    "service-worker.js": "https://galhavivi.github.io/cofi/react-form/service-worker.js",
-    "static/js/main.677d695f.js.LICENSE.txt": "https://galhavivi.github.io/cofi/react-form/static/js/main.677d695f.js.LICENSE.txt",
-    "static/media/logo.svg": "https://galhavivi.github.io/cofi/react-form/static/media/logo.8387712a.svg"
+    "static/js/main.b3e3a6ec.js.LICENSE.txt": "https://galhavivi.github.io/cofi/react-form/static/js/main.b3e3a6ec.js.LICENSE.txt",
+    "static/media/logo.svg": "https://galhavivi.github.io/cofi/react-form/static/media/logo.ad344e81.svg"
   },
   "entrypoints": [
-    "static/css/main.d84e2f79.css",
-    "static/js/main.677d695f.js"
+    "static/css/main.9284b3c6.css",
+    "static/js/main.b3e3a6ec.js"
   ]
 }
