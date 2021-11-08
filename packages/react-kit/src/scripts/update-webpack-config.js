@@ -28,14 +28,15 @@ const updateWebpackConfig = function(config) {
       x.constructor.name !== 'OptimizeCssAssetsWebpackPlugin'),
   });
 
-  // Loaders (module)
-  config.module.rules[1].use[0].options.useEslintrc = true;
+  // Fails on react 4, not sure if we need it anymore?
+  // // Loaders (module)
+  // config.module.rules[1].use[0].options.useEslintrc = true;
 
-  // Styled components' babel plugin - dev & stage only
-  if (process.env.NODE_ENV !== 'production') {
-    const babelLoader = config.module.rules[2].oneOf[1];
-    babelLoader.options.plugins.push('babel-plugin-styled-components');
-  }
+  // // Styled components' babel plugin - dev & stage only
+  // if (process.env.NODE_ENV !== 'production') {
+  //   const babelLoader = config.module.rules[2].oneOf[1];
+  //   babelLoader.options.plugins.push('babel-plugin-styled-components');
+  // }
 
   // Plugins
   config.plugins.push(

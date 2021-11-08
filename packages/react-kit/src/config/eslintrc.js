@@ -21,7 +21,7 @@ module.exports = {
     }
   },
 
-  plugins: ['jest', 'no-for-of-loops', 'react', 'import', 'json', 'react-hooks'],
+  plugins: ['no-for-of-loops', 'import', 'json', 'react', 'react-hooks'], // , 'jest'
   parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: 2017,
@@ -110,17 +110,21 @@ module.exports = {
   overrides: [
     {
       files: ['**/*.test.*', '**/*.spec.*'],
-      rules: {
-        // https://github.com/jest-community/eslint-plugin-jest
-        'jest/no-focused-tests': ERROR,
-        "react/jsx-no-bind": [ERROR, {
-          "ignoreDOMComponents": false,
-          "ignoreRefs": false,
-          "allowArrowFunctions": true,
-          "allowFunctions": false,
-          "allowBind": false
-        }]
-      },
+      // TODO: figure out if to return jest here
+      // rules: {
+      //   // https://github.com/jest-community/eslint-plugin-jest
+      //   'jest/no-focused-tests': ERROR,
+      //   "react/jsx-no-bind": [ERROR, {
+      //     "ignoreDOMComponents": false,
+      //     "ignoreRefs": false,
+      //     "allowArrowFunctions": true,
+      //     "allowFunctions": false,
+      //     "allowBind": false
+      //   }]
+      // },
+      files: [
+        "**/*.spec.js"
+      ],
     },
   ],
 

@@ -30,8 +30,8 @@
     "build-package": "src/**/*.js"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
   },
   "dependencies": {
     "@date-io/date-fns": "^1.3.12",
@@ -49,7 +49,7 @@
     "@cofi/form": "^2.0.0",
     "@cofi/react-form": "^2.0.0",
     "@cofi/react-kit": "^2.0.0",
-    "react-styleguidist": "^9.0.5"
+    "react-styleguidist": "^11.1.7"
   },
   "keywords": [
     "cofi",

@@ -20,21 +20,29 @@
   },
   "dependencies": {
     "@cofi/js-kit": "^2.0.0",
-    "babel-plugin-styled-components": "^1.10.0",
+    "babel-plugin-styled-components": "^1.13.3",
     "@testing-library/react": "^12.1.2",
     "enzyme": "^3.6.0",
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.5",
     "enzyme-to-json": "^3.3.4",
     "eslint-config-fbjs": "^3.1.1",
     "eslint-plugin-relay": "^1.8.2",
+    "eslint-plugin-react-hooks": "4.2.1-alpha-c3a19e5af-20211014",
     "jest-styled-components": "^6.3.4",
     "puppeteer": "^1.17.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "^3.4.0",
+    "react-scripts": "^4.0.3",
     "serialize-javascript": "^2.1.2",
     "start-server-and-test": "^1.9.1",
     "styled-components": "^4.4.1"
+  },
+  "FinaldependenciesFinal": {
+    "jest-styled-components": "^7.0.5",
+    "puppeteer": "^11.0.0",
+    "serialize-javascript": "^6.0.0",
+    "start-server-and-test": "^1.14.0",
+    "styled-components": "^5.3.3"
   },
   "keywords": [
     "cofi",
