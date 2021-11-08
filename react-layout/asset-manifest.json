@@ -1,17 +1,15 @@
 {
   "files": {
-    "main.css": "https://galhavivi.github.io/cofi/react-layout/static/css/main.d84e2f79.css",
-    "main.js": "https://galhavivi.github.io/cofi/react-layout/static/js/main.03fdc80a.js",
-    "main.css.map": "https://galhavivi.github.io/cofi/react-layout/static/css/main.d84e2f79.css.map",
-    "main.js.map": "https://galhavivi.github.io/cofi/react-layout/static/js/main.03fdc80a.js.map",
+    "main.css": "https://galhavivi.github.io/cofi/react-layout/static/css/main.9284b3c6.css",
+    "main.js": "https://galhavivi.github.io/cofi/react-layout/static/js/main.2227cd3a.js",
+    "main.css.map": "https://galhavivi.github.io/cofi/react-layout/static/css/main.9284b3c6.css.map",
+    "main.js.map": "https://galhavivi.github.io/cofi/react-layout/static/js/main.2227cd3a.js.map",
     "index.html": "https://galhavivi.github.io/cofi/react-layout/index.html",
-    "precache-manifest.ff39f0a81f218810572ddcbaaa37a70e.js": "https://galhavivi.github.io/cofi/react-layout/precache-manifest.ff39f0a81f218810572ddcbaaa37a70e.js",
-    "service-worker.js": "https://galhavivi.github.io/cofi/react-layout/service-worker.js",
-    "static/js/main.03fdc80a.js.LICENSE.txt": "https://galhavivi.github.io/cofi/react-layout/static/js/main.03fdc80a.js.LICENSE.txt",
-    "static/media/logo.svg": "https://galhavivi.github.io/cofi/react-layout/static/media/logo.8387712a.svg"
+    "static/js/main.2227cd3a.js.LICENSE.txt": "https://galhavivi.github.io/cofi/react-layout/static/js/main.2227cd3a.js.LICENSE.txt",
+    "static/media/logo.svg": "https://galhavivi.github.io/cofi/react-layout/static/media/logo.ad344e81.svg"
   },
   "entrypoints": [
-    "static/css/main.d84e2f79.css",
-    "static/js/main.03fdc80a.js"
+    "static/css/main.9284b3c6.css",
+    "static/js/main.2227cd3a.js"
   ]
 }
