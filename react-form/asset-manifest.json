@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "https://galhavivi.github.io/cofi/react-form/static/css/main.9284b3c6.css",
-    "main.js": "https://galhavivi.github.io/cofi/react-form/static/js/main.b3e3a6ec.js",
+    "main.js": "https://galhavivi.github.io/cofi/react-form/static/js/main.6a4b796e.js",
     "main.css.map": "https://galhavivi.github.io/cofi/react-form/static/css/main.9284b3c6.css.map",
-    "main.js.map": "https://galhavivi.github.io/cofi/react-form/static/js/main.b3e3a6ec.js.map",
+    "main.js.map": "https://galhavivi.github.io/cofi/react-form/static/js/main.6a4b796e.js.map",
     "index.html": "https://galhavivi.github.io/cofi/react-form/index.html",
-    "static/js/main.b3e3a6ec.js.LICENSE.txt": "https://galhavivi.github.io/cofi/react-form/static/js/main.b3e3a6ec.js.LICENSE.txt",
+    "static/js/main.6a4b796e.js.LICENSE.txt": "https://galhavivi.github.io/cofi/react-form/static/js/main.6a4b796e.js.LICENSE.txt",
     "static/media/logo.svg": "https://galhavivi.github.io/cofi/react-form/static/media/logo.ad344e81.svg"
   },
   "entrypoints": [
     "static/css/main.9284b3c6.css",
-    "static/js/main.b3e3a6ec.js"
+    "static/js/main.6a4b796e.js"
   ]
 }
