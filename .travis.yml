@@ -16,7 +16,7 @@ install:
   - npm ci
 
   - echo cicd - install global dependencies
-  - npm i -g npx -y serve gh-pages@3.2.3 --force
+  - npm i -g npx serve gh-pages@3.2.3 --force
 
   - echo cicd - clean npm cache
   - npx -y lerna exec -- npm cache clean --force
