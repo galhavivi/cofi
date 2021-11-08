@@ -33,13 +33,12 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "^4.0.3",
-    "start-server-and-test": "^1.9.1",
+    "start-server-and-test": "^1.14.0",
     "styled-components": "^5.3.3",
     "gh-pages": "^3.2.3"
   },
   "FinaldependenciesFinal": {
-    "puppeteer": "^11.0.0",
-    "start-server-and-test": "^1.14.0"
+    "puppeteer": "^11.0.0"
   },
   "keywords": [
     "cofi",
