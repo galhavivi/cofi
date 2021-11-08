@@ -1,7 +1,8 @@
 <h4>Simple</h4>
 
 ```javascript
-const CheckboxCollection = require('CheckboxCollection').default;
+import CheckboxCollection from './CheckboxCollection';
+
 initialState = { 
     value: [],
 };
@@ -38,7 +39,8 @@ onChange={(value) => {
 <h4>Disabled</h4>
 
 ```javascript
-const CheckboxCollection = require('CheckboxCollection').default;
+import CheckboxCollection from './CheckboxCollection';
+
 initialState = { 
     value: [],
 };
@@ -77,7 +79,8 @@ onChange={(value) => {
 <h4>Inline</h4>
 
 ```javascript
-const CheckboxCollection = require('CheckboxCollection').default;
+import CheckboxCollection from './CheckboxCollection';
+
 initialState = { 
     value: [],
 };
@@ -116,7 +119,8 @@ onChange={(value) => {
 <h4>Search</h4>
 
 ```javascript
-const CheckboxCollection = require('CheckboxCollection').default;
+import CheckboxCollection from './CheckboxCollection';
+
 const allItems = [{
     value: '1',
     label: 'Ross Geller'
@@ -170,7 +174,8 @@ onSearchChange={(value) => {
 <h4>Async Search</h4>
 
 ```javascript
-const CheckboxCollection = require('CheckboxCollection').default;
+import CheckboxCollection from './CheckboxCollection';
+
 const allItems = [{
     value: '1',
     label: 'Ross Geller'

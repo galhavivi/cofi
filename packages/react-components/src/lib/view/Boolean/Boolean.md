@@ -3,8 +3,8 @@
 <h4>Usage in cofi form</h4>
 
 ```javascript
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 const model = {
   id: 'simple',
@@ -38,29 +38,23 @@ const resources = {
 <h4>Value: true</h4>
 
 ```javascript
-initialState = { 
-    value: true
-};
+const [value, setValue] = React.useState(true);
 
-<Boolean value={state.value} />
+<Boolean value={value} />
 ```
 
 <h4>Value: false</h4>
 
 ```javascript
-initialState = { 
-    value: false
-};
+const [value, setValue] = React.useState(false);
 
-<Boolean value={state.value} />
+<Boolean value={value} />
 ```
 
 <h4>Value: undefined</h4>
 
 ```javascript
-initialState = { 
-    value: undefined
-};
+const [value, setValue] = React.useState(undefined);
 
-<Boolean value={state.value} />
+<Boolean value={value} />
 ```

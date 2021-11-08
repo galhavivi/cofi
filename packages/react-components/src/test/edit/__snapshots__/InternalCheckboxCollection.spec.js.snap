@@ -7,7 +7,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes disabled 
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={true}
           disabled={true}
           onChange={[Function]}
@@ -22,7 +22,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes disabled 
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={true}
           disabled={true}
           onChange={[Function]}
@@ -37,7 +37,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes disabled 
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={false}
           disabled={true}
           onChange={[Function]}
@@ -52,7 +52,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes disabled 
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={false}
           disabled={true}
           onChange={[Function]}
@@ -67,7 +67,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes disabled 
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={false}
           disabled={true}
           onChange={[Function]}
@@ -82,7 +82,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes disabled 
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={false}
           disabled={true}
           onChange={[Function]}
@@ -102,7 +102,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes inline 1`
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={true}
           disabled={false}
           onChange={[Function]}
@@ -117,7 +117,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes inline 1`
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={true}
           disabled={false}
           onChange={[Function]}
@@ -132,7 +132,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes inline 1`
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -147,7 +147,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes inline 1`
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -162,7 +162,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes inline 1`
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -177,7 +177,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes inline 1`
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -197,7 +197,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes only 1`] 
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={true}
           disabled={false}
           onChange={[Function]}
@@ -212,7 +212,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes only 1`] 
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={true}
           disabled={false}
           onChange={[Function]}
@@ -227,7 +227,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes only 1`] 
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -242,7 +242,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes only 1`] 
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -257,7 +257,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes only 1`] 
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -272,7 +272,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes only 1`] 
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -298,7 +298,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes with sear
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={true}
           disabled={false}
           onChange={[Function]}
@@ -313,7 +313,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes with sear
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={true}
           disabled={false}
           onChange={[Function]}
@@ -328,7 +328,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes with sear
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -343,7 +343,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes with sear
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -358,7 +358,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes with sear
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -373,7 +373,7 @@ exports[`<CheckboxCollection /> should render provided data checkboxes with sear
   >
     <WithStyles(ForwardRef(FormControlLabel))
       control={
-        <ForwardRef(WithStyles(ForwardRef(Checkbox)))
+        <WithStyles(ForwardRef(Checkbox))
           checked={false}
           disabled={false}
           onChange={[Function]}

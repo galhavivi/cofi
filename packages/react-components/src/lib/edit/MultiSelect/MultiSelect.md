@@ -3,8 +3,8 @@
 <h4>Usage in cofi form</h4>
 
 ```javascript
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 const model = {
   id: 'simple',
@@ -70,9 +70,8 @@ const resources = {
 <h4>Simple - fixed items</h4>
 
 ```javascript
-initialState = { 
-  value: ['2', '3'],
-  state: {
+const [value, setValue] = React.useState(['2', '3']);
+const [state, setState] = React.useState({
     items:[{
         value: '1',
         label: 'Ross Geller'
@@ -92,23 +91,16 @@ initialState = {
         value: '6',
         label: 'Phoebe Buffay'
     }],
-  },
-};
+});
 
-<MultiSelect
-value={state.value}
-state={state.state}
-onValueChange={value => setState({ value })}
-/>
-
+<MultiSelect value={value} state={state} onValueChange={setValue} />
 ```
 
 <h4>Value as object</h4>
 
 ```javascript
-initialState = { 
-  value: [{ id: '3', first: 'Rachel', last: 'Green' }],
-  state: {
+const [value, setValue] = React.useState([{ id: '3', first: 'Rachel', last: 'Green' }],);
+const [state, setState] = React.useState({
     itemIdField: 'id',
     items:[{
         value: { id: '1', first: 'Ross', last: 'Geller' },
@@ -129,22 +121,16 @@ initialState = {
         value: { id: '6', first: 'Phoebe', last: 'Buffay' },
         label: 'Phoebe Buffay'
     }],
-  },
-};
+});
 
-<MultiSelect
-value={state.value}
-state={state.state}
-onValueChange={value => setState({ value })}
-/>
+<MultiSelect value={value} state={state} onValueChange={setValue} />
 ```
 
 <h4>Searchable</h4>
 
 ```javascript
-initialState = { 
-  value: ['3'],
-  state: {
+const [value, setValue] = React.useState(['3'],);
+const [state, setState] = React.useState({
     searchable: true,
     items:[{
         value: '1',
@@ -165,58 +151,17 @@ initialState = {
         value: '6',
         label: 'Phoebe Buffay'
     }],
-  },
-};
+});
 
-<MultiSelect
-value={state.value}
-state={state.state}
-onValueChange={value => setState({ value })}
-/>
+<MultiSelect value={value} state={state} onValueChange={setValue} />
 ```
 
 <h4>Disabled</h4>
 
 ```javascript
-initialState = { 
-  value: ['3', '4'],
-  state: {
-    items:[{
-        value: '1',
-        label: 'Ross Geller',
-    }, {
-        value: '2',
-        label: 'Monica Geller'
-    }, {
-        value: '3',
-        label: 'Rachel Green'
-    }, {
-        value: '4',
-        label: 'Chandler Bing'
-    }, {
-        value: '5',
-        label: 'Joey Tribbiani'
-    }, {
-        value: '6',
-        label: 'Phoebe Buffay'
-    }],
-  },
-};
-
-<MultiSelect
-value={state.value}
-state={state.state}
-disabled={true}
-onValueChange={value => setState({ value })}
-/>
-```
-
-<h4>Value undefined</h4>
-
-```javascript
-initialState = { 
-  value: undefined,
-  state: {
+const [value, setValue] = React.useState(['3']);
+const [state, setState] = React.useState({
+    searchable: true,
     items:[{
         value: '1',
         label: 'Ross Geller'
@@ -236,12 +181,37 @@ initialState = {
         value: '6',
         label: 'Phoebe Buffay'
     }],
-  },
-};
+});
 
-<MultiSelect
-value={state.value}
-state={state.state}
-onValueChange={value => setState({ value })}
-/>
+<MultiSelect value={value} state={state} disabled={true} onValueChange={setValue} />
+```
+
+<h4>Value undefined</h4>
+
+```javascript
+const [value, setValue] = React.useState();
+const [state, setState] = React.useState({
+    searchable: true,
+    items:[{
+        value: '1',
+        label: 'Ross Geller'
+    }, {
+        value: '2',
+        label: 'Monica Geller'
+    }, {
+        value: '3',
+        label: 'Rachel Green'
+    }, {
+        value: '4',
+        label: 'Chandler Bing'
+    }, {
+        value: '5',
+        label: 'Joey Tribbiani'
+    }, {
+        value: '6',
+        label: 'Phoebe Buffay'
+    }],
+});
+
+<MultiSelect value={value} state={state} onValueChange={setValue} />
 ```

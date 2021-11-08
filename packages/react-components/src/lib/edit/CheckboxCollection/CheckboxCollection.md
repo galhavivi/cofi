@@ -3,8 +3,8 @@
 <h4>Usage in cofi form</h4>
 
 ```javascript
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 const model = {
   id: 'simple',
@@ -70,119 +70,90 @@ const resources = {
 <h4>Simple</h4>
 
 ```javascript
-initialState = { 
-    value: ['2', '3'],
-    state: {
-        items: [{
-            value: '1',
-            label: 'Ross Geller'
-        }, {
-            value: '2',
-            label: 'Monica Geller'
-        }, {
-            value: '3',
-            label: 'Rachel Green'
-        }, {
-            value: '4',
-            label: 'Chandler Bing'
-        }, {
-            value: '5',
-            label: 'Joey Tribbiani'
-        }, {
-            value: '6',
-            label: 'Phoebe Buffay'
-        }]
-    }
-};
+const [value, setValue] = React.useState(['2', '3']);
+const [state, setState] = React.useState({ 
+    items: [{
+        value: '1',
+        label: 'Ross Geller'
+    }, {
+        value: '2',
+        label: 'Monica Geller'
+    }, {
+        value: '3',
+        label: 'Rachel Green'
+    }, {
+        value: '4',
+        label: 'Chandler Bing'
+    }, {
+        value: '5',
+        label: 'Joey Tribbiani'
+    }, {
+        value: '6',
+        label: 'Phoebe Buffay'
+    }]
+});
 
-<CheckboxCollection
-value={state.value}
-state={state.state}
-onValueChange={(value) => { 
-    setState({ value });
-    console.log(`onValueChange: ${value}`);
-}}
-/>
+<CheckboxCollection value={value} state={state} onValueChange={setValue} />
 ```
 
 
 <h4>Disabled</h4>
 
 ```javascript
-initialState = { 
-    value: [],
-    state: {
-        items: [{
-            value: '1',
-            label: 'Ross Geller'
-        }, {
-            value: '2',
-            label: 'Monica Geller'
-        }, {
-            value: '3',
-            label: 'Rachel Green'
-        }, {
-            value: '4',
-            label: 'Chandler Bing'
-        }, {
-            value: '5',
-            label: 'Joey Tribbiani'
-        }, {
-            value: '6',
-            label: 'Phoebe Buffay'
-        }]
-    }
-};
+const [value, setValue] = React.useState(['2', '3']);
+const [state, setState] = React.useState({ 
+    items: [{
+        value: '1',
+        label: 'Ross Geller'
+    }, {
+        value: '2',
+        label: 'Monica Geller'
+    }, {
+        value: '3',
+        label: 'Rachel Green'
+    }, {
+        value: '4',
+        label: 'Chandler Bing'
+    }, {
+        value: '5',
+        label: 'Joey Tribbiani'
+    }, {
+        value: '6',
+        label: 'Phoebe Buffay'
+    }]
+});
 
-<CheckboxCollection
-value={state.value}
-state={state.state}
-disabled={true}
-onValueChange={(value) => { 
-    setState({ value });
-    console.log(`onValueChange: ${value}`);
-}}
-/>
-
+<CheckboxCollection value={value} state={state} disabled={true} onValueChange={setValue} />
 ```
 
 <h4>Inline</h4>
 
 ```javascript
-initialState = { 
-    value: [],
-    state: {
-        inline: true,
-        items: [{
-            value: '1',
-            label: 'Ross Geller'
-        }, {
-            value: '2',
-            label: 'Monica Geller'
-        }, {
-            value: '3',
-            label: 'Rachel Green'
-        }, {
-            value: '4',
-            label: 'Chandler Bing'
-        }, {
-            value: '5',
-            label: 'Joey Tribbiani'
-        }, {
-            value: '6',
-            label: 'Phoebe Buffay'
-        }]
-    }
-};
+const [value, setValue] = React.useState(['2', '3']);
+const [state, setState] = React.useState({ 
+    inline: true,
+    items: [{
+        value: '1',
+        label: 'Ross Geller'
+    }, {
+        value: '2',
+        label: 'Monica Geller'
+    }, {
+        value: '3',
+        label: 'Rachel Green'
+    }, {
+        value: '4',
+        label: 'Chandler Bing'
+    }, {
+        value: '5',
+        label: 'Joey Tribbiani'
+    }, {
+        value: '6',
+        label: 'Phoebe Buffay'
+    }]
+});
 
-<CheckboxCollection
-value={state.value}
-state={state.state}
-onValueChange={(value) => { 
-    setState({ value });
-    console.log(`onValueChange: ${value}`);
-}}
-/>
+<CheckboxCollection value={value} state={state} onValueChange={setValue} />
 ```
 
 <h4>Search</h4>
@@ -208,34 +179,25 @@ const allItems = [{
     label: 'Phoebe Buffay'
 }];
 
-initialState = { 
-    value: [],
-    state: {
-        search: {
-            value: '',
-            placeholder: 'Search'
-        },
-        items: allItems,
-    }
-};
+const [value, setValue] = React.useState([]);
+const [state, setState] = React.useState({ 
+    search: {
+        value: '',
+        placeholder: 'Search'
+    },
+    items: allItems,
+});
 
-<CheckboxCollection
-value={state.value}
-state={state.state}
-onValueChange={value => setState({ value })}
-onStateChange={updater => {
-    setState(state => {
-        const newState = updater({ state: state.state }); // illustrate a cofi updater
-        return ({ 
-            state: { 
-                ...newState,
-                items: allItems.filter(x => { 
-                    return x.label.toLowerCase().indexOf(newState.search.value.toLowerCase()) > -1;
-                }), 
-            }
-        })
-    });
-}}
+const findItems = query => allItems.filter(x => x.label.toLowerCase().indexOf(query.toLowerCase()) > -1);
+
+<CheckboxCollection value={value} state={state} onValueChange={setValue}
+    onStateChange={updater => {
+        setState(state => {
+            const newState = updater({ state }); // illustrate a cofi updater
+        
+            return ({ ...newState, items: findItems(newState.search.value) });
+        });
+    }}
 />
 ```
 
@@ -262,29 +224,24 @@ const allItems = [{
     label: 'Phoebe Buffay'
 }];
 
-initialState = { 
-    value: [],
-     state: {
-        search: {
-            value: '',
-            placeholder: 'Search'
-        },
-        items: allItems,
-    }
-};
+const [value, setValue] = React.useState([]);
+const [state, setState] = React.useState({ 
+    search: {
+        value: '',
+        placeholder: 'Search'
+    },
+    items: allItems,
+});
 
 const findItems = query => allItems.filter(x => x.label.toLowerCase().indexOf(query.toLowerCase()) > -1);
 
-<CheckboxCollection
-value={state.value}
-state={state.state}
-onValueChange={value => setState({ value })}
-onStateChange={updater => {
-  setState(state => ({ state: { ...updater({ state: state.state }), items: [] } }));
+<CheckboxCollection value={value} state={state} onValueChange={setValue}
+    onStateChange={updater => {
+        setState(state => ({ ...updater({ state }), items: [] }));
 
-  setTimeout(() => {      
-    setState(state => ({ state: { ...state.state, items: findItems(state.state.search.value) } }));
-  }, 300);
-}}
+        setTimeout(() => {      
+            setState(state => ({ ...state, items: findItems(state.search.value) }));
+        }, 700);
+    }}
 />
 ```

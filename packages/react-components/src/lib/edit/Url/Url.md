@@ -3,8 +3,8 @@
 <h4>Usage in cofi form</h4>
 
  ```javascript
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
  const model = {
   id: 'simple',
@@ -55,74 +55,43 @@ const resources = {
 <h4>Simple</h4>
 
 ```javascript
-initialState = { 
-    value: 'http://test.com',
-    state: {
-        placeholder: 'Enter Url',
-    },
-};
+const [value, setValue] = React.useState('http://test.com');
+const [state, setState] = React.useState({
+    placeholder: 'Enter URL',
+});
 
- <Url
-    value={state.value}
-    state={state.state}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-    />
+<Url value={value} state={state} onValueChange={setValue} />
 ```
 
 <h4>Initial value undefined</h4>
 
 ```javascript
-initialState = { 
-    value: undefined,
-    state: {
-        placeholder: 'Enter Url',
-    },
-};
- <Url
-    value={state.value}
-    state={state.state}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-    />
+const [value, setValue] = React.useState();
+const [state, setState] = React.useState({
+    placeholder: 'Enter URL',
+});
+
+<Url value={value} state={state} onValueChange={setValue} />
 ```
 
 <h4>Disabled</h4>
 
 ```javascript
-initialState = { 
-    value: 'http://test.com',
-    state: {
-        placeholder: 'Enter Url',
-    },
-};
- <Url
-    value={state.value}
-    state={state.state}
-    disabled={true}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-    />
+const [value, setValue] = React.useState();
+const [state, setState] = React.useState({
+    placeholder: 'Enter URL',
+});
+
+<Url value={value} state={state} disabled={true} onValueChange={setValue} />
 ```
 
 <h4>Invalid</h4>
 
 ```javascript
-initialState = { 
-    value: 'http://test.com',
-    state: {
-        placeholder: 'Enter Url',
-    },
-};
- <Url
-    value={state.value}
-    state={state.state}
-    invalid={true}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-    />
+const [value, setValue] = React.useState();
+const [state, setState] = React.useState({
+    placeholder: 'Enter URL',
+});
+
+<Url value={value} state={state} invalid={true} onValueChange={setValue} />
 ```

@@ -4,8 +4,8 @@
 <h4>Usage in cofi form</h4>
 
 ```javascript
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 const model = {
   id: 'simple',
@@ -62,45 +62,23 @@ const resources = {
 <h4>Simple</h4>
 
 ```javascript
-initialState = { 
-    value: { height: '20px', width: '20px' },
-};
+const [value, setValue] = React.useState({ height: '20px', width: '20px' });
 
-<JsonEditor
-    value={state.value}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-/>
+<JsonEditor value={value} onValueChange={setValue} />
 ```
 
 <h4>Initial value undefined</h4>
 
 ```javascript
-initialState = { 
-    value: undefined,
-};
+const [value, setValue] = React.useState();
 
-<JsonEditor
-    value={state.value}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-/>
+<JsonEditor value={value} onValueChange={setValue} />
 ```
 
 <h4>Disabled</h4>
 
 ```javascript
-initialState = { 
-    value: { height: '20px', width: '20px' },
-};
+const [value, setValue] = React.useState({ height: '20px', width: '20px' });
 
-<JsonEditor
-    value={state.value}
-    disabled={true}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-/>
+<JsonEditor value={value} disabled={true} onValueChange={setValue} />
 ```

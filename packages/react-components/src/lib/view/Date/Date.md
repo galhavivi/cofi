@@ -3,8 +3,8 @@
 <h4>Usage in cofi form</h4>
 
 ```javascript
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 const model = {
   id: 'simple',
@@ -39,9 +39,7 @@ const resources = {
 <h4>Simple</h4>
 
 ```javascript
-initialState = { 
-    value: new Date()
-};
+const [value, setValue] = React.useState(new Date());
 
-<DateView value={state.value} />
+<DateView value={value} />
 ```

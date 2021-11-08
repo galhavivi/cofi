@@ -3,8 +3,8 @@
 <h4>Usage in cofi form</h4>
 
 ```javascript
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 const mockServerItems = [{
   id: '1',
@@ -127,41 +127,40 @@ const resources = {
 <h4>Simple</h4>
 
 ```javascript
-initialState = { 
-  value: [{ value: '3', label: 'Rachel Green' }],
-};
-
 const serverItems = [{
   value: '1',
   label: 'Ross Geller'
 }, {
-    value: '2',
-    label: 'Monica Geller'
+  value: '2',
+  label: 'Monica Geller'
 }, {
-    value: '3',
-    label: 'Rachel Green'
+  value: '3',
+  label: 'Rachel Green'
 }, {
-    value: '4',
-    label: 'Chandler Bing'
+  value: '4',
+  label: 'Chandler Bing'
 }, {
-    value: '5',
-    label: 'Joey Tribbiani'
+  value: '5',
+  label: 'Joey Tribbiani'
 }, {
-    value: '6',
-    label: 'Phoebe Buffay'
+  value: '6',
+  label: 'Phoebe Buffay'
 }];
+
+const [value, setValue] = React.useState([serverItems[2]]);
+const [state, setState] = React.useState({});
 
 const findItems = query => serverItems.filter(x => x.label.toLowerCase().indexOf(query.toLowerCase()) > -1);
 
 <AsyncMultiSelect
-  value={state.value}
-  state={state.state}
-  onValueChange={value => setState({ value })}
+  value={value}
+  state={state}
+  onValueChange={setValue}
   onStateChange={updater => {
-    setState(state => ({ state: { ...updater({ state: state.state }), items: [], isLoading: true } }));
+    setState(state => ({ ...updater({ state }), items: [], isLoading: true }));
 
     setTimeout(() => {      
-      setState(state => ({ state: { ...state.state, items: findItems(state.state.searchQuery), isLoading: false } }));
+      setState(state => ({ ...state, items: findItems(state.searchQuery), isLoading: false }));
     }, 700);
   }}
 />
@@ -170,13 +169,6 @@ const findItems = query => serverItems.filter(x => x.label.toLowerCase().indexOf
 <h4>Value as object</h4>
 
 ```javascript
-initialState = { 
-  value: [{ value: { id: '3', first: 'Rachel', last: 'Green' }, label: 'Rachel Green' }],
-  state: {
-    itemIdField: 'id',
-  }
-};
-
 const serverItems = [{
   value: { id: '1', first: 'Ross', last: 'Geller' },
   label: 'Ross Geller'
@@ -197,18 +189,20 @@ const serverItems = [{
     label: 'Phoebe Buffay'
 }];
 
+const [value, setValue] = React.useState([serverItems[2]]);
+const [state, setState] = React.useState({ itemIdField: 'id' });
 
 const findItems = query => serverItems.filter(x => x.label.toLowerCase().indexOf(query.toLowerCase()) > -1);
 
 <AsyncMultiSelect
-  value={state.value}
-  state={state.state}
-  onValueChange={value => setState({ value })}
+  value={value}
+  state={state}
+  onValueChange={setValue}
   onStateChange={updater => {
-    setState(state => ({ state: { ...updater({ state: state.state }), items: [], isLoading: true } }));
+    setState(state => ({ ...updater({ state }), items: [], isLoading: true }));
 
     setTimeout(() => {      
-      setState(state => ({ state: { ...state.state, items: findItems(state.state.searchQuery), isLoading: false } }));
+      setState(state => ({ ...state, items: findItems(state.searchQuery), isLoading: false }));
     }, 700);
   }}
 />
@@ -217,10 +211,6 @@ const findItems = query => serverItems.filter(x => x.label.toLowerCase().indexOf
 <h4>Disabled</h4>
 
 ```javascript
-initialState = { 
-  value: [{ value: '3', label: 'Rachel Green' }],
-};
-
 const serverItems = [{
   value: '1',
   label: 'Ross Geller'
@@ -241,18 +231,21 @@ const serverItems = [{
     label: 'Phoebe Buffay'
 }];
 
+const [value, setValue] = React.useState([serverItems[2]]);
+const [state, setState] = React.useState({});
+
 const findItems = query => serverItems.filter(x => x.label.toLowerCase().indexOf(query.toLowerCase()) > -1);
 
 <AsyncMultiSelect
-  value={state.value}
-  state={state.state}
+  value={value}
+  state={state}
   disabled={true}
   onValueChange={value => setState({ value })}
   onStateChange={updater => {
-    setState(state => ({ state: { ...updater({ state: state.state }), items: [], isLoading: true } }));
+    setState(state => ({ ...updater({ state }), items: [], isLoading: true }));
 
     setTimeout(() => {      
-      setState(state => ({ state: { ...state.state, items: findItems(state.state.searchQuery), isLoading: false } }));
+      setState(state => ({ ...state, items: findItems(state.searchQuery), isLoading: false }));
     }, 700);
   }}
 />
@@ -262,10 +255,6 @@ const findItems = query => serverItems.filter(x => x.label.toLowerCase().indexOf
 
 
 ```javascript
-initialState = { 
-  value: undefined,
-};
-
 const serverItems = [{
   value: '1',
   label: 'Ross Geller'
@@ -286,17 +275,20 @@ const serverItems = [{
     label: 'Phoebe Buffay'
 }];
 
+const [value, setValue] = React.useState();
+const [state, setState] = React.useState({});
+
 const findItems = query => serverItems.filter(x => x.label.toLowerCase().indexOf(query.toLowerCase()) > -1);
 
 <AsyncMultiSelect
-  value={state.value}
-  state={state.state}
-  onValueChange={value => setState({ value })}
+  value={value}
+  state={state}
+  onValueChange={setValue}
   onStateChange={updater => {
-    setState(state => ({ state: { ...updater({ state: state.state }), items: [], isLoading: true } }));
+    setState(state => ({ ...updater({ state }), items: [], isLoading: true }));
 
     setTimeout(() => {      
-      setState(state => ({ state: { ...state.state, items: findItems(state.state.searchQuery), isLoading: false } }));
+      setState(state => ({ ...state, items: findItems(state.searchQuery), isLoading: false }));
     }, 700);
   }}
 />

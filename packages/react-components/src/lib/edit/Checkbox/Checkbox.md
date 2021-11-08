@@ -4,8 +4,8 @@
 <h4>Usage in cofi form</h4>
 
 ```javascript
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 const model = {
   id: 'simple',
@@ -62,64 +62,32 @@ const resources = {
 <h4>Simple</h4>
 
 ```javascript
-initialState = { 
-    value: true,
-};
+const [value, setValue] = React.useState(true);
 
-<Checkbox
-    value={state.value}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-/>
+<Checkbox value={value} onValueChange={setValue} />
 ```
 
 <h4>With label</h4>
 
 ```javascript
-initialState = { 
-    value: true,
-    state: {
-        label: 'Click me',
-    }
-};
+const [value, setValue] = React.useState(true);
+const [state, setState] = React.useState({ label: 'Click me' });
 
-<Checkbox
-    value={state.value}
-    state={state.state}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-/>
+<Checkbox value={value} state={state} onValueChange={setValue} />
 ```
 
 <h4>Initial value undefined</h4>
 
 ```javascript
-initialState = { 
-    value: undefined,
-};
+const [value, setValue] = React.useState();
 
-<Checkbox
-    value={state.value}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-/>
+<Checkbox value={value} onValueChange={setValue} />
 ```
 
 <h4>Disabled</h4>
 
 ```javascript
-initialState = { 
-    value: true,
-};
+const [value, setValue] = React.useState(true);
 
-<Checkbox
-    value={state.value}
-    disabled={true}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-/>
+<Checkbox value={value} disabled={true} onValueChange={setValue} />
 ```
