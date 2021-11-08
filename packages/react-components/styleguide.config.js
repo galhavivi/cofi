@@ -1,6 +1,8 @@
 const path = require('path');
 const configFactory = require('react-scripts/config/webpack.config');
 
+const mode = process.env.NODE_ENV !== 'production' ? 'development' : 'production';
+
 module.exports = {
   template: {
     favicon: 'src/favicon.ico',
@@ -33,5 +35,5 @@ module.exports = {
     components: 'src/lib/form/**/[A-Z]*.jsx',
     ignore: '**/internal/**/*',
   }],
-  webpackConfig: configFactory('development'),
+  webpackConfig: configFactory(mode),
 };
