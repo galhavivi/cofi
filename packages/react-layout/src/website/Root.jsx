@@ -49,7 +49,7 @@ const Root = () => {
           <Styled.GlobalStyle />
           <Styled.Header>
             <Styled.InternalLink id="logo" to={deafultDemoRoute}>
-              <Styled.Logo src={require('./logo.svg')} />
+              <Styled.Logo src={require('./logo.svg').default} />
               <Styled.LogoText>Cofi | React Layout Demos</Styled.LogoText>
             </Styled.InternalLink>
             <Styled.HeaderLinks>
