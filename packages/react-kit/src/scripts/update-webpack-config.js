@@ -28,7 +28,7 @@ const updateWebpackConfig = function(config) {
       x.constructor.name !== 'OptimizeCssAssetsWebpackPlugin'),
   });
 
-  // Fails on react 4, not sure if we need it anymore?
+  // Fails on react 4 - not sure if we need it anymore?
   // // Loaders (module)
   // config.module.rules[1].use[0].options.useEslintrc = true;
 
