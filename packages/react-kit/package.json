@@ -1,6 +1,6 @@
 {
   "name": "@cofi/react-kit",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "React development environment utilities such as scripts and config files",
   "license": "MIT",
   "repository": {
@@ -19,7 +19,7 @@
     "publish-package": "npm publish dist --access public || echo publish failed"
   },
   "dependencies": {
-    "@cofi/js-kit": "^2.0.0",
+    "@cofi/js-kit": "^3.0.0",
     "babel-plugin-styled-components": "^1.13.3",
     "@testing-library/react": "^12.1.2",
     "enzyme": "^3.6.0",

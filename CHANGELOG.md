@@ -4,6 +4,8 @@
 
 Changes that have landed in master but are not yet released.
 
+## v3.0.0 (November 9, 2021)
+
 ### environment
 
 * Upgrade to Node 17. [Issue 18](https://github.com/galhavivi/cofi/issues/18)
