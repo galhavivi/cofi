@@ -10,19 +10,10 @@ const WARNING = 1;
 const ERROR = 2;
 
 module.exports = {
-  extends: ['fbjs'],
-
-  // Stop ESLint from looking for a configuration file in parent folders
-  root: true,
-
-  settings: {
-    react: {
-      version: 'detect',
-    }
-  },
-
-  plugins: ['no-for-of-loops', 'import', 'json', 'react', 'react-hooks'], // , 'jest'
-  parser: '@babel/eslint-parser',
+  extends: ['fbjs'], // extend facebook configuration which contains set of rules and settings
+  root: true, // stops ESLint from looking for a configuration file in parent folders
+  plugins: ['no-for-of-loops', 'import', 'json', 'react', 'react-hooks'], // extra set of rules
+  parser: '@babel/eslint-parser', // by default eslint expects ES5 syntax. babel parser helps to extend to more syntax
   parserOptions: {
     ecmaVersion: 2017,
     sourceType: 'module',
@@ -31,10 +22,28 @@ module.exports = {
       experimentalObjectRestSpread: true,
     },
   },
-
-  // We're stricter than the default config, mostly. We'll override a few rules
-  // and then enable some React specific ones.
-  rules: {
+  settings: { // shared settings to all the rules
+    react: {
+      version: 'detect',
+    }
+  },
+  overrides: [
+    {
+      files: ['**/*.test.js', '**/*.spec.js'],
+    },
+  ],
+  globals: { // tells eslint how to treat global variable when it encounter one
+    spyOnDev: 'writable',
+    spyOnDevAndProd: 'writable',
+    spyOnProd: 'writable',
+    __PROFILE__: 'writable',
+    __UMD__: 'writable',
+    flushAllPromises: 'writable',
+    mount: 'writable',
+    render: 'writable',
+    shallow: 'writable',
+  },
+  rules: { // declaring the rules we want to use from the plugins array
     'accessor-pairs': OFF,
     'brace-style': [ERROR, '1tbs', { allowSingleLine: true }],
     'comma-dangle': [ERROR, 'always-multiline'],
@@ -42,8 +51,8 @@ module.exports = {
     'dot-location': [ERROR, 'property'],
     'dot-notation': ERROR,
     'eol-last': ERROR,
-    eqeqeq: [ERROR, 'allow-null'],
-    indent: [ERROR, 2],
+    'eqeqeq': [ERROR, 'allow-null'],
+    'indent': [ERROR, 2],
     'import/order': [ERROR, { 'newlines-between': 'never' }],
     'jsx-quotes': [ERROR, 'prefer-double'],
     'keyword-spacing': [ERROR, { after: true, before: true }],
@@ -57,86 +66,29 @@ module.exports = {
     'no-use-before-define': [ERROR, { functions: false, variables: false }],
     'no-useless-concat': OFF,
     'object-curly-newline': ERROR,
-    quotes: [ERROR, 'single', { avoidEscape: true, allowTemplateLiterals: true }],
+    'quotes': [ERROR, 'single', { avoidEscape: true, allowTemplateLiterals: true }],
     'space-before-blocks': ERROR,
     'space-before-function-paren': OFF,
     'valid-typeof': [ERROR, { requireStringLiterals: true }],
-
-    // We apply these settings to files that should run on Node.
-    // They can't use JSX or ES6 modules, and must be in strict mode.
-    // They can, however, use other ES6 features.
-    // (Note these rules are overridden later for source files.)
     'no-var': ERROR,
-    strict: ERROR,
-
-    // React & JSX
-    // Our transforms set this automatically
+    'strict': ERROR,
     'react/jsx-boolean-value': [ERROR, 'always'],
     'react/jsx-no-undef': ERROR,
-    // We don't care to do this
     'react/jsx-sort-prop-types': OFF,
-
-    // The react/jsx-space-before-closing rule is deprecated. Please use the react/jsx-tag-spacing rule with the "beforeSelfClosing" option instead.
-    // 'react/jsx-space-before-closing': ERROR,
     'react/jsx-tag-spacing': [ERROR, { beforeSelfClosing: 'always' }],
-
     'react/jsx-uses-react': ERROR,
     'react/no-is-mounted': OFF,
-    // This isn't useful in our test code
     'react/react-in-jsx-scope': ERROR,
     'react/self-closing-comp': ERROR,
-    // We don't care to do this
     'react/jsx-wrap-multilines': [ERROR, { declaration: false, assignment: false }],
-    // Checks rules of Hooks
     "react-hooks/rules-of-hooks": ERROR,
-    // Checks effect dependencies
     "react-hooks/exhaustive-deps": WARNING,
-    // prettier
-    // 'prettier/prettier': [ERROR, prettierConfig],
-    // Prevent for...of loops because they require a Symbol polyfill.
-    // You can disable this rule for code that isn't shipped (e.g. build scripts and tests).
     'no-for-of-loops/no-for-of-loops': ERROR,
-    // Our own rules:
     'max-len': [WARNING, { code: 130 }],
     'no-console': WARNING,
     'import/no-webpack-loader-syntax': OFF,
-
     'object-curly-spacing': [ERROR, 'always'],
     'curly': [ERROR, 'multi-line', 'consistent'],
     'comma-spacing': [ERROR, { before: false, after: true }]
-
-  },
-
-  overrides: [
-    {
-      files: ['**/*.test.*', '**/*.spec.*'],
-      // TODO: figure out if to return jest here
-      // rules: {
-      //   // https://github.com/jest-community/eslint-plugin-jest
-      //   'jest/no-focused-tests': ERROR,
-      //   "react/jsx-no-bind": [ERROR, {
-      //     "ignoreDOMComponents": false,
-      //     "ignoreRefs": false,
-      //     "allowArrowFunctions": true,
-      //     "allowFunctions": false,
-      //     "allowBind": false
-      //   }]
-      // },
-      files: [
-        "**/*.spec.js"
-      ],
-    },
-  ],
-
-  globals: {
-    spyOnDev: 'writable',
-    spyOnDevAndProd: 'writable',
-    spyOnProd: 'writable',
-    __PROFILE__: 'writable',
-    __UMD__: 'writable',
-    flushAllPromises: 'writable',
-    mount: 'writable',
-    render: 'writable',
-    shallow: 'writable',
   },
 };
