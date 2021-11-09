@@ -2,7 +2,8 @@
 <h4>Simple</h4>
 
 ```javascript
-const SearchInput = require('SearchInput').default;
+import SearchInput from './SearchInput';
+
 initialState = { 
     value: ''
 };
@@ -21,7 +22,8 @@ initialState = {
 <h4>Disabled</h4>
 
 ```javascript
-const SearchInput = require('SearchInput').default;
+import SearchInput from './SearchInput';
+
 initialState = { 
     value: ''
 };

@@ -27,18 +27,23 @@ export default ({ appResources, draft, afterAction, onClose }) => {
     onClose && onClose();
   }, [model, actions, onClose]);
 
-  const save = (value, name) => async ({ data }) => {
+  const saveField = useCallback(async ({ data }) => {
     const id = data.id;
     const item = { ...data };
     delete item.id;
-    await actions.changeValue(name, { ...value, [id]: item });
+    await actions.changeValue('fields', { ...configModel.fields, [id]: item });
     await actions.changeContext({ ...model.context, edit: undefined, preview: undefined });
     onClose && onClose();
-  };
+  }, [configModel.fields, model.context, actions, onClose]);
 
-  const saveField = useCallback(save(configModel.fields, 'fields'));
-
-  const saveLayout = useCallback(save(model.data.layouts, 'layouts'));
+  const saveLayout = useCallback(async ({ data }) => {
+    const id = data.id;
+    const item = { ...data };
+    delete item.id;
+    await actions.changeValue('layouts', { ...model.data.layouts, [id]: item });
+    await actions.changeContext({ ...model.context, edit: undefined, preview: undefined });
+    onClose && onClose();
+  }, [model.data.layouts, model.context, actions, onClose]);
 
   // after each edit - update the preview object in the context
   const afterChangeValue = useCallback(props => {

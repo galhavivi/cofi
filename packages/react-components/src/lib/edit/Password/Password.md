@@ -3,8 +3,8 @@
 <h4>Usage in cofi form</h4>
 
 ```javascript
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 const model = {
   id: 'simple',
@@ -50,58 +50,31 @@ const resources = {
 <h4>Simple</h4>
 
 ```javascript
-initialState = { 
-    value: 'Im@King22385',
-};
+const [value, setValue] = React.useState('Im@King22385');
 
- <Password
-    value={state.value}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-    />
+<Password value={value} onValueChange={setValue} />
 ```
 
 <h4>Initial value undefined</h4>
 
 ```javascript
-initialState = { 
-    value: undefined,
-};
- <Password
-    value={state.value}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-    />
+const [value, setValue] = React.useState();
+
+<Password value={value} onValueChange={setValue} />
 ```
 
 <h4>Disabled</h4>
 
 ```javascript
-initialState = { 
-    value: 'Im@King22385',
-};
- <Password
-    value={state.value}
-    disabled={true}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-    />
+const [value, setValue] = React.useState();
+
+<Password value={value} disabled={true} onValueChange={setValue} />
 ```
 
 <h4>Invalid</h4>
 
 ```javascript
-initialState = { 
-    value: 'Im@King22385',
-};
- <Password
-    value={state.value}
-    invalid={true}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-    />
+const [value, setValue] = React.useState();
+
+<Password value={value} invalid={true} onValueChange={setValue} />
 ```

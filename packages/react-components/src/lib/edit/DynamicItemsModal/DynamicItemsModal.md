@@ -3,12 +3,9 @@
 <h4>Simple</h4>
 
 ```javascript
-const useContext = require('react').useState;
-const createContext = require('react').createContext;
-const CofiContext = require('@cofi/react-form/FormContext').default;
-const InputText = require('../Text').default;
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import InputText from '../Text';
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 // cofi form definition
 const employeeForm = {
@@ -112,13 +109,10 @@ const resources = {
 <h4>Advanced</h4>
 
 ```javascript
-const useContext = require('react').useState;
-const createContext = require('react').createContext;
-const CofiContext = require('@cofi/react-form/FormContext').default;
-const InputText = require('../Text').default;
-const Select = require('../Select').default;
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import InputText from '../Text';
+import Select from '../Select';
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 const selectItems = {
   M: { value: 'M', label: 'Male'},

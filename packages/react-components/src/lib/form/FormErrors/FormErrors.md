@@ -3,9 +3,9 @@
 <h4>Usage in cofi form</h4>
 
 ```javascript
-const Text = require('../../edit/Text/index.js').default;
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import Text from '../../edit/Text';
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 const model = {
   id: 'simple',
@@ -69,9 +69,9 @@ const formStyle = {
 <h4>Usage in cofi form - check only specific fields</h4>
 
 ```javascript
-const Text = require('../../edit/Text/index.js').default;
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import Text from '../../edit/Text';
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 const model = {
   id: 'simple',

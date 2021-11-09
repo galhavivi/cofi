@@ -1,34 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<DynamicItemsModal /> component functions render itemsDisplay 1`] = `
-<StyledComponent
-  forwardedComponent={
-    Object {
-      "$$typeof": Symbol(react.forward_ref),
-      "attrs": Array [],
-      "componentStyle": ComponentStyle {
-        "componentId": "sc-bxivhb",
-        "isStatic": false,
-        "lastClassName": "iyycEQ",
-        "rules": Array [
-          "
-	list-style: none;
-	padding: 0;
-	max-height: 180px;
-	overflow-y: auto;
-",
-        ],
-      },
-      "foldedComponentIds": Array [],
-      "render": [Function],
-      "styledComponentId": "sc-bxivhb",
-      "target": "ul",
-      "toString": [Function],
-      "warnTooManyClasses": [Function],
-      "withComponent": [Function],
-    }
-  }
-  forwardedRef={null}
+<ul
+  className="sc-hKwDye jrNqGy"
 >
   <styled.li
     key="0"
@@ -68,13 +42,13 @@ exports[`<DynamicItemsModal /> component functions render itemsDisplay 1`] = `
       </WithStyles(ForwardRef(Fab))>
     </styled.div>
   </styled.li>
-</StyledComponent>
+</ul>
 `;
 
 exports[`<DynamicItemsModal /> should render provided data 1`] = `
 <div>
   <ul
-    class="sc-bxivhb iyycEQ"
+    class="sc-hKwDye jrNqGy"
   />
   <button
     class="MuiButtonBase-root MuiFab-root MuiFab-sizeSmall MuiFab-primary"
@@ -97,7 +71,7 @@ exports[`<DynamicItemsModal /> should render provided data 1`] = `
     </span>
   </button>
   <span
-    class="sc-gzVnrw dcsTyF"
+    class="sc-iCfMLu iSOBhP"
   >
     Add New
   </span>

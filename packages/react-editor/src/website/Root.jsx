@@ -40,7 +40,7 @@ const Root = () => {
           <Styled.GlobalStyle />
           <Styled.Header>
             <Styled.InternalLink id="logo" to="/">
-              <Styled.Logo src={require('./logo.svg')} />
+              <Styled.Logo src={require('./logo.svg').default} />
               <Styled.LogoText>Cofi | React Editor</Styled.LogoText>
             </Styled.InternalLink>
             <Styled.HeaderLinks>

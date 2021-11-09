@@ -3,8 +3,8 @@
 <h4>Usage in cofi form</h4>
 
 ```javascript
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 const model = {
   id: 'simple',
@@ -56,58 +56,31 @@ const resources = {
 <h4>Simple</h4>
 
 ```javascript
-initialState = { 
-  value: new Date('2019-04-18 09:00'),
-};
+const [value, setValue] = React.useState(new Date('2019-04-18 09:00'));
 
- <TimePicker
-  value={state.value}
-  onValueChange={(value) => {
-    setState({ value });
-  }}
-  />
+<TimePicker value={value} onValueChange={setValue} />
   ```
 
 <h4>Initial value undefined</h4>
 
 ```javascript
-initialState = { 
-  value: undefined,
-};
- <TimePicker
-  value={state.value}
-  onValueChange={(value) => {
-    setState({ value });
-  }}
-  />
+const [value, setValue] = React.useState();
+
+<TimePicker value={value} onValueChange={setValue} />
   ```
 
   <h4>Disabled</h4>
 
 ```javascript
-initialState = { 
-  value: new Date('2019-04-18 09:00'),
-};
- <TimePicker
-  value={state.value}
-  disabled={true}
-  onValueChange={(value) => {
-    setState({ value });
-  }}
-  />
+const [value, setValue] = React.useState();
+
+<TimePicker value={value} disabled={true} onValueChange={setValue} />
   ```
 
 <h4>Invalid</h4>
 
 ```javascript
-initialState = { 
-  value: new Date('2019-04-18 09:00'),
-};
- <TimePicker
-  value={state.value}
-  invalid={true}
-  onValueChange={(value) => {
-    setState({ value });
-  }}
-/>
+const [value, setValue] = React.useState();
+
+<TimePicker value={value} invalid={true} onValueChange={setValue} />
 ```

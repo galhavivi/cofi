@@ -3,8 +3,8 @@
 <h4>Usage in cofi form</h4>
 
 ```javascript
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 const model = {
   id: 'simple',
@@ -50,43 +50,23 @@ const resources = {
 <h4>Simple</h4>
 
 ```javascript
-initialState = { 
-    status: true,
-};
+const [value, setValue] = React.useState(true);
 
- <Switch
-    value={state.status}
-    onValueChange={(status) => {
-        setState({ status });
-    }}
-    />
+<Switch value={value} onValueChange={setValue} />
 ```
 
 <h4>Initial value undefined</h4>
 
 ```javascript
-initialState = { 
-    status: undefined,
-};
- <Switch
-    value={state.status}
-    onValueChange={(status) => {
-        setState({ status });
-    }}
-    />
+const [value, setValue] = React.useState();
+
+<Switch value={value} onValueChange={setValue} />
 ```
 
 <h4>Disabled</h4>
 
 ```javascript
-initialState = { 
-    status: true,
-};
- <Switch
-    value={state.status}
-    disabled={true}
-    onValueChange={(status) => {
-        setState({ status });
-    }}
-    />
+const [value, setValue] = React.useState();
+
+<Switch value={value} disabled={true} onValueChange={setValue} />
 ```

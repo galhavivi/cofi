@@ -3,11 +3,11 @@
 <h4>Display form log messages</h4>
 
 ```javascript
-const { LogProvider, withLog } = require('@cofi/react-form/index');
-const { setLogLevel, logLevels } = require('@cofi/form/index');
-const Text = require('../../edit/Text/index.js').default;
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import { LogProvider, withLog } from '@cofi/react-form';
+import { setLogLevel, logLevels } from '@cofi/form';
+import Text from '../../edit/Text';
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 // set cofi log level to debug (to see it also on prod docs website)
 setLogLevel(logLevels.DEBUG);

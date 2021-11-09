@@ -8,13 +8,10 @@ const OFF = 0;
 const ERROR = 2;
 
 module.exports = {
-  extends: ['airbnb-base'],
-
-  // Stop ESLint from looking for a configuration file in parent folders
-  root: true,
-
-  plugins: ['no-for-of-loops', 'import', 'json'],
-  parser: '@babel/eslint-parser',
+  extends: ['airbnb-base'], // extend airbnb-base configuration which contains set of rules and settings
+  root: true, // stops ESLint from looking for a configuration file in parent folders
+  plugins: ['no-for-of-loops', 'import', 'json'], // extra set of rules
+  parser: '@babel/eslint-parser', // by default eslint expects ES5 syntax. babel parser helps to extend to more syntax
   parserOptions: {
     ecmaVersion: 2017,
     sourceType: 'module',
@@ -24,8 +21,7 @@ module.exports = {
       experimentalObjectRestSpread: true,
     },
   },
-
-  settings: {
+  settings: { // shared settings to all the rules
     'import/resolver': {
       node: {
         extensions: [".js"]
@@ -33,14 +29,10 @@ module.exports = {
     }
   },
   overrides: [{
-    files: [
-      "**/*.spec.js"
-    ],
+    files: ["**/*.spec.js"],
     env: {
-      jest: true // now **/*.spec.js files' env has both es6 *and* jest
+      jest: true // now **/*.spec.js files env has both es6 *and* jest
     },
-    // Can't extend in overrides: https://github.com/eslint/eslint/issues/8813
-    // "extends": ["plugin:jest/recommended"]
     plugins: ["jest"],
     rules: {
       "jest/no-disabled-tests": "warn",
@@ -50,82 +42,46 @@ module.exports = {
       "jest/valid-expect": "error"
     }
   }],
-
-  // We're stricter than the default config, mostly. We'll override a few rules
-  // and then enable some React specific ones.
-  rules: {
-    'accessor-pairs': OFF,
-    'brace-style': [ERROR, '1tbs', {
-      allowSingleLine: true
-    }],
-    'comma-dangle': [ERROR, 'always-multiline'], // this rule covered by prettier -> trailingComma: 'es5'
-    'consistent-return': OFF,
-    'dot-location': [ERROR, 'property'],
-    'dot-notation': ERROR,
-    'eol-last': ERROR,
-    eqeqeq: [ERROR, 'allow-null'],
-    indent: OFF,
-    'import/prefer-default-export': OFF,
-    'import/no-extraneous-dependencies': OFF,
-    'import/no-webpack-loader-syntax': OFF,
-    'import/order': [ERROR, {
-      'newlines-between': 'never'
-    }],
-    // 'jsx-quotes': [ERROR, 'prefer-double'],
-    'keyword-spacing': [ERROR, {
-      after: true,
-      before: true
-    }],
-    'no-bitwise': OFF,
-    'no-inner-declarations': [ERROR, 'functions'],
-    'no-multi-spaces': ERROR,
-    'no-restricted-syntax': [ERROR, 'WithStatement'],
-    'no-shadow': OFF,
-    'no-unused-expressions': [ERROR, {
-      allowTernary: true,
-      allowShortCircuit: true
-    }],
-    'no-unused-vars': [ERROR, {
-      args: 'none'
-    }],
-    'no-use-before-define': [ERROR, {
-      functions: false,
-      variables: false
-    }],
-    'no-useless-concat': OFF,
-    'object-curly-newline': OFF,
-    quotes: [ERROR, 'single', {
-      avoidEscape: true,
-      allowTemplateLiterals: true
-    }],
-    'space-before-blocks': ERROR,
-    'valid-typeof': [ERROR, {
-      requireStringLiterals: true
-    }],
-
-    // We apply these settings to files that should run on Node.
-    // They can't use JSX or ES6 modules, and must be in strict mode.
-    // They can, however, use other ES6 features.
-    // (Note these rules are overridden later for source files.)
-    'no-var': ERROR,
-    strict: ERROR,
-
-    // Prevent for...of loops because they require a Symbol polyfill.
-    // You can disable this rule for code that isn't shipped (e.g. build scripts and tests).
-    'no-for-of-loops/no-for-of-loops': ERROR,
-    // Our own rules:
-    'max-len': [ERROR, {
-      code: 130
-    }],
-    'no-console': ERROR,
-    'no-param-reassign': OFF,
-  },
-
-  globals: {
+  globals: { // tells eslint how to treat global variable when it encounter one
     spyOnDev: true,
     spyOnDevAndProd: true,
     spyOnProd: true,
     __PROFILE__: true,
     __UMD__: true,
+  },
+  rules: { // declaring the rules we want to use from the plugins array
+    'accessor-pairs': OFF,
+    'brace-style': [ERROR, '1tbs', { allowSingleLine: true }],
+    'comma-dangle': [ERROR, 'always-multiline'],
+    'consistent-return': OFF,
+    'dot-location': [ERROR, 'property'],
+    'dot-notation': ERROR,
+    'eol-last': ERROR,
+    'eqeqeq': [ERROR, 'allow-null'],
+    'indent': OFF,
+    'import/prefer-default-export': OFF,
+    'import/no-extraneous-dependencies': OFF,
+    'import/no-webpack-loader-syntax': OFF,
+    'import/order': [ERROR, { 'newlines-between': 'never' }],
+    'keyword-spacing': [ERROR, { after: true, before: true }],
+    'no-bitwise': OFF,
+    'no-inner-declarations': [ERROR, 'functions'],
+    'no-multi-spaces': ERROR,
+    'no-restricted-syntax': [ERROR, 'WithStatement'],
+    'no-shadow': OFF,
+    'no-unused-expressions': [ERROR, { allowTernary: true, allowShortCircuit: true }],
+    'no-unused-vars': [ERROR, { args: 'none' }],
+    'no-use-before-define': [ERROR, { functions: false, variables: false }],
+    'no-useless-concat': OFF,
+    'object-curly-newline': OFF,
+    'quotes': [ERROR, 'single', { avoidEscape: true, allowTemplateLiterals: true }],
+    'space-before-blocks': ERROR,
+    'valid-typeof': [ERROR, { requireStringLiterals: true }],
+    'no-var': ERROR,
+    'strict': ERROR,
+    'no-for-of-loops/no-for-of-loops': ERROR,
+    'max-len': [ERROR, { code: 130 }],
+    'no-console': ERROR,
+    'no-param-reassign': OFF,
   },
 };

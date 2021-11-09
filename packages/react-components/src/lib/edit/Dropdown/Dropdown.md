@@ -3,8 +3,8 @@
 <h4>Usage in cofi form</h4>
 
 ```javascript
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 const model = {
   id: 'simple',
@@ -70,202 +70,155 @@ const resources = {
 <h4>Simple</h4>
 
 ```javascript
-initialState = { 
+const [value, setValue] = React.useState('BASKETBALL');
+const [state, setState] = React.useState({
+  items: [{
     value: 'BASKETBALL',
-    state: {
-      items: [{
-          value: 'BASKETBALL',
-          label: 'Basketball'
-        }, {
-          value: 'FOOTBALL',
-          label: 'Football'
-        }, {
-          value: 'SHOP',
-          label: 'Shop'
-        }, {
-          value: 'FASHION',
-          label: 'Fashion'
-        }, {
-          value: 'COOK',
-          label: 'Cook'
-        }]
-    },
-};
+    label: 'Basketball'
+  }, {
+    value: 'FOOTBALL',
+    label: 'Football'
+  }, {
+    value: 'SHOP',
+    label: 'Shop'
+  }, {
+    value: 'FASHION',
+    label: 'Fashion'
+  }, {
+    value: 'COOK',
+    label: 'Cook'
+  }],
+});
 
- <Dropdown
-    value={state.value}
-    state={state.state}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-    />
+<Dropdown value={value} state={state} onValueChange={setValue} />
 ```
 
 <h4>Initial value undefined</h4>
 
 ```javascript
-initialState = { 
-    value: undefined,
-    state: {
-      items: [{
-          value: 'BASKETBALL',
-          label: 'Basketball'
-        }, {
-          value: 'FOOTBALL',
-          label: 'Football'
-        }, {
-          value: 'SHOP',
-          label: 'Shop'
-        }, {
-          value: 'FASHION',
-          label: 'Fashion'
-        }, {
-          value: 'COOK',
-          label: 'Cook'
-        }]
-    },
-};
- <Dropdown
-    value={state.value}
-    state={state.state}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-    />
+const [value, setValue] = React.useState();
+const [state, setState] = React.useState({
+  items: [{
+    value: 'BASKETBALL',
+    label: 'Basketball'
+  }, {
+    value: 'FOOTBALL',
+    label: 'Football'
+  }, {
+    value: 'SHOP',
+    label: 'Shop'
+  }, {
+    value: 'FASHION',
+    label: 'Fashion'
+  }, {
+    value: 'COOK',
+    label: 'Cook'
+  }],
+});
+
+<Dropdown value={value} state={state} onValueChange={setValue} />
 ```
 
 <h4>Item's value as any object</h4>
 
 ```jsx
-const items = [{
-          value: {type: 'hobbit', name: 'Frodo'},
-          label: 'Frodo'
-        }, {
-          value: {type: 'hobbit', name: 'Sam'},
-          label: 'Sam'
-        }, {
-          value: {type: 'hobbit', name: 'Pippin'},
-          label: 'Pippin'
-        }, {
-          value: {type: 'elf', name: 'Legolas'},
-          label: 'Legolas'
-        }, {
-          value: {type: 'dwarf', name: 'Gilmli'},
-          label: 'Gilmli'
-        }]
-initialState = { 
-    value: {type: 'hobbit', name: 'Pippin'},
-    state: {
-      items,
-    },
-};
- <Dropdown
-    value={state.value}
-    state={state.state}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-    />
+const [value, setValue] = React.useState({ type: 'hobbit', name: 'Pippin' });
+const [state, setState] = React.useState({
+  items: [{
+    value: { type: 'hobbit', name: 'Frodo' },
+    label: 'Frodo'
+  }, {
+    value: { type: 'hobbit', name: 'Sam' },
+    label: 'Sam'
+  }, {
+    value: { type: 'hobbit', name: 'Pippin' },
+    label: 'Pippin'
+  }, {
+    value: { type: 'elf', name: 'Legolas' },
+    label: 'Legolas'
+  }, {
+    value: { type: 'dwarf', name: 'Gilmli' },
+    label: 'Gilmli'
+  }],
+});
+
+<Dropdown value={value} state={state} onValueChange={setValue} />
 ```
 
 <h4>Required</h4>
 
 ```javascript
-initialState = { 
+const [value, setValue] = React.useState();
+const [state, setState] = React.useState({
+  items: [{
     value: 'BASKETBALL',
-    state: {
-      items: [{
-          value: 'BASKETBALL',
-          label: 'Basketball'
-        }, {
-          value: 'FOOTBALL',
-          label: 'Football'
-        }, {
-          value: 'SHOP',
-          label: 'Shop'
-        }, {
-          value: 'FASHION',
-          label: 'Fashion'
-        }, {
-          value: 'COOK',
-          label: 'Cook'
-        }]
-    },
-};
- <Dropdown
-    value={state.value}
-    state={state.state}
-    required={true}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-    />
+    label: 'Basketball'
+  }, {
+    value: 'FOOTBALL',
+    label: 'Football'
+  }, {
+    value: 'SHOP',
+    label: 'Shop'
+  }, {
+    value: 'FASHION',
+    label: 'Fashion'
+  }, {
+    value: 'COOK',
+    label: 'Cook'
+  }],
+});
+
+<Dropdown value={value} state={state} required={true} onValueChange={setValue} />
 ```
 
 <h4>Disabled</h4>
 
 ```javascript
-initialState = { 
+const [value, setValue] = React.useState();
+const [state, setState] = React.useState({
+  items: [{
+    value: 'BASKETBALL',
+    label: 'Basketball'
+  }, {
     value: 'FOOTBALL',
-    state: {
-      items: [{
-          value: 'BASKETBALL',
-          label: 'Basketball'
-        }, {
-          value: 'FOOTBALL',
-          label: 'Football'
-        }, {
-          value: 'SHOP',
-          label: 'Shop'
-        }, {
-          value: 'FASHION',
-          label: 'Fashion'
-        }, {
-          value: 'COOK',
-          label: 'Cook'
-        }]
-    },
-};
- <Dropdown
-    value={state.value}
-    state={state.state}
-    disabled={true}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-    />
+    label: 'Football'
+  }, {
+    value: 'SHOP',
+    label: 'Shop'
+  }, {
+    value: 'FASHION',
+    label: 'Fashion'
+  }, {
+    value: 'COOK',
+    label: 'Cook'
+  }],
+});
+
+<Dropdown value={value} state={state} disabled={true} onValueChange={setValue} />
 ```
 
 <h4>Invalid</h4>
 
 ```javascript
-initialState = { 
+const [value, setValue] = React.useState();
+const [state, setState] = React.useState({
+  items: [{
+    value: 'BASKETBALL',
+    label: 'Basketball'
+  }, {
     value: 'FOOTBALL',
-    state: {
-      items: [{
-          value: 'BASKETBALL',
-          label: 'Basketball'
-        }, {
-          value: 'FOOTBALL',
-          label: 'Football'
-        }, {
-          value: 'SHOP',
-          label: 'Shop'
-        }, {
-          value: 'FASHION',
-          label: 'Fashion'
-        }, {
-          value: 'COOK',
-          label: 'Cook'
-        }]
-    },
-};
- <Dropdown
-    value={state.value}
-    state={state.state}
-    invalid={true}
-    onValueChange={(value) => {
-        setState({ value });
-    }}
-    />
+    label: 'Football'
+  }, {
+    value: 'SHOP',
+    label: 'Shop'
+  }, {
+    value: 'FASHION',
+    label: 'Fashion'
+  }, {
+    value: 'COOK',
+    label: 'Cook'
+  }],
+});
+
+<Dropdown value={value} state={state} invalid={true} onValueChange={setValue} />
 ```

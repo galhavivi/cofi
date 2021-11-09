@@ -15,7 +15,7 @@
   "scripts": {
     "start": "export NODE_OPTIONS=--openssl-legacy-provider && npx styleguidist server",
     "build-package": "rm -rf dist/* && node ../../node_modules/@babel/cli/bin/babel.js  src/lib --out-dir dist --copy-files && cp package.json ./dist && cp .npmrc ./dist",
-    "build-website": "rm -rf ./build && npx styleguidist build && mv styleguide build",
+    "build-website": "rm -rf ./build && export NODE_OPTIONS=--openssl-legacy-provider && npx styleguidist build && mv styleguide build",
     "test": "node node_modules/@cofi/react-kit/scripts/test.js",
     "coverage": "npm run test -- --coverage",
     "e2e": "echo no e2e tests yet",
@@ -30,8 +30,8 @@
     "build-package": "src/**/*.js"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
   },
   "dependencies": {
     "@date-io/date-fns": "^1.3.12",
@@ -39,17 +39,17 @@
     "@material-ui/core": "^4.1.2",
     "@material-ui/icons": "^4.0.2",
     "@material-ui/pickers": "^3.1.2",
+    "styled-components": "^5.3.3",
     "date-fns": "^2.8.1",
     "dateformat": "^3.0.3",
     "react-json-editor-ajrm": "^2.5.13",
-    "react-select": "^3.0.8",
-    "styled-components": "^4.4.1"
+    "react-select": "^3.0.8"
   },
   "devDependencies": {
     "@cofi/form": "^2.0.0",
     "@cofi/react-form": "^2.0.0",
     "@cofi/react-kit": "^2.0.0",
-    "react-styleguidist": "^9.0.5"
+    "react-styleguidist": "^11.1.7"
   },
   "keywords": [
     "cofi",

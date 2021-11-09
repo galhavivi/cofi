@@ -3,8 +3,8 @@
 <h4>Usage in cofi form</h4>
 
 ```javascript
-const Form = require('@cofi/react-form/Form').default;
-const Field = require('@cofi/react-form/Field').default;
+import Form from '@cofi/react-form/Form';
+import Field from '@cofi/react-form/Field';
 
 const model = {
   id: 'simple',
@@ -70,185 +70,147 @@ const resources = {
 <h4>Simple</h4>
 
 ```javascript
-initialState = { 
-  value: '2',
-  state: {
-    items: [{
-            value: '1',
-            label: 'Ross Geller'
-        }, {
-            value: '2',
-            label: 'Monica Geller'
-        }, {
-            value: '3',
-            label: 'Rachel Green'
-        }, {
-            value: '4',
-            label: 'Chandler Bing'
-        }, {
-            value: '5',
-            label: 'Joey Tribbiani'
-        }, {
-            value: '6',
-            label: 'Phoebe Buffay'
-        }],
-  },
-};
+const [value, setValue] = React.useState('2');
+const [state, setState] = React.useState({
+  items: [{
+          value: '1',
+          label: 'Ross Geller'
+      }, {
+          value: '2',
+          label: 'Monica Geller'
+      }, {
+          value: '3',
+          label: 'Rachel Green'
+      }, {
+          value: '4',
+          label: 'Chandler Bing'
+      }, {
+          value: '5',
+          label: 'Joey Tribbiani'
+      }, {
+          value: '6',
+          label: 'Phoebe Buffay'
+      }],
+});
 
- <RadioGroup
-  value={state.value}
-  state={state.state}
-  onValueChange={(value) => {
-    setState({ value });
-  }}
-  />
+<RadioGroup value={value} state={state} onValueChange={setValue} />
 ```
 
 <h4>Inline</h4>
 
 ```javascript
-initialState = { 
-  value: '4',
-  state: {
-    inline: true,
-    items: [{
-            value: '1',
-            label: 'Ross Geller'
-        }, {
-            value: '2',
-            label: 'Monica Geller'
-        }, {
-            value: '3',
-            label: 'Rachel Green'
-        }, {
-            value: '4',
-            label: 'Chandler Bing'
-        }, {
-            value: '5',
-            label: 'Joey Tribbiani'
-        }, {
-            value: '6',
-            label: 'Phoebe Buffay'
-        }],
-  },
-};
- <RadioGroup
-  value={state.value}
-  state={state.state}
-  onValueChange={(value) => {
-    setState({ value });
-  }}
-  />
+const [value, setValue] = React.useState('2');
+const [state, setState] = React.useState({
+  inline: true,
+  items: [{
+          value: '1',
+          label: 'Ross Geller'
+      }, {
+          value: '2',
+          label: 'Monica Geller'
+      }, {
+          value: '3',
+          label: 'Rachel Green'
+      }, {
+          value: '4',
+          label: 'Chandler Bing'
+      }, {
+          value: '5',
+          label: 'Joey Tribbiani'
+      }, {
+          value: '6',
+          label: 'Phoebe Buffay'
+      }],
+});
+
+<RadioGroup value={value} state={state} onValueChange={setValue} />
 ```
 
 <h4>Initial value undefined</h4>
 
 ```javascript
-initialState = { 
-  value: undefined,
-  state: {
-    items: [{
-        value: '1',
-        label: 'Ross Geller'
-    }, {
-        value: '2',
-        label: 'Monica Geller'
-    }, {
-        value: '3',
-        label: 'Rachel Green'
-    }, {
-        value: '4',
-        label: 'Chandler Bing'
-    }, {
-        value: '5',
-        label: 'Joey Tribbiani'
-    }, {
-        value: '6',
-        label: 'Phoebe Buffay'
-    }],
-  },
-};
- <RadioGroup
-  value={state.value}
-  state={state.state}
-  onValueChange={(value) => {
-    setState({ value });
-  }}
-  />
+const [value, setValue] = React.useState();
+const [state, setState] = React.useState({
+  items: [{
+          value: '1',
+          label: 'Ross Geller'
+      }, {
+          value: '2',
+          label: 'Monica Geller'
+      }, {
+          value: '3',
+          label: 'Rachel Green'
+      }, {
+          value: '4',
+          label: 'Chandler Bing'
+      }, {
+          value: '5',
+          label: 'Joey Tribbiani'
+      }, {
+          value: '6',
+          label: 'Phoebe Buffay'
+      }],
+});
+
+<RadioGroup value={value} state={state} onValueChange={setValue} />
 ```
 
 <h4>Disabled</h4>
 
 ```javascript
-initialState = { 
-  value: '4',
-  state: {
-    items: [{
-            value: '1',
-            label: 'Ross Geller'
-        }, {
-            value: '2',
-            label: 'Monica Geller'
-        }, {
-            value: '3',
-            label: 'Rachel Green'
-        }, {
-            value: '4',
-            label: 'Chandler Bing'
-        }, {
-            value: '5',
-            label: 'Joey Tribbiani'
-        }, {
-            value: '6',
-            label: 'Phoebe Buffay'
-        }],
-  },
-};
- <RadioGroup
-  value={state.value}
-  state={state.state}
-  disabled={true}
-  onValueChange={(value) => {
-    setState({ value });
-  }}
-  />
+const [value, setValue] = React.useState('2');
+const [state, setState] = React.useState({
+  items: [{
+          value: '1',
+          label: 'Ross Geller'
+      }, {
+          value: '2',
+          label: 'Monica Geller'
+      }, {
+          value: '3',
+          label: 'Rachel Green'
+      }, {
+          value: '4',
+          label: 'Chandler Bing'
+      }, {
+          value: '5',
+          label: 'Joey Tribbiani'
+      }, {
+          value: '6',
+          label: 'Phoebe Buffay'
+      }],
+});
+
+<RadioGroup value={value} state={state} disabled={true} onValueChange={setValue} />
 ```
 
 <h4>Specific Items disabled</h4>
 
 ```javascript
-initialState = { 
-  value: '4',
-  state: {
-    items: [{
-            value: '1',
-            label: 'Ross Geller'
-        }, {
-            value: '2',
-            label: 'Monica Geller',
-            disabled: true
-        }, {
-            value: '3',
-            label: 'Rachel Green'
-        }, {
-            value: '4',
-            label: 'Chandler Bing'
-        }, {
-            value: '5',
-            label: 'Joey Tribbiani'
-        }, {
-            value: '6',
-            label: 'Phoebe Buffay',
-            disabled: true
-        }],
-  },
-};
+const [value, setValue] = React.useState('2');
+const [state, setState] = React.useState({
+  items: [{
+          value: '1',
+          label: 'Ross Geller'
+      }, {
+          value: '2',
+          label: 'Monica Geller',
+      }, {
+          value: '3',
+          label: 'Rachel Green',
+          disabled: true,
+      }, {
+          value: '4',
+          label: 'Chandler Bing',
+          disabled: true,
+      }, {
+          value: '5',
+          label: 'Joey Tribbiani'
+      }, {
+          value: '6',
+          label: 'Phoebe Buffay'
+      }],
+});
 
-<RadioGroup
-  value={state.value}
-  state={state.state}
-  onValueChange={(value) => {
-    setState({ value });
-  }}
-/>
+<RadioGroup value={value} state={state} onValueChange={setValue} />
 ```

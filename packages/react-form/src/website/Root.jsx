@@ -52,7 +52,7 @@ const Root = () => {
             <Styled.GlobalStyle />
             <Styled.Header id="header">
               <Styled.InternalLink id="logo" to={defaultDemoRoute}>
-                <Styled.Logo src={require('./logo.svg')} />
+                <Styled.Logo src={require('./logo.svg').default} />
                 <Styled.LogoText id="logo-text">Cofi | React Form Demos</Styled.LogoText>
               </Styled.InternalLink>
               <Styled.HeaderLinks>

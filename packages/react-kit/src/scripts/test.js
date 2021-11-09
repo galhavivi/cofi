@@ -37,6 +37,8 @@ const configFactory = function() {
     }
   }
 
+  config.resetMocks = false;
+  
   // return config
   return config;
 };
