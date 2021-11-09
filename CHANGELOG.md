@@ -11,9 +11,14 @@ Changes that have landed in master but are not yet released.
 ### js-kit
 
 * Update eslint version to 8. [Issue 20](https://github.com/galhavivi/cofi/issues/20)
+
+* Update dependencies to latest versions. [Issue 22](https://github.com/galhavivi/cofi/issues/22)
+
 ### react-kit
 
 * Refactor react-form demo's code to functional components. [Issue 14](https://github.com/galhavivi/cofi/issues/14)
+
+* Update dependencies to latest versions. [Issue 22](https://github.com/galhavivi/cofi/issues/22)
 
 ### react-layout
 
