@@ -29,10 +29,6 @@ h3[class*="rsg--heading"] {
   margin: 0 !important;
 }
 
-[data-testid] {
-  margin-bottom: 70px !important;
-}
-
 .rsg--heading4-18 {
   font-size: 14px !important;
 }
