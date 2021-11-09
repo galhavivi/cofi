@@ -40,7 +40,7 @@ async function verifyLayoutScroll(page) {
   expect(scrollTop).toEqual(0);
 
   // wait for scroll to finish animation
-  await page.waitFor(ANIMATION_DURATION);
+  await page.waitFor(3 * ANIMATION_DURATION);
 
   // verify that sections body top offset has changed
   scrollTop = await page.$eval(selectors.sectionsWrapper, e => e.scrollTop);
