@@ -6,7 +6,7 @@ Changes that have landed in master but are not yet released.
 
 ### documentation
 
-* Update docusaurus version
+* Update docusaurus version. [Issue 27](https://github.com/galhavivi/cofi/issues/27)
 
 ## v3.0.1 (November 10, 2021)
 
