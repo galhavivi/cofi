@@ -4,7 +4,7 @@
 
 Changes that have landed in master but are not yet released.
 
-## v3.0.0 (November 9, 2021)
+## v3.0.1 (November 10, 2021)
 
 ### environment
 
