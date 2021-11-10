@@ -1,6 +1,6 @@
 {
   "name": "@cofi/react-layout",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "React Item, List and more Components, to create full entities pages such as create / edit/ details / list with the same UI/UX experience",
   "license": "MIT",
   "main": "src/website/app.js",
