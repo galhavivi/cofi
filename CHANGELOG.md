@@ -4,6 +4,10 @@
 
 Changes that have landed in master but are not yet released.
 
+### documentation
+
+* Update docusaurus version
+
 ## v3.0.1 (November 10, 2021)
 
 ### environment
