@@ -5,9 +5,9 @@
  
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
-import FormIcon from '@material-ui/icons/ListAlt';
-import DbIcon from '@material-ui/icons/SettingsBackupRestore';
-import FieldsIcon from '@material-ui/icons/List';
+import FormIcon from '@mui/icons-material/ListAlt';
+import DbIcon from '@mui/icons-material/SettingsBackupRestore';
+import FieldsIcon from '@mui/icons-material/List';
 import Boolean from '@cofi/react-components/view/Boolean';
 import service from '../../service';
 import { Wrapper, Link, Actions, Action } from './Styled';

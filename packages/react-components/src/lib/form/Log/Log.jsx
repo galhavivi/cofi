@@ -5,9 +5,9 @@
  
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
-import DebugIcon from '@material-ui/icons/BugReport';
-import WarnIcon from '@material-ui/icons/Warning';
-import ErrorIcon from '@material-ui/icons/Error';
+import DebugIcon from '@mui/icons-material/BugReport';
+import WarnIcon from '@mui/icons-material/Warning';
+import ErrorIcon from '@mui/icons-material/Error';
 import Debugs from './Debugs';
 import Errors from './Errors';
 import Warnings from './Warnings';

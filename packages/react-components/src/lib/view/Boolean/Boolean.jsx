@@ -5,8 +5,8 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import TrueIcon from '@material-ui/icons/CheckCircleOutline';
-import FalseIcon from '@material-ui/icons/NotInterested';
+import TrueIcon from '@mui/icons-material/CheckCircleOutline';
+import FalseIcon from '@mui/icons-material/NotInterested';
 import Styled from './StyledComponents';
 
 /**

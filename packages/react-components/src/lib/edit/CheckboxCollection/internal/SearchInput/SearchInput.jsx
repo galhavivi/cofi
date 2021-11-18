@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import Paper from '@mui/material/Paper';
 import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@material-ui/icons/Search';
+import SearchIcon from '@mui/icons-material/Search';
 import IconButton from '@mui/material/IconButton';
 import { withStyles } from '@mui/styles';
 import { noop } from 'lodash';

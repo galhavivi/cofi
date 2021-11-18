@@ -5,8 +5,8 @@
 
 import React, { useState } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import MenuIcon from '@material-ui/icons/Menu';
-import CloseIcon from '@material-ui/icons/Close';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import menu from '../menu';
 import { getMenuItemByParams } from '../route.utils';
 import readDemoFiles from '../utils/read-demo-files';

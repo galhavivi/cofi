@@ -6,7 +6,7 @@
 import React from 'react';
 import { useState } from 'react';
 import IconButton from '@mui/material/IconButton';
-import Icon from '@material-ui/icons/Dehaze';
+import Icon from '@mui/icons-material/Dehaze';
 import PropTypes from 'prop-types';
 import Menu from '../Menu';
 

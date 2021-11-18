@@ -7,7 +7,7 @@ const demo = `import React, { useEffect, useState, useContext, useCallback, useM
 import { FormContext, createForm } from '@cofi/react-form';
 import { iterateSections, getSectionComponentBoxes } from '@cofi/react-layout/Section/utils';
 import { iterateBoxes } from '@cofi/react-layout/Box/utils';
-import SaveIcon from '@material-ui/icons/Save';
+import SaveIcon from '@mui/icons-material/Save';
 import Item from '@cofi/react-layout/Item';
 import FormErrors from '@cofi/react-components/form/FormErrors';
 import form from './form';

@@ -8,7 +8,7 @@ const demo = `import React, { useContext, useMemo } from 'react';
 import { FormContext, createForm } from '@cofi/react-form';
 import ReactBreakpoints, { Media } from 'react-breakpoints';
 import Item from '@cofi/react-layout/Item';
-import SaveIcon from '@material-ui/icons/Save';
+import SaveIcon from '@mui/icons-material/Save';
 import form from './form';
 import sections from './sections';
 import sectionsMobile from './sections-mobile';

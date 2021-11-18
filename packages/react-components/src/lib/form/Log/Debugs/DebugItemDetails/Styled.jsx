@@ -4,7 +4,7 @@
   */
  
 import styled from 'styled-components';
-import CloseIcon from '@material-ui/icons/Close';
+import CloseIcon from '@mui/icons-material/Close';
 
 export const Details = styled.div`
   border-left: 1px solid #e5e5e5;

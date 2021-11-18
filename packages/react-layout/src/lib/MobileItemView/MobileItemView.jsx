@@ -7,7 +7,7 @@ import React from 'react';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import IconButton from '@mui/material/IconButton';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Section from '../Section';
 import Menu from '../Menu';
 import { ITEM_HEIGHT } from '../Menu/Menu';

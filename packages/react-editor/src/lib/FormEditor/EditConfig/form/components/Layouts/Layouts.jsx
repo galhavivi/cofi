@@ -6,10 +6,10 @@
 import React, { useContext } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 import { FormContext } from '@cofi/react-form';
-import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Create';
-import DownloadIcon from '@material-ui/icons/SaveAlt';
-import DuplicateIcon from '@material-ui/icons/FileCopy';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Create';
+import DownloadIcon from '@mui/icons-material/SaveAlt';
+import DuplicateIcon from '@mui/icons-material/FileCopy';
 import Grid from '../../../../../Grid';
 import downloadJson from '../../../../../utils/downloadJson'; 
 import * as Styled from './Styled';
