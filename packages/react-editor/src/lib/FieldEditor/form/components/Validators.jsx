@@ -4,7 +4,7 @@
   */
 
 import React, { useEffect } from 'react';
-import { withTheme } from '@material-ui/styles';
+import { withTheme } from '@mui/styles';
 import styled from 'styled-components';
 import Handler from './Handler';
 

@@ -5,8 +5,8 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createGenerateClassName, StylesProvider, ThemeProvider } from '@material-ui/styles';
-import { createTheme } from '@mui/material/styles';
+import { createGenerateClassName, StylesProvider } from '@mui/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { HashRouter, Route, Switch } from 'react-router-dom';
 import { setLogLevel, logLevels } from '@cofi/form';
 import Styled from './Styled';

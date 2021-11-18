@@ -4,7 +4,7 @@
   */
 
 import styled from 'styled-components';
-import { withTheme } from '@material-ui/styles';
+import { withTheme } from '@mui/styles';
 
 export const BooleanWrapper = styled.div`
   position: relative;

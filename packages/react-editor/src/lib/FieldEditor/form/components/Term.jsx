@@ -5,7 +5,7 @@
 
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { withTheme } from '@material-ui/styles';
+import { withTheme } from '@mui/styles';
 import Select from '@cofi/react-components/edit/Select';
 import Checkbox from '@cofi/react-components/edit/Checkbox';
 import Handler from './Handler';

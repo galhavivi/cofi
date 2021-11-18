@@ -6,8 +6,8 @@
 import React, { useEffect } from 'react';
 import { HashRouter, Route, Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
-import { createGenerateClassName, StylesProvider, ThemeProvider } from '@material-ui/styles';
-import { createTheme } from '@mui/material/styles';
+import { createGenerateClassName, StylesProvider } from '@mui/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { setLogLevel, logLevels } from '@cofi/form';
 import Styled from './components/StyledComponents';
 import Demos from './components/Demos';

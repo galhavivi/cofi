@@ -159,7 +159,7 @@ in order to fix their class names collision that causing ui to break.
 Example form our demos:
 
 ```javascript
-import { createGenerateClassName, StylesProvider } from '@material-ui/styles';
+import { createGenerateClassName, StylesProvider } from '@mui/styles';
 
 const generateClassName = createGenerateClassName({
   productionPrefix: 'cofi-react-form-demos',
