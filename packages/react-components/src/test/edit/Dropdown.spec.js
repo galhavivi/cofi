@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import Select from '@material-ui/core/Select';
+import Select from '@mui/material/Select';
 import Dropdown from '../../lib/edit/Dropdown/index';
 
 

@@ -4,8 +4,8 @@
   */
 
 import React from 'react';
-import MenuInner from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+import MenuInner from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 import PropTypes from 'prop-types';
 
 export const ITEM_HEIGHT = 48;

@@ -38,7 +38,7 @@ Simple Example
 
 ```javascript
 import React from 'react';
-import Input from '@material-ui/core/Input';
+import Input from '@mui/material/Input';
 
 export default ({ value = '', state = {}, onValueChange }) => <Input
   value={value}
@@ -100,7 +100,7 @@ Example - using react functional component
 ```javascript
 /* Input.js */
 import React from 'react';
-import Input from '@material-ui/core/Input';
+import Input from '@mui/material/Input';
 
 export default ({ value = '', state = {}, disabled = false, onValueChange }) => <Input
   type={state.type}
@@ -116,7 +116,7 @@ Example - using toCofi HOC
 ```javascript
 /* Input.js */
 import { toCofi } from '@cofi/react-components/utils';
-import Input from '@material-ui/core/Input';
+import Input from '@mui/material/Input';
 
 export const mapper = ({ value = '', disabled = false, state = {}, onValueChange }) => ({
   type: state.type

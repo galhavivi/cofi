@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
-import Paper from '@material-ui/core/Paper';
-import InputBase from '@material-ui/core/InputBase';
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
-import IconButton from '@material-ui/core/IconButton';
-import { withStyles } from '@material-ui/core/styles';
+import IconButton from '@mui/material/IconButton';
+import { withStyles } from '@mui/styles';
 import { noop } from 'lodash';
 
 const styles = {

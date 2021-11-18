@@ -5,7 +5,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Input from '@material-ui/core/Input';
+import Input from '@mui/material/Input';
 
 /**
  * Represent a string

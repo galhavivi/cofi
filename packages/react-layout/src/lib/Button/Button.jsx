@@ -4,7 +4,7 @@
   */
 
 import React from 'react';
-import DefaultButton from '@material-ui/core/Button';
+import DefaultButton from '@mui/material/Button';
 import PropTypes from 'prop-types';
 
 export const types = {

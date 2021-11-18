@@ -150,7 +150,7 @@ Example
 
 ```javascript
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import { FormContext } from '@cofi/react-form';
 
 export default class SaveButton extends React.Component {
@@ -213,7 +213,7 @@ Example
 ```javascript
 import React from 'react';
 import { Field, FormContext, createForm } from '@cofi/react-form';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import form from '../form'; // object of { model, resources }
 
 class MyComponent extends React.Component {
@@ -249,7 +249,7 @@ Example
 ```javascript
 import React, { useCallback } from 'react';
 import { Field, withForm, createForm } from '@cofi/react-form';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import service from '../service';
 import form from '../form'; // object of { model, resources }
 

@@ -6,8 +6,8 @@
 const time = '`${time} ms`'; // eslint-disable-line
 
 const demo = `import React, { useCallback, useContext } from 'react';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 import ReactJson from 'react-json-view';
 import { createForm, Field, FormContext } from '@cofi/react-form';
 import form from './form';

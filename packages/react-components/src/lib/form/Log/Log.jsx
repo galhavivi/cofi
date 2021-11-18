@@ -4,7 +4,7 @@
   */
  
 import React, { useState } from 'react';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import DebugIcon from '@material-ui/icons/BugReport';
 import WarnIcon from '@material-ui/icons/Warning';
 import ErrorIcon from '@material-ui/icons/Error';
