@@ -7,7 +7,7 @@ import React from 'react';
 import FormContext from '@cofi/react-form/FormContext';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { withTheme } from '@material-ui/core/styles';
+import { withTheme } from '@mui/styles';
 
 const defaultLabels = {
   required: 'Required',
@@ -29,10 +29,10 @@ const FieldTitle = styled.div`
 `;
 
 const FieldLink = withTheme(styled.div`
+  color: ${({ theme }) => theme.palette.secondary.main};
   list-style-type: none;
   margin-top: 10px;
   cursor: pointer;
-  color: ${({ theme }) => theme.palette.secondary.main};
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

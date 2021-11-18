@@ -5,7 +5,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withTheme } from '@material-ui/core/styles';
+import { withTheme } from '@mui/styles';
 import Styled from './StyledComponents';
 
 /**
@@ -36,6 +36,7 @@ class Url extends React.Component {
 
   render() {
     const { theme } = this.props;
+
     return (<Styled.A maxLines={this.props.state.maxLines}
       color={theme.palette.secondary.main}
       href={this.props.value}

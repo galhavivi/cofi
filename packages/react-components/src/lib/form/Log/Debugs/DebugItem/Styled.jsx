@@ -4,7 +4,7 @@
   */
  
 import styled from 'styled-components';
-import { withTheme } from '@material-ui/core/styles';
+import { withTheme } from '@mui/styles';
 
 export const Action = styled.div`
   color: ${({ isQueueAction }) => isQueueAction ? '#9a9a9a' : 'unset'};
