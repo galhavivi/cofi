@@ -6,7 +6,7 @@
 import React from 'react';
 import Popper from '@mui/material/Popper';
 import Paper from '@mui/material/Paper';
-import { makeStyles } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(theme => ({
   popper: {
