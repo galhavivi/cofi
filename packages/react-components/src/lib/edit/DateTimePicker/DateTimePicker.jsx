@@ -6,10 +6,9 @@
 import { DateTimePicker as InternalDateTimePicker } from '@mui/lab';
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
-
+import Styled from './DateTimePicker.styled';
 
 /**
  * Represent a Date object
@@ -42,7 +41,7 @@ export default class DateTimePicker extends React.Component {
     return (
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <InternalDateTimePicker
-          renderInput={(props) => <TextField {...props} />}
+          renderInput={(props) => <Styled.TextField {...props} />}
           value={this.props.value}
           format={this.props.state.format || DateTimePicker.defaultProps.state.format}
           disabled={this.props.disabled}

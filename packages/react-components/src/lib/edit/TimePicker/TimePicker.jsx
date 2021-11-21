@@ -6,10 +6,9 @@
 import { TimePicker as InternalTimePicker } from '@mui/lab';
 import PropTypes from 'prop-types';
 import * as React from 'react';
-import TextField from '@mui/material/TextField';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
- 
+import Styled from './TimePicker.styled';
 
 /**
  * Represent a Date object
@@ -42,7 +41,7 @@ export default class TimePicker extends React.Component {
     return (
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <InternalTimePicker
-          renderInput={(props) => <TextField {...props} />}
+          renderInput={(props) => <Styled.TextField {...props} />}
           value={this.props.value}
           format={this.props.state.format || TimePicker.defaultProps.state.format}
           disabled={this.props.disabled}
