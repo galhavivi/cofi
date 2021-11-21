@@ -5,7 +5,7 @@
 
 import React from 'react';
 import ReactJson from 'react-json-view';
-import Link from '@material-ui/core/Link';
+import Link from '@mui/material/Link';
 import * as Styled from '../Styled';
 
 const UnknownError = ({ error }) => (<>

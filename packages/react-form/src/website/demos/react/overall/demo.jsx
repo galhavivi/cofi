@@ -6,7 +6,7 @@
 import React, { useContext, useCallback } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 import styled from 'styled-components';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import ReactJson from 'react-json-view';
 import { Field, createField, createForm, FormContext } from '../../../../lib';
 import Styled from '../../../components/StyledComponents';

@@ -4,7 +4,7 @@
   */
 
 import styled from 'styled-components';
-import { withTheme } from '@material-ui/styles';
+import { withTheme } from '@mui/styles';
 
 export const Link = withTheme(styled.a`
   flex: 1;

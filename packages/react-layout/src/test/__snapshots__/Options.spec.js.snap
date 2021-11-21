@@ -2,14 +2,14 @@
 
 exports[`Options Should render - ok 1`] = `
 <div>
-  <WithStyles(ForwardRef(IconButton))
+  <ForwardRef(IconButton)
     aria-haspopup="true"
     aria-label="Options"
     color="primary"
     onClick={[Function]}
   >
     <Memo(ForwardRef(DehazeIcon)) />
-  </WithStyles(ForwardRef(IconButton))>
+  </ForwardRef(IconButton)>
   <Menu
     anchorEl={null}
     onClose={[Function]}
@@ -34,14 +34,14 @@ exports[`Options Should render - ok 1`] = `
 
 exports[`Options Should render - with action that has disabled truthy - ok 1`] = `
 <div>
-  <WithStyles(ForwardRef(IconButton))
+  <ForwardRef(IconButton)
     aria-haspopup="true"
     aria-label="Options"
     color="primary"
     onClick={[Function]}
   >
     <Memo(ForwardRef(DehazeIcon)) />
-  </WithStyles(ForwardRef(IconButton))>
+  </ForwardRef(IconButton)>
   <Menu
     anchorEl={null}
     onClose={[Function]}

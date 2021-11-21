@@ -5,7 +5,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import _Switch from '@material-ui/core/Switch';
+import _Switch from '@mui/material/Switch';
 import { toCofi } from '../../utils';
 
 const propTypes = {

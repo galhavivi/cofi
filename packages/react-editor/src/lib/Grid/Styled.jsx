@@ -4,7 +4,7 @@
   */
 
 import styled from 'styled-components';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 
 export const HeaderButton = styled(Button)`
   margin-left: 10px !important;

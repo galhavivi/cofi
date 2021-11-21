@@ -4,8 +4,8 @@
   */
 
 import React, { useCallback, useContext } from 'react';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
+import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 import ReactJson from 'react-json-view';
 import { FormContext, createForm, Field } from '../../../../lib';
 import Styled from '../../../components/StyledComponents';

@@ -3,12 +3,13 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-import React from 'react';
-// import 'date-fns';
-import DateFnsUtils from '@date-io/date-fns';
-import { MuiPickersUtilsProvider, TimePicker as InternalTimePicker } from '@material-ui/pickers';
+import { TimePicker as InternalTimePicker } from '@mui/lab';
 import PropTypes from 'prop-types';
- 
+import * as React from 'react';
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import LocalizationProvider from '@mui/lab/LocalizationProvider';
+import Styled from './TimePicker.styled';
+
 /**
  * Represent a Date object
  * 
@@ -38,18 +39,16 @@ export default class TimePicker extends React.Component {
  
   render() {
     return (
-      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
         <InternalTimePicker
-          autoOk={true}
-          clearable={true}
-          disableFuture={true}
-          format={this.props.state.format || TimePicker.defaultProps.state.format}
+          renderInput={(props) => <Styled.TextField {...props} />}
           value={this.props.value}
+          format={this.props.state.format || TimePicker.defaultProps.state.format}
           disabled={this.props.disabled}
           error={this.props.invalid}
           onChange={this.onChange}
         />
-      </MuiPickersUtilsProvider>
+      </LocalizationProvider>
     );
   }
  

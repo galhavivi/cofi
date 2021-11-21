@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Text /> should render provided data 1`] = `
-<WithStyles(ForwardRef(FormControl))>
-  <WithStyles(ForwardRef(Input))
+<ForwardRef(FormControl)>
+  <ForwardRef(Input)
     disabled={false}
     error={false}
     inputProps={
@@ -15,5 +15,5 @@ exports[`<Text /> should render provided data 1`] = `
     type="text"
     value="avocado"
   />
-</WithStyles(ForwardRef(FormControl))>
+</ForwardRef(FormControl)>
 `;

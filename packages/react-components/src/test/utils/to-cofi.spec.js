@@ -5,7 +5,7 @@
 
 import React from 'react';
 import { shallow } from 'enzyme';
-import Input from '@material-ui/core/Input';
+import Input from '@mui/material/Input';
 import { toCofi } from '../../lib/utils//index';
 
 

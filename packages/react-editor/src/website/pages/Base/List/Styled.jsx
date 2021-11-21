@@ -4,7 +4,7 @@
   */
 
 import styled from 'styled-components';
-import { withTheme } from '@material-ui/styles';
+import { withTheme } from '@mui/styles';
 
 export const Wrapper = styled.div`
   padding: 40px;

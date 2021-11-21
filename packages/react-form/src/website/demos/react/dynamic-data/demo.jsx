@@ -4,7 +4,7 @@
   */
 
 import React, { useState, useContext, useCallback } from 'react';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import { createForm, FormContext, Field } from '../../../../lib';
 import Styled from '../../../components/StyledComponents';
 import form from './form';

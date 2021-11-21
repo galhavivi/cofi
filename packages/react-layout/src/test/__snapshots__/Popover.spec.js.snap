@@ -6,28 +6,13 @@ exports[`Popover Should render - ok 1`] = `
   className="makeStyles-popper-1"
   disablePortal={true}
   id="My Id"
-  modifiers={
-    Object {
-      "arrow": Object {
-        "element": null,
-        "enabled": true,
-      },
-      "flip": Object {
-        "enabled": true,
-      },
-      "preventOverflow": Object {
-        "boundariesElement": "scrollParent",
-        "enabled": true,
-      },
-    }
-  }
   open={true}
   placement="top"
 >
   <span
     className="makeStyles-arrow-3"
   />
-  <WithStyles(ForwardRef(Paper))
+  <ForwardRef(Paper)
     className="makeStyles-paper-2"
   >
     <div
@@ -40,7 +25,7 @@ exports[`Popover Should render - ok 1`] = `
     >
       <component />
     </div>
-  </WithStyles(ForwardRef(Paper))>
+  </ForwardRef(Paper)>
 </ForwardRef(Popper)>
 `;
 

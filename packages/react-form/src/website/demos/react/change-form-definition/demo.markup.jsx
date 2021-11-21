@@ -5,7 +5,7 @@
 
 const demo = `import React, { useState, useCallback } from 'react';
 import { Form, Field } from '@cofi/react-form';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import DataViewer from './custom-form-components/DataViewer';
 import formEdit from './edit-form';
 import formView from './view-form';

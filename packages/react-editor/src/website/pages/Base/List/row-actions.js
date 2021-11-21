@@ -3,10 +3,10 @@
   * Licensed under the terms of the MIT license. See LICENSE file in project root for terms.
   */
 
-import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Create';
-import DuplicateIcon from '@material-ui/icons/FileCopy';
-import DownloadIcon from '@material-ui/icons/SaveAlt';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Create';
+import DuplicateIcon from '@mui/icons-material/FileCopy';
+import DownloadIcon from '@mui/icons-material/SaveAlt';
 
 export default ({ edit, duplicate, download, remove }, rowActions = []) => [{
   label: 'Edit',

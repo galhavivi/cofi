@@ -4,6 +4,10 @@
 
 Changes that have landed in master but are not yet released.
 
+### react-components
+
+* Update @material-ui to @mui. [Issue 29](https://github.com/galhavivi/cofi/issues/29)
+
 ### documentation
 
 * Update docusaurus version. [Issue 27](https://github.com/galhavivi/cofi/issues/27)

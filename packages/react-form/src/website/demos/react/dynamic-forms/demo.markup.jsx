@@ -5,7 +5,7 @@
 
 const demo = `import React, { useCallback, useContext } from 'react';
 import { createForm, FormContext, createForm } from '@cofi/react-form';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import ReactJson from 'react-json-view';
 import form from './form/index.js';
 
@@ -35,9 +35,9 @@ export default createForm(form)(DemoForm);`;
 const demoEmployee = `import React, { useContext, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { clone, cloneDeep } from 'lodash';
-import { withStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Button from '@material-ui/core/Button';
+import { withStyles } from '@mui/styles';
+import Modal from '@mui/material/Modal';
+import Button from '@mui/material/Button';
 import { createForm, FormContext, createForm } from '@cofi/react-form';
 import styled from 'styled-components';
 import employeeForm from './form';

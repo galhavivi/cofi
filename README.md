@@ -40,7 +40,7 @@ JavaScript Form class which manage fields and data manipulations. [More info](fo
 
 Supplies 3 products to manage forms in [react](https://reactjs.org) applications. [More info](react-overview.html)
 - React Form & Field components based on Form class. 
-- Common components for usage such as Text, Number, Select and more, based on [Material UI](https://material-ui.com/)
+- Common components for usage such as Text, Number, Select and more, based on [Material UI](https://mui.com/)
 - Layout components to build form pages / peaces with the same UI / UX experience such as Item component which contain header, sections,
 footer actions and menu actions.
 

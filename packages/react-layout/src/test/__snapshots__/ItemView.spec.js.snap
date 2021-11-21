@@ -8,18 +8,18 @@ exports[`ItemView Should render - ok 1`] = `
     </styled.div>
     <styled.div>
       <styled.div>
-        <WithStyles(ForwardRef(Tabs))
+        <ForwardRef(Tabs)
           aria-label="Tabs"
           indicatorColor="primary"
           onChange={[MockFunction]}
           textColor="primary"
         >
-          <WithStyles(ForwardRef(Tab))
+          <ForwardRef(Tab)
             key="general"
             label="General"
             value="general"
           />
-        </WithStyles(ForwardRef(Tabs))>
+        </ForwardRef(Tabs)>
       </styled.div>
       <Options
         options={Array []}
@@ -115,18 +115,18 @@ exports[`ItemView Should render without footer - ok 1`] = `
     </styled.div>
     <styled.div>
       <styled.div>
-        <WithStyles(ForwardRef(Tabs))
+        <ForwardRef(Tabs)
           aria-label="Tabs"
           indicatorColor="primary"
           onChange={[MockFunction]}
           textColor="primary"
         >
-          <WithStyles(ForwardRef(Tab))
+          <ForwardRef(Tab)
             key="general"
             label="General"
             value="general"
           />
-        </WithStyles(ForwardRef(Tabs))>
+        </ForwardRef(Tabs)>
       </styled.div>
       <Options
         options={Array []}
@@ -153,18 +153,18 @@ exports[`ItemView Should render without options - ok 1`] = `
     </styled.div>
     <styled.div>
       <styled.div>
-        <WithStyles(ForwardRef(Tabs))
+        <ForwardRef(Tabs)
           aria-label="Tabs"
           indicatorColor="primary"
           onChange={[MockFunction]}
           textColor="primary"
         >
-          <WithStyles(ForwardRef(Tab))
+          <ForwardRef(Tab)
             key="general"
             label="General"
             value="general"
           />
-        </WithStyles(ForwardRef(Tabs))>
+        </ForwardRef(Tabs)>
       </styled.div>
     </styled.div>
   </styled.div>
@@ -257,18 +257,18 @@ exports[`ItemView Should render without title - ok 1`] = `
   <styled.div>
     <styled.div>
       <styled.div>
-        <WithStyles(ForwardRef(Tabs))
+        <ForwardRef(Tabs)
           aria-label="Tabs"
           indicatorColor="primary"
           onChange={[MockFunction]}
           textColor="primary"
         >
-          <WithStyles(ForwardRef(Tab))
+          <ForwardRef(Tab)
             key="general"
             label="General"
             value="general"
           />
-        </WithStyles(ForwardRef(Tabs))>
+        </ForwardRef(Tabs)>
       </styled.div>
       <Options
         options={Array []}

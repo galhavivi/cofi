@@ -124,8 +124,7 @@ async function verifyItemManipulation(page) {
   await page.waitFor(ANIMATION_DURATION);
 
   // change department field to 'HR' to disable and exclude menu item options
-  await page.click('div#department [role="button"]'); // focus
-  await page.click('div#department [role="button"]'); // click
+  await page.click('div#department [role="button"]');
   await page.waitFor(ANIMATION_DURATION);
   await page.click('li[role="option"]:nth-child(4)');
   await page.waitFor(ANIMATION_DURATION);

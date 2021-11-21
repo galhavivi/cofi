@@ -5,7 +5,7 @@
 
 const demo = `import React, { useContext, useCallback } from 'react';
 import styled from 'styled-components';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import ReactJson from 'react-json-view';
 import { Field, createField, createForm, FormContext } from '@cofi/react-form';
 import formDefinition from './form';

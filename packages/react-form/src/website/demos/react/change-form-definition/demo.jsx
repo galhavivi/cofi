@@ -4,7 +4,7 @@
   */
 
 import React, { useState, useCallback } from 'react';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import { Form, Field } from '../../../../lib';
 import Styled from '../../../components/StyledComponents';
 import DataViewer from './custom-form-components/DataViewer';

@@ -4,8 +4,8 @@
   */
 
 import styled from 'styled-components';
-import MUIList from '@material-ui/core/List';
-import MUIListItem from '@material-ui/core/ListItem';
+import MUIList from '@mui/material/List';
+import MUIListItem from '@mui/material/ListItem';
 
 const List = styled(MUIList)`
   width: 100%;

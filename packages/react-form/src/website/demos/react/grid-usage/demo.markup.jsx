@@ -7,8 +7,8 @@ const id = '`${form.model.id}-${data.id}`'; // eslint-disable-line
 
 const demo = `import React, { useState, useCallback } from 'react';
 import { Form, Field } from '@cofi/react-form';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 import SaveButton from './custom-form-components/SaveButton';
 import formEdit from './edit-form';
 import formView from './view-form';

@@ -71,7 +71,7 @@ async function openTabPageOnBrowser(browser) {
 
 async function testHomepageNavigation(page) {
   // find the length of the closed navigation items
-  const itemsSelector = 'nav [role="button"]';
+  const itemsSelector = 'nav [item-id]';
   const itemsBeforeOpen = await page.$$(itemsSelector);
   expect(itemsBeforeOpen).toHaveLength(3);
 
@@ -84,7 +84,7 @@ async function testHomepageNavigation(page) {
   await page.waitFor(ANIMATION_DURATION);
 
   // verify its sub items appear on the screen
-  firstDemo = await page.$('[item-id="/item/layouts"][role="button"]');
+  firstDemo = await page.$('a[item-id="/item/layouts"]');
   expect(firstDemo).toBeTruthy();
 
   // verify that home is presented and not any example
@@ -94,7 +94,7 @@ async function testHomepageNavigation(page) {
   expect(home).toBeTruthy();
 
   // click first example item
-  await page.click('[item-id="/item/layouts"][role="button"]');
+  await page.click('a[item-id="/item/layouts"]');
 
   // verify that home is not presented and first example is presented
   demoContainer = await page.$('#example-container');

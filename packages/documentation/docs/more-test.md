@@ -210,7 +210,7 @@ Example - component Input using [toCofi](react-components#tocofi) hoc
 ```javascript
 /* Input.js */
 import { toCofi } from '@cofi/react-components/utils';
-import Input from '@material-ui/core/Input';
+import Input from '@mui/material/Input';
 
 export const mapper = ({ value = '', disabled = false, state = {}, onValueChange }) => ({
   type: state.type

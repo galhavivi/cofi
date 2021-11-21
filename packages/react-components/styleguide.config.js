@@ -22,6 +22,9 @@ module.exports = {
       linkHover: '#3fcee6',
     },
   },
+  styleguideComponents: {
+    Wrapper: path.join(__dirname, 'src/lib/Wrapper'),
+  },
   sections: [{
     name: 'Field Edit Components',
     components: 'src/lib/edit/**/[A-Z]*.jsx',

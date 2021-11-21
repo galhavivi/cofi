@@ -4,11 +4,11 @@
   */
 
 import React, { useEffect, useState, useContext, useCallback, useMemo } from 'react';
-import Radio from '@material-ui/core/Radio';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Radio from '@mui/material/Radio';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import { FormContext, createForm } from '@cofi/react-form';
 import FormErrors from '@cofi/react-components/form/FormErrors';
-import SaveIcon from '@material-ui/icons/Save';
+import SaveIcon from '@mui/icons-material/Save';
 import styled from 'styled-components';
 import { iterateSections, getSectionComponentBoxes } from '../../../lib/Section/utils';
 import { iterateBoxes } from '../../../lib/Box/utils';

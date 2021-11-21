@@ -5,8 +5,8 @@
 
 import React, { useState, useCallback } from 'react';
 import { cloneDeep } from 'lodash';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 import { Form, Field } from '../../../../lib';
 import Styled from '../../../components/StyledComponents';
 import SaveButton from './custom-form-components/SaveButton';

@@ -4,8 +4,8 @@
   */
  
 import styled from 'styled-components';
-import MuiTooltip from '@material-ui/core/Tooltip';
-import { withStyles } from '@material-ui/core/styles';
+import MuiTooltip from '@mui/material/Tooltip';
+import { withStyles } from '@mui/styles';
 
 export const Tooltip = withStyles(() => ({
   tooltip: {

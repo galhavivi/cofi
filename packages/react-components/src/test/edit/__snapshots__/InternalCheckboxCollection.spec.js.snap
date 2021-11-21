@@ -5,9 +5,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes disabled 
   <styled.div
     key="Ross Geller"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={true}
           disabled={true}
           onChange={[Function]}
@@ -20,9 +20,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes disabled 
   <styled.div
     key="Monica Geller"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={true}
           disabled={true}
           onChange={[Function]}
@@ -35,9 +35,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes disabled 
   <styled.div
     key="Rachel Green"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={false}
           disabled={true}
           onChange={[Function]}
@@ -50,9 +50,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes disabled 
   <styled.div
     key="Chandler Bing"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={false}
           disabled={true}
           onChange={[Function]}
@@ -65,9 +65,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes disabled 
   <styled.div
     key="Joey Tribbiani"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={false}
           disabled={true}
           onChange={[Function]}
@@ -80,9 +80,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes disabled 
   <styled.div
     key="Phoebe Buffay"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={false}
           disabled={true}
           onChange={[Function]}
@@ -100,9 +100,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes inline 1`
   <styled.div
     key="Ross Geller"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={true}
           disabled={false}
           onChange={[Function]}
@@ -115,9 +115,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes inline 1`
   <styled.div
     key="Monica Geller"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={true}
           disabled={false}
           onChange={[Function]}
@@ -130,9 +130,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes inline 1`
   <styled.div
     key="Rachel Green"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -145,9 +145,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes inline 1`
   <styled.div
     key="Chandler Bing"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -160,9 +160,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes inline 1`
   <styled.div
     key="Joey Tribbiani"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -175,9 +175,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes inline 1`
   <styled.div
     key="Phoebe Buffay"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -195,9 +195,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes only 1`] 
   <styled.div
     key="Ross Geller"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={true}
           disabled={false}
           onChange={[Function]}
@@ -210,9 +210,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes only 1`] 
   <styled.div
     key="Monica Geller"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={true}
           disabled={false}
           onChange={[Function]}
@@ -225,9 +225,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes only 1`] 
   <styled.div
     key="Rachel Green"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -240,9 +240,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes only 1`] 
   <styled.div
     key="Chandler Bing"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -255,9 +255,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes only 1`] 
   <styled.div
     key="Joey Tribbiani"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -270,9 +270,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes only 1`] 
   <styled.div
     key="Phoebe Buffay"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -296,9 +296,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes with sear
   <styled.div
     key="Ross Geller"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={true}
           disabled={false}
           onChange={[Function]}
@@ -311,9 +311,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes with sear
   <styled.div
     key="Monica Geller"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={true}
           disabled={false}
           onChange={[Function]}
@@ -326,9 +326,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes with sear
   <styled.div
     key="Rachel Green"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -341,9 +341,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes with sear
   <styled.div
     key="Chandler Bing"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -356,9 +356,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes with sear
   <styled.div
     key="Joey Tribbiani"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={false}
           disabled={false}
           onChange={[Function]}
@@ -371,9 +371,9 @@ exports[`<CheckboxCollection /> should render provided data checkboxes with sear
   <styled.div
     key="Phoebe Buffay"
   >
-    <WithStyles(ForwardRef(FormControlLabel))
+    <ForwardRef(FormControlLabel)
       control={
-        <WithStyles(ForwardRef(Checkbox))
+        <ForwardRef(Checkbox)
           checked={false}
           disabled={false}
           onChange={[Function]}

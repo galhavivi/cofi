@@ -7,22 +7,22 @@ exports[`MobileItemView Should render - ok 1`] = `
       Employee
     </styled.div>
     <span>
-      <WithStyles(ForwardRef(IconButton))
+      <ForwardRef(IconButton)
         aria-label="Save"
         color="primary"
         key="Save"
         onClick={[MockFunction]}
       >
         <icon />
-      </WithStyles(ForwardRef(IconButton))>
+      </ForwardRef(IconButton)>
     </span>
-    <WithStyles(ForwardRef(IconButton))
+    <ForwardRef(IconButton)
       aria-label="Options"
       color="primary"
       onClick={[Function]}
     >
       <Memo(ForwardRef(MoreVertIcon)) />
-    </WithStyles(ForwardRef(IconButton))>
+    </ForwardRef(IconButton)>
     <Menu
       anchorEl={null}
       anchorOrigin={

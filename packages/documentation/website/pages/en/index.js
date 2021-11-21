@@ -97,7 +97,7 @@ class Index extends React.Component {
                   components for usage such as Select, TextInput and more.
                   Components maps their generic Cofi's props to actual UI components props,
                   which are based on 
-                  <Link href="https://material-ui.com/" target="_blank">Material UI</Link>
+                  <Link href="https://mui.com/" target="_blank">Material UI</Link>
                   components.
               </Feature>
               <Feature title="Layouts">
