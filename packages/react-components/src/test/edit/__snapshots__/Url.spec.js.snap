@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Url /> should render provided data 1`] = `
-<WithStyles(ForwardRef(Input))
+<ForwardRef(Input)
   disabled={false}
   error={false}
   onChange={[Function]}

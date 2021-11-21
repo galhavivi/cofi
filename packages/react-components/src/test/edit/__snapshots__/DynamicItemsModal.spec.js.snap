@@ -16,7 +16,7 @@ exports[`<DynamicItemsModal /> component functions render itemsDisplay 1`] = `
        
     </styled.div>
     <styled.div>
-      <WithStyles(ForwardRef(Fab))
+      <ForwardRef(Fab)
         color="secondary"
         onClick={[Function]}
         size="small"
@@ -27,8 +27,8 @@ exports[`<DynamicItemsModal /> component functions render itemsDisplay 1`] = `
         }
       >
         <Memo(ForwardRef(CreateIcon)) />
-      </WithStyles(ForwardRef(Fab))>
-      <WithStyles(ForwardRef(Fab))
+      </ForwardRef(Fab)>
+      <ForwardRef(Fab)
         color="secondary"
         onClick={[Function]}
         size="small"
@@ -39,7 +39,7 @@ exports[`<DynamicItemsModal /> component functions render itemsDisplay 1`] = `
         }
       >
         <Memo(ForwardRef(DeleteIcon)) />
-      </WithStyles(ForwardRef(Fab))>
+      </ForwardRef(Fab)>
     </styled.div>
   </styled.li>
 </ul>
@@ -51,24 +51,21 @@ exports[`<DynamicItemsModal /> should render provided data 1`] = `
     class="sc-hKwDye jrNqGy"
   />
   <button
-    class="MuiButtonBase-root MuiFab-root MuiFab-sizeSmall MuiFab-primary"
+    class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary css-3cm1w6-MuiButtonBase-root-MuiFab-root"
     tabindex="0"
     type="button"
   >
-    <span
-      class="MuiFab-label"
+    <svg
+      aria-hidden="true"
+      class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+      data-testid="AddIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
     >
-      <svg
-        aria-hidden="true"
-        class="MuiSvgIcon-root"
-        focusable="false"
-        viewBox="0 0 24 24"
-      >
-        <path
-          d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
-        />
-      </svg>
-    </span>
+      <path
+        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+      />
+    </svg>
   </button>
   <span
     class="sc-iCfMLu iSOBhP"

@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Checkbox /> should render provided data 1`] = `
-<WithStyles(ForwardRef(FormControlLabel))
+<ForwardRef(FormControlLabel)
   control={
-    <WithStyles(ForwardRef(Checkbox))
+    <ForwardRef(Checkbox)
       checked={false}
       disabled={false}
       onChange={[Function]}
