@@ -10,50 +10,7 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles(theme => ({
   popper: {
-    top: '-10px !important',
-    '&[x-placement*="bottom"] $arrow': {
-      top: 0,
-      left: 0,
-      marginTop: '-0.9em',
-      width: '3em',
-      height: '1em',
-      '&::before': {
-        borderWidth: '0 1em 1em 1em',
-        borderColor: `transparent transparent #cecece transparent`,
-      },
-    },
-    '&[x-placement*="top"] $arrow': {
-      bottom: 0,
-      left: 0,
-      marginBottom: '-0.9em',
-      width: '3em',
-      height: '1em',
-      '&::before': {
-        borderWidth: '1em 1em 0 1em',
-        borderColor: `#cecece transparent transparent transparent`,
-        marginTop: '1px',
-      },
-    },
-    '&[x-placement*="right"] $arrow': {
-      left: 0,
-      marginLeft: '-0.9em',
-      height: '3em',
-      width: '1em',
-      '&::before': {
-        borderWidth: '1em 1em 1em 0',
-        borderColor: `transparent #cecece transparent transparent`,
-      },
-    },
-    '&[x-placement*="left"] $arrow': {
-      right: 0,
-      marginRight: '-0.9em',
-      height: '3em',
-      width: '1em',
-      '&::before': {
-        borderWidth: '1em 0 1em 1em',
-        borderColor: `transparent transparent transparent #cecece`,
-      },
-    },
+    marginBottom: '10px !important',
   },
   paper: {
     maxWidth: 200,
@@ -61,16 +18,13 @@ const useStyles = makeStyles(theme => ({
   arrow: {
     position: 'absolute',
     fontSize: 7,
-    width: '3em',
-    height: '3em',
-    '&::before': {
-      content: '""',
-      margin: 'auto',
-      display: 'block',
-      width: 0,
-      height: 0,
-      borderStyle: 'solid',
-    },
+    bottom: '-8px',
+    left: '70px',
+    width: '0', 
+    height: '0', 
+    borderLeft: '7px solid transparent',
+    borderRight: '7px solid transparent',
+    borderTop: '7px solid #e5e5e5',
   },
   header: {
     borderBottom: '1px solid #e1e1e1',
@@ -98,20 +52,6 @@ export default function Popover(props) {
 
   const Component = props.component;
 
-  const modifiers = {
-    flip: {
-      enabled: true,
-    },
-    preventOverflow: {
-      enabled: true,
-      boundariesElement: 'scrollParent',
-    },
-    arrow: {
-      enabled: true,
-      element: arrowRef,
-    },
-  };
-
   return !targetRef.current ? (null) : (
     <Popper
       id={props.id}
@@ -119,8 +59,7 @@ export default function Popover(props) {
       anchorEl={targetRef.current}
       placement="top"
       className={classes.popper}
-      disablePortal={true}
-      modifiers={modifiers}>
+      disablePortal={true}>
       <span className={classes.arrow} ref={setArrowRef} />
       <Paper className={classes.paper}>
         <div className={classes.header}>{props.title}</div>
