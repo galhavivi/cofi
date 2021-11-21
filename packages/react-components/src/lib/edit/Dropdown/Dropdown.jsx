@@ -6,8 +6,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { isEqual } from 'lodash';
-import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
+import Styled from './Dropdown.styled';
 
 /**
  * Represent value of any type
@@ -60,7 +60,7 @@ export default class Dropdown extends React.Component {
     const value = item ? JSON.stringify(item.value) : '';
 
     return (
-      <Select
+      <Styled.Dropdown
         value={value}
         disabled={this.props.disabled}
         error={this.props.invalid}
@@ -75,7 +75,7 @@ export default class Dropdown extends React.Component {
           const value = JSON.stringify(item.value);
           return (<MenuItem key={item.label} value={value}>{item.label}</MenuItem>);
         })}
-      </Select>
+      </Styled.Dropdown>
     );
   }
 

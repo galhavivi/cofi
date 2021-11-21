@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Dropdown /> should render provided data 1`] = `
-<ForwardRef(Select)
+<Styled(Component)
   disabled={false}
   error={false}
   onChange={[Function]}
@@ -44,5 +44,5 @@ exports[`<Dropdown /> should render provided data 1`] = `
   >
     Cook
   </ForwardRef(MenuItem)>
-</ForwardRef(Select)>
+</Styled(Component)>
 `;
