@@ -44,7 +44,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function Popover(props) {
   const classes = useStyles();
-  const [arrowRef, setArrowRef] = React.useState(null);
   const [targetRef, setTargetRef] = React.useState(props.targetRef.current ? props.targetRef : React.createRef());
 
   React.useEffect(() => setTargetRef(props.targetRef.current ? props.targetRef : React.createRef()), 
@@ -60,7 +59,7 @@ export default function Popover(props) {
       placement="top"
       className={classes.popper}
       disablePortal={true}>
-      <span className={classes.arrow} ref={setArrowRef} />
+      <span className={classes.arrow} />
       <Paper className={classes.paper}>
         <div className={classes.header}>{props.title}</div>
         <div className={classes.body}>
