@@ -1,6 +1,6 @@
 {
   "name": "@cofi/js-kit",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Utils for developing JavaScript package. Should be installed in devDependencies",
   "license": "MIT",
   "repository": {

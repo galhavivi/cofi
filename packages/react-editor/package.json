@@ -1,6 +1,6 @@
 {
   "name": "@cofi/react-editor",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Create cofi form and layouts using a simple editor",
   "license": "MIT",
   "main": "src/website/app.js",

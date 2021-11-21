@@ -1,6 +1,6 @@
 {
   "name": "@cofi/react-kit",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "React development environment utilities such as scripts and config files",
   "license": "MIT",
   "repository": {

@@ -1,6 +1,6 @@
 {
   "name": "@cofi/form",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "JavaScript Form Class",
   "license": "MIT",
   "main": "src/index.js",

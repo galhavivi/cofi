@@ -4,6 +4,8 @@
 
 Changes that have landed in master but are not yet released.
 
+## v3.0.2 (November 21, 2021)
+
 ### react-components
 
 * Update @material-ui to @mui. [Issue 29](https://github.com/galhavivi/cofi/issues/29)
