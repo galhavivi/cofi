@@ -6,7 +6,7 @@ sidebar_label: Components
 
 Unified api components - a set of stateless / stateful components that use the same set of props, and render real components inside (for instance - TextInput ).
 Components are rendered in a generic way using [FieldView](react-field.html#field-view) component render function.
-These components can serve as a mapping layer between Cofi form and other internal components (such as [Material UI](https://material-ui.com/) components).
+These components can serve as a mapping layer between Cofi form and other internal components (such as [Material UI](https://mui.com/) components).
 Props include a number of callbacks that notify a change, such as `onValueChange`.
 
 ## Stateless Vs Stateful Components
@@ -92,7 +92,7 @@ export default ({ value = [] state, disabled, invalid, onValueChange, onStateCha
 
 ### toCofi
 
-To use existing components library in a form (such as [Material UI](https://material-ui.com/)) -
+To use existing components library in a form (such as [Material UI](https://mui.com/)) -
 a map from the Cofi component generic props to the existing component props is needed.
 
 Example - using react functional component
@@ -151,9 +151,9 @@ We plan to keep `@cofi/react-component` as generic as possible. We also define a
   - Define the resource under the resources object (i.e resources.myExtraData = () => {})
   - Consume Cofi's context in the component, and get the resource from `context.resources[props.state.resourceId]`
 
-In our common components we used [Material UI](https://material-ui.com/) as our base components. 
-If your app uses [Material UI](https://material-ui.com/) along with [styled components](https://www.styled-components.com/)
-like we did in our form and layout demos, you will need to wrap your app's Root component with `StylesProvider` of [Material UI](https://material-ui.com/)
+In our common components we used [Material UI](https://mui.com/) as our base components. 
+If your app uses [Material UI](https://mui.com/) along with [styled components](https://www.styled-components.com/)
+like we did in our form and layout demos, you will need to wrap your app's Root component with `StylesProvider` of [Material UI](https://mui.com/)
 in order to fix their class names collision that causing ui to break.
 
 Example form our demos:

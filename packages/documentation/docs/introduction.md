@@ -29,7 +29,7 @@ JavaScript Form class which manage fields and data manipulations. [More info](fo
 
 Supplies 3 products to manage forms in [react](https://reactjs.org) applications. [More info](react-overview.html)
 - React Form & Field components based on Form class. 
-- Common components for usage such as Text, Number, Select and more, based on [Material UI](https://material-ui.com/)
+- Common components for usage such as Text, Number, Select and more, based on [Material UI](https://mui.com/)
 - Layout components to build form pages / peaces with the same UI / UX experience such as Item component which contain header, sections,
 footer actions and menu actions.
 
@@ -150,7 +150,7 @@ Cofi is fully documented:
 
 - `Form Class` - that defined in `@cofi/form` is only using `lodash` as a third-party dependency (it could have been implemented without any dependency but there is no need to reinvent the wheel).
 - `React Form Component` - that defined in `@cofi/react-form` is only using `@cofi/form` as a dependency.
-- `React Components and Layout` - using [React Material UI](https://material-ui.com/) as underline components.
+- `React Components and Layout` - using [React Material UI](https://mui.com/) as underline components.
 
 ### Small Package Size
 

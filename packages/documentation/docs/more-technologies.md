@@ -17,7 +17,7 @@ Cofi is built mainly with these amazing open sources:
 - [Puppeteer](https://pptr.dev/)
 - [React](https://reactjs.org/)
 - [Create React App](https://reactjs.org/docs/create-a-new-react-app.html)
-- [Material UI](https://material-ui.com/)
+- [Material UI](https://mui.com/)
 - [Docusaurus](https://docusaurus.io/)
 - [React Styleguidist](https://react-styleguidist.js.org/)
 - [Styled Components](https://styled-components.com/)
