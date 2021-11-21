@@ -27,7 +27,7 @@ exports[`Popover Should render - ok 1`] = `
   <span
     className="makeStyles-arrow-3"
   />
-  <WithStyles(ForwardRef(Paper))
+  <ForwardRef(Paper)
     className="makeStyles-paper-2"
   >
     <div
@@ -40,7 +40,7 @@ exports[`Popover Should render - ok 1`] = `
     >
       <component />
     </div>
-  </WithStyles(ForwardRef(Paper))>
+  </ForwardRef(Paper)>
 </ForwardRef(Popper)>
 `;
 
