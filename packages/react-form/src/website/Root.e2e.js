@@ -21,7 +21,7 @@ describe('Demos e2e', () => {
   it('Cofi form demos sanity', async () => {
     // wait for the array of parallel tests
     await Promise.all([
-      // execTest(testHomepageNavigation),
+      execTest(testHomepageNavigation),
       execTest(testReactDemos),
       execTest(testRouting),
     ]);
