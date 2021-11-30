@@ -1,6 +1,6 @@
 {
   "name": "@cofi/documentation",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Cofi documentation",
   "license": "MIT",
   "repository": {
@@ -22,7 +22,7 @@
     "pre-push": "lint-staged"
   },
   "devDependencies": {
-    "@cofi/react-kit": "^3.0.1",
+    "@cofi/react-kit": "^3.0.3",
     "filepath": "^1.1.0",
     "front-matter": "^2.3.0",
     "glob-promise": "^3.3.0",
