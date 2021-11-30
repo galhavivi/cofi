@@ -1,6 +1,6 @@
 {
   "name": "@cofi/react-layout",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "React Item, List and more Components, to create full entities pages such as create / edit/ details / list with the same UI/UX experience",
   "license": "MIT",
   "main": "src/website/app.js",
@@ -41,10 +41,10 @@
     "react-breakpoints": "^3.0.3"
   },
   "devDependencies": {
-    "@cofi/react-components": "^1.0.0",
-    "@cofi/form": "^1.0.0",
-    "@cofi/react-form": "^1.0.0",
-    "@cofi/react-kit": "^1.0.0",
+    "@cofi/react-components": "^3.0.3",
+    "@cofi/form": "^3.0.3",
+    "@cofi/react-form": "^3.0.3",
+    "@cofi/react-kit": "^3.0.3",
     "jszip": "^3.2.2",
     "prismjs": "^1.15.0",
     "raw-loader": "4.0.0",

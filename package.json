@@ -6,13 +6,13 @@
     "url": "https://github.com/galhavivi/cofi.git"
   },
   "homepage": "https://galhavivi.github.io/cofi/index.html",
-	"scripts": {
+  "scripts": {
     "bootstrap": "rm -rf ./node_modules && npx -y lerna exec -- rm -rf ./node_modules && npm config set legacy-peer-deps true && npx -y lerna bootstrap --force-local --hoist --no-ci -- --production=false && npx lerna run build-package",
     "clean": "rm -rf package-lock.json && npx -y lerna exec -- rm -rf package-lock.json",
     "clean-bootstrap": "npm run clean && npm run bootstrap"
-	},
+  },
   "devDependencies": {
     "husky": "^3.0.0",
-    "lerna": "3.20.0"
+    "lerna": "^3.20.0"
   }
 }

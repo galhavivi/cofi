@@ -4,6 +4,11 @@
 
 Changes that have landed in master but are not yet released.
 
+## v3.0.3 (November 30, 2021)
+
+### overall
+
+* Fix versions dependencies. [Issue 32](https://github.com/galhavivi/cofi/issues/32)
 ## v3.0.2 (November 21, 2021)
 
 ### react-components
